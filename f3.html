@@ -6,13 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my title</title>
     <style>
-        table{
+        table {
             text-align: center;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        #testID {
+            color: green;
+        }
+
+        .testClass {
+            color: rgb(202, 144, 35);
+        }
+
+        table,
+        tr,
+        td {
+            font-size: 40px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .s2>td {
+            color: blueviolet;
         }
     </style>
 </head>
 
 <body>
+
     <h1>Formatting Elements</h1>
     <h3>b</h3>
     <p>
@@ -112,7 +138,11 @@
         <li><a href="https://picsum.photos/id/237/400/300">dog</a></li>
     </ol>
     <hr>
-    <table border="1" width="50%">
+    <h1>table picsum</h1>
+    <H3 id="testID">Test id h3</H3>
+    <h3 class="testClass">test id h3</h3>
+    <hr>
+    <table>
         <tr>
         <tr>
             <th>No.</th>
@@ -133,8 +163,65 @@
             <td>555</td>
             <td><img src="https://picsum.photos/id/15/200/300" alt=""></td>
         </tr>
-
     </table>
+    <hr>
+    <table style="width: 500px; height: 500px; color: red; background-color: rgb(94, 211, 147); ">
+        <h3>table 9 宮格</h3>
+        <tr style="color: beige;">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr class="s2">
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <hr>
+    <table style="width: 500px; height: 500px; color: red; background-color: rgb(94, 211, 147); ">
+        <h3>table合併colspan向右</h3>
+        <tr style="color: beige;">
+            <td colspan="2">1</td>
+            <!-- <td>2</td> -->
+            <td>3</td>
+        </tr>
+        <tr class="s2">
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+    <hr>
+    <table style="width: 500px; height: 500px; color: red; background-color: rgb(94, 211, 147); ">
+        <h3>table合併rowspan向下合併</h3>
+        <tr style="color: beige;">
+            <td rowspan="3">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr class="s2">
+            <!-- <td>4</td> -->
+            <td>5</td>
+            <td rowspan="2">6</td>
+        </tr>
+        <tr>
+            <!-- <td>7</td> -->
+            <td>8</td>
+            <!-- <td>9</td> -->
+        </tr>
+        <hr>
+        
 </body>
 
 </html>
