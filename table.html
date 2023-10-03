@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .tdb{width: 120px;height: 300px;}
+        .tda{width: 200px;}
+        .tdc{height: 100px;}
+        .td1{width: 200px;height: 300px;}
+        .td2,.td3{width: 100px;}
+        .td4{width: 300px;height: 50px;}
+        .td5{width: 100px;height: 200px;}
+        .tdd,.tde,.tdf{width: 100px;height: 200px}
+        .td01,.td02{width: 100px;}
+        .td03,.td04{width: 254.5px;height: 100px;}
+    </style>
+</head>
+
+<body>
+    
+    <table >
+<tr >
+    <td class="tdb"><h1>B</h1></td>
+    <td class="tda"><h1>A</h1></td>
+</tr>
+<tr>
+    <td class="tdc" colspan="2">C總結</td>
+    <!-- <td>4</td> -->
+</tr>
+    </table>
+    <hr>
+    <table >
+        <tr>
+            <td class="td1">1</td>
+            <td class="td2">2</td>
+            <td class="td3">3</td>
+        </tr>
+    </table>
+    <hr>
+<table >
+<tr>
+    <td class="td4" colspan="3">123</td>
+    <!-- <td>123</td> -->
+    <!-- <td>123</td> -->
+</tr>
+<tr>
+    <td class="td5">4</td>
+    <td class="td6">5</td>
+    <td class="td7">6</td>
+</tr>
+</table>
+<hr>
+<table >
+    <tr>
+        <td class="tdd" rowspan="2">1</td>
+        <td class="td01">2</td>
+        <td class="tde" rowspan="2">3</td>
+        <td class="td02">4</td>
+        <td class="tdf" rowspan="2">5</td>
+    </tr>
+    <tr>
+        <!-- <td>1</td> -->
+        <td>2</td>
+        <!-- <td>3</td> -->
+        <td>4</td>
+        <!-- <td>5</td> -->
+    </tr>
+</table>
+    <table>
+    <tr >
+        <td class="td03" colspan="2/1">1</td>
+        <!-- <td>2</td> -->
+        <td class="td04" colspan="3">3</td>
+        <!-- <td>4</td> -->
+        <!-- <td>5</td> -->
+    </tr>
+</table>
+</body>
+</html>
