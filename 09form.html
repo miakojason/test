@@ -1,40 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
     <style>
-        *{
+        * {
             text-align: center;
         }
-        .box{
+
+        .box {
             width: 300px;
             border: 1px solid black;
             text-align: center;
             margin: auto;
         }
+
+        hr {
+            border: 2px dashed darkolivegreen
+        }
+        textarea{
+            text-align: left;
+        }
     </style>
 </head>
-<body>
-<h3>form</h3>
-<div class="box">
-<form action="">
-    <p>
-        <label for="name">帳號:</label>
-        <input type="text" name="" id="name" >
-    </p>
-    <p>
-        <label for="pwd">密碼:</label>
-        <input type="text" name="" id="pwd">
-    </p>
-    <p>
-        <label for="phone">電話:</label>
-        <input type="text" name="" id="phone">
-    </p>
-    <input type="submit" value="送出資料">
-    <input type="reset" value="清除資料">
-</form>
+
+<body background="img/透明皮卡丘.png" style="background-size: 500px 700px; background-color: powderblue;" >
+    <h3>form</h3>
+    <div class="box">
+        <form action="">
+            <p>
+                <label for="name">帳號:</label>
+                <input type="text" name="" id="name">
+            </p>
+            <p>
+                <label for="pwd">密碼:</label>
+                <input type="text" name="" id="pwd">
+            </p>
+            <p>
+                <label for="phone">電話:</label>
+                <input type="text" name="" id="phone">
+            </p>
+            <input type="submit" value="送出資料">
+            <input type="reset" value="清除資料">
+        </form>
     </div>
+    <hr>
+    <div>
+        <h3>
+            單行文字
+        </h3>
+        <p>
+            <input type="text" value="55688">
+        </p>
+    </div>
+    <div>
+        <h3>數字</h3>
+        <p>
+            <input type="text" value="123">
+        </p>
+    </div>
+    <div>
+        <h3>
+            日期
+        </h3>
+        <p>
+            <input type="date" value="2023-10-03">
+        </p>
+    </div>
+    <hr>
+    <div>
+        <h3>select下拉選單</h3>
+        <form>
+            <select name="phone">
+                <option value="htc" selected>htc</option>
+                <option value="apple">apple</option>
+                <option value="asus">asus</option>
+            </select>
+        </form>
+    </div>
+    <hr>
+    <h3>radio單選</h3>
+    <div>
+        <form>
+            <input type="radio" name="userage" value="age1">未滿20歲
+            <input type="radio" name="userage" value="age1">20~29
+            <input type="radio" name="userage" value="age1">30歲以上<br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </div>
+    <hr>
+    <h3>checkbox多選</h3>
+    <div>
+        <form>
+            <input type="checkbox" name="phone[]" value="htc checked">htc
+            <input type="checkbox" name="phone[]" value="apple">apple
+            <input type="checkbox" name="phone[]" value="asus">asus <br>
+            <input type="submit">
+            <input type="reset">
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h3>textarea留言板</h3>
+        <textarea name="" id="" cols="50" rows="10">
+         ☆
+        ☆☆
+       ☆☆☆
+      ☆☆☆☆
+     ☆☆☆☆☆
+    ☆☆☆☆☆☆
+   ☆☆☆☆☆☆☆
+       </textarea>
+    </div>
+    <hr>
+    <div>
+        <h3>hr報表</h3>
+        <form>
+            <label for="name">姓名</label>
+            <input type="text" name="name" id="">
+            <label for="mobile">電話</label>
+            <input type="text" name="mobile" id="" size="10">
+            <label for="useraddr">地址</label>
+            <input type="text" name="useraddr" id="" size="30"><br>
+            
+             習慣:
+             <input type="checkbox" name="bad" id="">抽菸
+             <input type="checkbox" name="bad" id="">喝酒
+             <input type="checkbox" name="bad" id="">運動
+             <input type="checkbox" name="bad" id="">唱歌
+             <input type="checkbox" name="bad" id="">看書
+             <input type="checkbox" name="bad" id="">學習英文<br>
+             感情狀況:
+           <input type="radio" name="love1" value="">單身
+             <input type="radio" name="love1" value="" >現充 &nbsp;-&nbsp;
+             學歷:
+             <select name="" id="">
+<option value="">God</option>
+<option value="">博士</option>
+<option value="">碩士</option>
+<option value="">大學</option>
+             </select>
+             
+             
+             
+<h3>自我介紹</h3>
+            <textarea name="" id="" cols="50" rows="10">
+今天下雨天
+            </textarea>
+            <br> 
+            <input type="submit"> <input type="reset">
+        </form>   
+    </div>
+    <hr>
 </body>
+
 </html>
