@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    *{
-        text-align: center;
-    }
+        * {
+            text-align: center;
+        }
+
         table,
         tr,
         td {
@@ -16,37 +17,44 @@
             border-collapse: collapse;
             vertical-align: top;
             margin: auto;
-          
+
         }
+
         h1 {
             text-align: center;
 
         }
 
         .tdb {
+            background-color: gold;
             width: 120px;
             height: 300px;
         }
 
         .tda {
+            background-color: cadetblue;
             width: 200px;
         }
 
         .tdc {
+            background-color: chocolate;
             height: 100px;
         }
 
         .td1 {
+            background-color: blueviolet;
             width: 200px;
             height: 300px;
         }
 
         .td2,
         .td3 {
+            background-color: blue;
             width: 100px;
         }
 
         .td4 {
+            background-color: lavender;
             width: 300px;
             height: 50px;
         }
@@ -55,25 +63,36 @@
         .tdd,
         .tde,
         .tdf {
-            width: 100px;
-            height: 200px
+            background-color: green;
+            width: 200px;
+            height: 400px
         }
 
         .td01,
         .td02 {
-            width: 100px;
+            background-color: red;
+            width: 200px;
         }
 
         .td03,
         .td04 {
-            width: 254.5px;
-            height: 100px;
+            background-color: aqua;
+            width: 504.5px;
+            height: 200px;
+        }
+        #h1{
+            
         }
     </style>
 </head>
 
 <body>
-
+   <p><h2><a href="#h1">康乃爾筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#h2">東大筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#h3">麥肯錫筆記</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#h4">獲利時代</a></h2></p>
+    <div id="h1">
+    <h1>康乃爾筆記</h1>
     <table>
         <tr>
             <td class="tdb">
@@ -108,54 +127,78 @@
             <!-- <td>4</td> -->
         </tr>
     </table>
+</div>
+<h2><a href="#">top</a></h2>
     <hr>
+<div id="h2">
+    <h1>東大筆記</h1>
     <table>
         <tr>
             <td class="td1">
                 <h1>1</h1>
-                <p>456456456456asdadasdasd
+                <Marquee direction="down">456456456456asdadasdasd
                     asdasdasdasdasd
-                </p>
+                    </p>
+                </Marquee>
+                <p></p>
             </td>
             <td class="td2">
                 <h1>2</h1>
-                <p>456456456456asdadasdasd
-                    asdasdasdasd
-                </p>
+                <Marquee direction="down">
+                    <p>456456456456asdadasdasd
+                        asdasdasdasd
+                    </p>
+                </Marquee>
             </td>
             <td class="td3">
                 <h1>3</h1>
-                <p>456456456456asdadasdasd
-                    asdasdasdasd
-                </p>
+                <Marquee direction="down">
+                    <p>456456456456asdadasdasd
+                        asdasdasdasd
+                    </p>
+                </Marquee>
             </td>
         </tr>
     </table>
+</div>
+<h2><a href="#">top</a></h2>
     <hr>
+<div id="h3">
+    <h1>麥肯錫筆記</h1>
     <table>
-        <td class= "td4" colspan="3">
+        <td class="td4" colspan="3">
             <p>重點筆記1546asdqweqwe</p>
         </td>
         <!-- <td>123</td> -->
         <!-- <td>123</td> -->
         </tr>
         <tr>
-            <td style="width: 200px; height: 200px;" class="td5">
+            <td style="width: 200px; height: 200px; background-color: plum;" class="td5">
                 <h1>5</h1>
-                <p>eqweqweqwe
-                </p>
+                <marquee behavior="right" direction="">
+                    <p>eqweqweqwe
+                    </p>
+                </marquee>
             </td>
-            <td  style="width: 200px; height: 200px;" class="td6">
+            <td style="width: 200px; height: 200px; background-color: peru;" class="td6">
                 <h1>6</h1>
-                <p>qweqweqweqweqweqweqweqwe</p>
+                <marquee behavior="alternate" direction="">
+                    <p>qweqweqwe</p>
+                </marquee>
             </td>
-            <td style="width: 200px; height:200px;" class="td7">
+            <td style="width: 200px; height:200px; background-color: paleturquoise;" class="td7">
                 <h1>7</h1>
-                <p>qweqweqwqweqweqweqwe</p>
+                <marquee direction="Up">
+                    <p>qweqweqwqweqweqweqwe</p>
+                </marquee>
             </td>
         </tr>
     </table>
+</div>
+<h2><a href="#">top</a></h2>
     <hr>
+<div id="h4">
+    <h1>獲利時代</h1>
     <table>
         <tr>
             <td class="tdd" rowspan="2">1</td>
@@ -166,23 +209,32 @@
         </tr>
         <tr>
             <!-- <td>1</td> -->
-            <td>2</td>
+            <td style="background-color: rgb(87, 154, 212);">2</td>
             <!-- <td>3</td> -->
-            <td>4</td>
+            <td style="background-color: rgb(87, 150, 206);">4</td>
             <!-- <td>5</td> -->
         </tr>
     </table>
     <table style="border-top: 0px;">
         <tr style="border-top: 0px;">
-            <td style="border-top: 0px;" class="td03" colspan="2/1">1</td>
+            <td style="border-top: 0px;" class="td03" colspan="2/1">
+                <h1>1</h1>
+                <p>
+                    <marquee><img style="width: 100px; height: 150px;" src="./img/透明皮卡丘.png" alt="">
+                </p>
+                </marquee>
+            </td>
             <!-- <td>2</td> -->
             <td style="border-top: 0px;" class="td04" colspan="3">3</td>
             <!-- <td>4</td> -->
             <!-- <td>5</td> -->
         </tr>
     </table>
-
+</div>
+    <h2><a href="#">top</a></h2>
     <h3><a href="./list.html">目錄</a></h3>
+
+
 </body>
 
 </html>
