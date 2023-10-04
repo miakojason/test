@@ -16,7 +16,8 @@
             text-align: center;
             margin: auto;
         }
-        .box2{
+
+        .box2 {
             background-color: aquamarine;
             height: 300px;
             width: 600px;
@@ -24,18 +25,36 @@
             text-align: center;
             margin: auto;
         }
-        
+
+        .box3 {
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border: 5px solid rgb(102, 225, 236);
+            border-style: outset;
+            height: 500px;
+            width: 600px;
+            margin: auto;
+        }
+        .box4{
+            margin: auto;
+            height: 600px;
+            width: 1080px;
+        }
+
 
         hr {
             border: 2px dashed darkolivegreen
         }
-        textarea{
+
+        textarea {
             text-align: left;
         }
     </style>
 </head>
 
-<body background="img/透明皮卡丘.png" style="background-size: 500px 700px; background-color: powderblue;" >
+<body background="img/透明皮卡丘.png" style="background-size: 500px 700px; background-color: powderblue;">
     <h3>form</h3>
     <div class="box">
         <form action="">
@@ -126,69 +145,82 @@
        </textarea>
     </div>
     <hr>
-    <div>
+    <div class="box4">
+    <img src="./img/cat.gif" alt="" style="width:230px;height: 230px; float: right;">
+<img src="img/馬力歐.gif" alt="" style="width:230px;height: 230px; float: left;">>
+
+<div class="box3">
         <h3>hr報表</h3>
         <form>
-            <label for="name">姓名</label>
-            <input type="text" name="name" id="">
-            <label for="mobile">電話</label>
-            <input type="text" name="mobile" id="" size="10">
-            <label for="useraddr">地址</label>
-            <input type="text" name="useraddr" id="" size="30"><br>
-            
-             習慣:
-             <input type="checkbox" name="bad" id="">抽菸
-             <input type="checkbox" name="bad" id="">喝酒
-             <input type="checkbox" name="bad" id="">運動
-             <input type="checkbox" name="bad" id="">唱歌
-             <input type="checkbox" name="bad" id="">看書
-             <input type="checkbox" name="bad" id="">學習英文<br>
-             感情狀況:
-           <input type="radio" name="love1" value="">單身
-             <input type="radio" name="love1" value="" >現充 &nbsp;-&nbsp;
-             學歷:
-             <select name="" id="">
-<option value="">God</option>
-<option value="">博士</option>
-<option value="">碩士</option>
-<option value="">大學</option>
-             </select>
-             
-             
-             
-<h3>自我介紹</h3>
-            <textarea name="" id="" cols="50" rows="10">
-今天下雨天
+            <label for="name1">姓名:</label>
+            <input type="text" name="" id="name1" size="6">
+            <label for="mobile">電話:</label>
+            <input type="text" name="" id="mobile"
+                size="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            <label for="useraddr">地址:</label>
+            <input type="text" name="" id="useraddr" size="40">&nbsp;&nbsp;&nbsp;<br>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;習慣:
+            <input type="checkbox" name="bad" id="">抽菸
+            <input type="checkbox" name="bad" id="">喝酒
+            <input type="checkbox" name="bad" id="">運動
+            <input type="checkbox" name="bad" id="">唱歌
+            <input type="checkbox" name="bad" id="">看書
+            <input type="checkbox" name="bad" id="">學習英文<br>
+            感情狀況:
+            <input type="radio" name="love1" value="">單身
+            <input type="radio" name="love1" value="">現充 &nbsp;-&nbsp;
+            學歷:
+            <select name="" id="">
+                <option value="">God</option>
+                <option value="">博士</option>
+                <option value="">碩士</option>
+                <option value="">大學</option>
+            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;會開車嗎:
+            <input type="radio" name="yes-no">會
+            <input type="radio" name="yes-no">不會
+            <input type="radio"name="car">有駕照
+            <input type="radio"name="car">無駕照
+            <input type="radio"name="drink">酒駕
+            <input type="radio"name="game">飆車<br> 
+            <h3>自我介紹</h3>
+            <textarea name="" id="" cols="60" rows="10">
+三千字自傳
             </textarea>
-            <br> 
+            <br>
             <input type="submit"> <input type="reset">
-        </form>   
+        </form>
     </div>
+</div>
     <hr>
     <table>
-        <tr><td></td>
-    <div class="box2">
-        <form>
-            <img src="./img/QRcord.jpg" alt="" style="width: 250px; height: 300px; float: right;">
-            <h3>歡迎來到天上宮闕㊣</h3>
-            <label for="name" style="">name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
-            <input type="text"><br>
-            <label for="name" style="">password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
-            <input type="text"><br>
-            <input type="submit"><input type="reset">
-       
-        </form>
-       
-    </div>
-</td>
-<td>
-    
-</td>
-</tr>
-</table>
-<hr>
+        <tr>
+            <td></td>
+            <div class="box2">
+                <form>
+                    <img src="./img/QRcord.jpg" alt="" style="width: 250px; height: 300px; float: right;">
+                    <h3>歡迎來到天上宮闕㊣</h3>
+                    <label for="name"
+                        style="">name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                    <input type="text"><br>
+                    <label for="name"
+                        style="">password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                    <input type="text"><br>
+                    <input type="submit"><input type="reset">
 
-<footer><a href="list.html">目錄</a></footer>
+                </form>
+
+            </div>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <footer><a href="list.html">目錄</a></footer>
 </body>
 
 </html>
