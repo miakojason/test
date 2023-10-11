@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: red;
+
+        }
+
+        #myp {
+            color: brown;
+        }
+
+        .classp {
+            color: blueviolet;
+        }
+
+        p {
+            color: chartreuse;
+        }
+
+        /* >組合使用 下一層 */
+        .box>p {
+            color: palevioletred;
+        }
+
+        .blue {
+            color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- element -->
+        <h2>basic selector</h2>
+
+        <!-- id -->
+        <p id="myp">Lorem ipsum dolor</p>
+        <!--class  -->
+        <p class="classp">Lorem ipsum dolor</p>
+        <!--box  -->
+        <div class="box">
+            <p>Lorem ipsum dolor</p>
+        </div>
+        <!-- blue -->
+        <p class="blue">Lorem ipsum dolor</p>
+    </div>
+
+    <!-- 選擇器 -->
+    <!--1. css 越靠近  優先-->
+    <!--2.精準指定 優先  -->
+    <!-- 權重 -->
+</body>
+
+</html>

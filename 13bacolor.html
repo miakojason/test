@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            /* width: 300px; */
+            /* height: 300px; */
+            width: 80%;
+            height: 95vh;
+            margin: auto;
+        }
+        .box1{
+          
+            background-color:gray;
+            background-image: url(./img/水墨山水.png);
+            background-repeat: no-repeat;
+        }
+
+        .box2{
+            width: 20%;
+            height: 95vh;
+            background-color:gray;
+            background-image: url(./img/水墨山水.png);
+            background-repeat: no-repeat;
+        }
+        
+        .box3{
+            width: 80%;
+            height: 80vh;
+            background-color:gray;
+            /* url前面的img會是最上層，有圖層效應 */
+            background-image: url(./img/cat.gif),url(./img/紅洛克人勳章.gif),url(./img/水墨山水.png);
+            background-repeat: no-repeat;
+            /* 第一個位子對應第一個img */
+            background-position: right top,left bottom, left bottom;
+        }
+        
+        table,tr,td{
+            width: 50%;
+            height: 35vh;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: auto;
+        }
+        td{
+            text-align: center;
+            width: 33%;
+            height: 50%;
+        }
+       
+        img{
+            width: 130px;
+            height: 180px;
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container box1">
+    </div>
+    <div class="container box2">
+    </div>
+    <div class="container box3">
+        <table>
+            <tr>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+            </tr>
+            <tr>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+                <td><img src="./img/紅洛克人勳章.gif "  alt=""></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
