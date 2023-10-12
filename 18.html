@@ -42,12 +42,37 @@ h3:hover{
         }
        pre:hover{
             background-color: plum;
-            
         }
+        nav{
+            text-align: center;
+            font-size: 28px;
+        }
+        nav:hover{
+            background-color: chocolate;
+        }
+        nav>a:hover{
+            color: rgb(2, 243, 94);
+            font-size: 50px;
+            /* 持續時間 */
+            transition-duration: 0.5s;
+        }
+        
+           body{background-image:url(./img/水墨山水.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        } 
+        body:hover{
+           background-image:url(./img/sea淺水員.jpg);
+        }
+      
     </style>
 </head>
 
 <body>
+    <nav>
+        <a href="./list.html">目錄</a>
+    </nav>
     <div class="container">
         <div class="box1">
             <pre class="pre1"> <h3>Eminem-Not Afraid</h3><br>
@@ -112,6 +137,7 @@ h3:hover{
                    </pre>
         </div>
     </div>
+    
 </body>
 
 </html>
