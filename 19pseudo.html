@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            table,
+            tr,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            /* th,td {
+                width: 20%;
+            } */
+            .money{
+                text-align: right;
+            }
+            .money::before{
+                content: "$ ";
+            }
+            .money::after{
+                content: " 元";
+            }
+
+            .status::after{
+                content: " %";
+            }
+            .status[data-level="1"]{
+                color:red;
+            }
+
+            input[type="text"]{
+                background-color: lightskyblue;
+            }
+
+            p[class^="iphone14"]{
+                background-color: green;
+            }
+
+            p[class^="iphone15"]{
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <table>
+                <tr>
+                    <th width="15%">name</th>
+                    <th width="20%">bonus</th>
+                    <th width="20%">績效成長</th>
+                    <th>備註</th>
+                </tr>
+                <tr>
+                    <td>Amy</td>
+                    <td class="money">5000</td>
+                    <td class="status">60</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td class="money">6000</td>
+                    <td class="status">30</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cat</td>
+                    <td class="money">10000</td>
+                    <td class="status" data-level="1">80</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <br><hr><br>
+        <div class="container">
+            <form action="" method="get">
+                <p>
+                    <label for=""></label>
+                    <input type="text" name="" id="">
+                </p>
+                <p>
+                    <label for=""></label>
+                    <input type="text" name="" id="">
+                </p>
+                <p>
+                    <label for=""></label>
+                    <input type="text" name="" id="">
+                </p>
+                <p>
+                    <label for=""></label>
+                    <input type="number" name="" id="">
+                </p>
+                <p>
+                    <label for=""></label>
+                    <input type="number" name="" id="">
+                </p>
+            </form>
+        </div>
+
+        <br><hr><br>
+        <div class="container">
+            <p class="iphone14 text-red">Lorem ipsum dolor sit amet.</p>
+            <p class="iphone14-pro text-red">Lorem ipsum dolor sit amet.</p>
+
+            <p class="iphone15 text-red">Lorem ipsum dolor sit amet.</p>
+            <p class="iphone15-pro text-red">Lorem ipsum dolor sit amet.</p>
+        </div>
+    </body>
+
+    </html>
+</body>
+
+</html>
