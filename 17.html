@@ -45,6 +45,25 @@
         .box1>div>p {
             color: rgb(6, 233, 120);
         }
+           /* 空格 全部被影響 */
+           .divA div {
+            color: blue;
+        }
+
+        /* > 只會影響同一層 */
+        .divA>div {
+            color: red;
+        }
+          /*  只會影響next兄弟姊妹 一個 */
+          .silbling+p {
+            color: greenyellow;
+        }
+
+         /* 只會影響next兄弟姊妹 全部 */
+        .silbling~p {   
+            color: greenyellow;
+        }
+
     </style>
 </head>
 
@@ -87,7 +106,7 @@
 
         <br>
         <hr><br>
-
+        <h3> > 實務上的應用</h3>
         <div class="container box1">
             <p>
                 box1-p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptates!
@@ -120,13 +139,60 @@
                 </p>
             </div>
         </div>
-
+        
         <!-- 
         .class box3   find('.test')
      -->
+     <br>
+     <hr><br>
 
+     <h3>空格如果可以 少用</h3>
+     <div class="divA">
+        divA
+        <div class="divA1">
+            &nbsp;&nbsp;divA1
+            <div class="divA11">
+                &nbsp;&nbsp;&nbsp;&nbsp;divA11
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+        </div>
 
+        divA
+        <div class="divA1">
+            &nbsp;&nbsp;divA1
+            <div class="divA11">
+                &nbsp;&nbsp;&nbsp;&nbsp;divA11
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p Lorem ipsum dolor sit amet.
+                </p>
+            </div>
+        </div>
+    </div>
 
+    <br>
+        <hr><br>
+        <h3>+ 兄弟</h3>
+        <p>
+            11Lorem ipsum dolor sit amet.
+        </p>
+        <p>
+           12 Lorem ipsum dolor sit amet.
+        </p>
+        <div class="silbling">
+            <p>&nbsp;&nbsp;01Lorem ipsum dolor sit amet.</p>
+            <p>&nbsp;&nbsp;02Lorem ipsum dolor sit amet.</p>
+            <p>&nbsp;&nbsp;03Lorem ipsum dolor sit amet.</p>
+            <p>&nbsp;&nbsp;04Lorem ipsum dolor sit amet.</p>
+            <p>&nbsp;&nbsp;005Lorem ipsum dolor sit amet.</p>
+        </div>
+        <p>
+            06Lorem ipsum dolor sit amet.
+        </p>
+        <p>
+           07 Lorem ipsum dolor sit amet.
+        </p>
 
     </div>
 </body>
