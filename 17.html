@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* > 空格 + ~ */
+        .p1,
+        .p2,
+        .p3 {
+            color: green;
+        }
+
+        /*       
+          p1 {
+            color: green;
+        }
+
+        p2 {
+            color: green;
+        }
+
+        p3 {
+            color: green;
+        } */
+        .div2>.p21 {
+            color: blueviolet;
+
+        }
+
+        .box1>p {
+            color: blue;
+        }
+
+        .box2>p {
+            color: rgb(219, 6, 6);
+        }
+
+        .box3>p {
+            color: brown;
+        }
+
+        .box1>div>p {
+            color: rgb(6, 233, 120);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- , -->
+        <h3>,</h3>
+        <h4>多組選擇器一起 </h4>
+        <p class="p1">Lorem ipsum dolor sit amet</p>
+        <p class="p2">Lorem ipsum dolor sit amet</p>
+        <p class="p3">Lorem ipsum dolor sit amet</p>
+
+        <br>
+        <hr><br>
+
+        <!-- , -->
+        <h3>></h3>
+        <h4>下一層</h4>
+        <div class="div2">
+            div2
+
+            <p class="p21">
+                &nbsp;&nbsp;Lorem ipsum dolor sit amet
+            </p>
+            <p class="p21">
+                &nbsp;&nbsp;Lorem ipsum dolor sit amet
+            </p>
+            <p class="p21">
+                &nbsp;&nbsp;Lorem ipsum dolor sit amet
+            <div class="div">
+                <div class="p21">
+                    &nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet
+                </div>
+            </div>
+            </p>
+            <p class="p21">
+                &nbsp;&nbsp;Lorem ipsum dolor sit amet
+            </p>
+        </div>
+
+        <br>
+        <hr><br>
+
+        <div class="container box1">
+            <p>
+                box1-p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptates!
+            </p>
+            <div>
+                <p>
+                  box1-div-p  &nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam!
+                </p>
+            </div>
+        </div>
+
+        <div class="container box2">
+            <p>
+                box2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptates!
+            </p>
+            <div>
+                <p>
+                   bix2-div-p &nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam!
+                </p>
+            </div>
+        </div>
+
+        <div class="container box3">
+            <p>
+              box3-p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, voluptates!
+            </p>
+            <div>
+                <p>
+                  box3-div-p  &nbsp;&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam!
+                </p>
+            </div>
+        </div>
+
+        <!-- 
+        .class box3   find('.test')
+     -->
+
+
+
+
+    </div>
+</body>
+
+</html>
