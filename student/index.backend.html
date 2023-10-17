@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        /* tr:nth-child(odd)用奇數行 */
+        tr:nth-child(even) {
+            /* even偶數行*/
+            background-color: #ffcccc;
+        }
+
+        th {
+            background-color: gray;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-right>a {
+            /*下層a底線沒有 */
+            text-decoration: none;
+        }
+
+        .a01 >a{
+            color: green;
+            text-decoration: none;
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-right">
+        <h3>student list</h3>
+        <a href="./edit02.html">Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </a>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>mobile</th>
+                <th>pic</th>
+                <th>operate</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="./edit02.html?id=">amy</a></td>
+                <td>0911-111-111</td>
+                <td><img src="https://picsum.photos/id/1/100/100" alt="">amy.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="./edit02.html?id=2">bob</a></td>
+                <td>0922-222-222 </td>
+                <td>bob.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="./edit02.html?id=3">cat</a></td>
+                <td>0933-333-333</td>
+                <td>cat.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="./edit02.html?id=4">four</a></td>
+                <td>0944-444-444</td>
+                <td>four.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="./edit02.html?id=5">five</a></td>
+                <td>0955-555-555</td>
+                <td>five.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="./edit02.html?id=6">six</a></td>
+                <td>0966-666-666</td>
+                <td>six.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="./edit02.html?id=7">seven</a></td>
+                <td>0977-777-777</td>
+                <td>seven.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="./edit02.html?id=8">eight</a></td>
+                <td>0988-888-888</td>
+                <td>eight.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="./edit02.html?id=9">nine</a></td>
+                <td>0999-999-999</td>
+                <td>nine.jpg</td>
+                <td class="a01"><a href="./edit02.html">修改</a>/<a href="del.html">刪除</a></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

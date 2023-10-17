@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 80%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        table,tr,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table{
+            width: 100%;
+        }
+        /* tr:nth-child(odd)用奇數行 */
+        tr:nth-child(even) { /* even偶數行*/
+            background-color: #ffcccc;
+        }
+        th{
+            background-color: gray;
+        }
+        .text-right{
+            text-align: right;
+        }
+        .text-right>a{/*下層a底線沒有 */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>mobile</th>
+                    <th>pic</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td> <label for="name">amy</label>
+                        <input type="text" name="name" value="amy"></td>
+                    <td><input type="text"name="mobile" value="0911-111-111"></td>
+                    <td><input type="text" name="pic" value="amy.jpg"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="text" name="name" value="bob"></td>
+                    <td><input type="text"name="mobile" value="0922-222-222"></td>
+                    <td><input type="text" name="pic" value="bob.jpg"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="text" name="name" value="cat"></td>
+                    <td><input type="text"name="mobile" value="0933-333-333"></td>
+                    <td><input type="text" name="pic" value="cat.jpg"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="text" name="name" value="four"></td>
+                    <td><input type="text"name="mobile" value="0944-444-444"></td>
+                    <td><input type="text" name="pic" value="four.jpg"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="text" name="name" value="five"></td>
+                    <td><input type="text"name="mobile" value="0955-555-555"></td>
+                    <td><input type="text" name="pic" value="five.jpg"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><input type="text" name="name" value="six"></td>
+                    <td><input type="text"name="mobile" value="0966-666-666"></td>
+                    <td><input type="text" name="pic" value="six.jpg"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><input type="text" name="name" value="seven"></td>
+                    <td><input type="text"name="mobile" value="0977-777-777"></td>
+                    <td><input type="text" name="pic" value="seven.jpg"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><input type="text" name="name" value="eight"></td>
+                    <td><input type="text" name="name" value="0988-888-888"></td>
+                    <td><input type="text" name="pic" value="eight.jpg"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><input type="text" name="name" value="nine"></td>
+                    <td><input type="text"name="mobile" value="0999-999-999"></td>
+                    <td><input type="text" name="pic" value="nine.jpg"></td>
+                </tr>
+            </table>
+<input type="submit"><input type="reset">
+        </form>
+
+    </div>
+</body>
+
+</html>
