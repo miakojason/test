@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        span{
+        span {
             width: 50px;
             height: 50px;
             background-color: lightblue;
         }
-        .display-block{
+
+        .display-block {
             display: block;
+            background-color: lightblue;
         }
-        a{
+
+        .display-inline {
+            display: inline;
+            background-color: lightblue;
+        }
+
+        .display-inline-block {
+            display: inline-block;
+            background-color: lightblue;
+        }
+
+        a {
             width: 50px;
             height: 50px;
             background-color: lightblue;
         }
-        
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        td,
+        th {
+            width: 25%;
+            height: 10vh;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h3>block</h3>
@@ -35,5 +72,86 @@
         <a class="display-block">bbb</a>
         <a href="">ccc</a>
     </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>type</th>
+                <th>大小 換行</th>
+                <th>範例</th>
+                <th>常見代表</th>
+            </tr>
+            <tr>
+                <th>
+                    block
+                </th>
+                <td>
+                    可大小 可換行
+                </td>
+                <td>
+                    <h3>old</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur
+                    </p>
+                    <h4>new</h4>
+                    <p>
+                        Lorem ipsum <span class="display-block">dolor</span>, sit amet consectetur
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        div , h1 - h6 ,  p , form , header , footer .....
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    inline-block
+                </th>
+                <td>
+                    可大小 可換行
+                </td>
+                <td>
+                    <h3>old</h3>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur
+                    </p>
+                    <h4>new</h4>
+                    <p>
+                        Lorem ipsum <span class="display-block">dolor</span>, sit amet consectetur
+                    </p>
+                </td>
+                <td>
+                    img
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    inline
+                </th>
+                <td>
+                    不可大小 可換行
+                </td>
+                <td>
+                    <h3>old</h3>
+                    <div>
+                        Lorem ipsum <div>dolor</div>, sit amet consectetur
+                    </div>
+                    <h4>new</h4>
+                    <div>
+                        Lorem ipsum <div class="display-inline">dolor</div>, sit amet consectetur
+                    </div>                    
+                </td>
+                <td>
+                    <p>
+                        span , a
+                    </p>
+                </td>
+            </tr>
+            
+
+        </table>
+    </div>
 </body>
+
 </html>
