@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+
+        .header {
+            width: 100%;
+            height: 15vh;
+            background-color: pink;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0px;
+            width: 100%;
+            height: 15vh;
+            background-color: bisque;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 80vh;
+            background-color: lightblue;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            width: 20%;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .bg-blue {
+            background-color: lightskyblue;
+        }
+
+        /* ul>li{
+            display: inline-block;
+        }
+        ul>li>a{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        } */
+
+        ul {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            list-style-type: none;
+            text-align: center;
+        }
+
+        li {
+            margin-right:80px;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        Store
+    </header>
+    <nav class="nav">
+        <ul>
+            <li>
+                <a href="#container1">
+                    <p>
+                        link1
+                    </p>
+                </a>
+            </li>
+            <li>
+                <a href="#container2">
+                    <p>
+                        link2
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="container1"></div>
+    <div class="container">
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+    </div>
+
+
+    <!-- container2 -->
+    <div id="container2"></div>
+    <div class="container bg-blue">
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/id/20/200/160" alt="" srcset="">
+            <br>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <br>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ab veritatis eos libero quidem
+                incidunt.
+            </p>
+        </div>
+    </div>
+    <!-- container2 -->
+</body>
+
+</html>
