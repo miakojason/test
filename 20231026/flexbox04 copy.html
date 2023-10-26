@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: auto;
+            /* 宣告flexbox */
+            display: flex;
+            /* 換行wrap */
+            flex-wrap: wrap;
+            /* 橫row(default)直column*/
+            flex-direction: row;
+            /* 水平置中+空 */
+            justify-content: space-evenly;
+            /* 垂直置中 */
+            align-items: center;
+            width: 70%;
+            height: 80vh;
+            background-color: lightblue;
+           
+        }
+
+        .item {
+            width: 30%;
+            height: 25vh;
+            background-color: lightgray;
+        }
+        .g {
+            background-color: lightgreen;
+        }
+        .r { 
+            background-color: lightpink;
+        }
+        h1{
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item g">item1<h1>O</h1></div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+        <div class="item g">item5<h1>O</h1></div>
+        <div class="item r">item6<h1>X</h1></div>
+        <div class="item r">item7<h1>X</h1></div>
+        <div class="item">item8</div>
+        <div class="item g">item9<h1>O</h1></div>
+    </div>
+</body>
+
+</html>
