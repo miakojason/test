@@ -69,9 +69,13 @@
             margin-top: 30px;
         }
         marquee>img{
-            opacity: 0.5;
+            filter: grayscale(100);
+            /* opacity: 0.5; */
             width: 220px;
             height: 250px;
+        }
+        img:hover{
+            filter: grayscale(0);
         }
 
         .item1 {
@@ -188,12 +192,12 @@
 
 <body>
     <nav>
-        <!-- <marquee behavior="Alternate" direction="" ScrollAmount="50"> -->
+        <marquee behavior="Alternate" direction="" ScrollAmount="50">
             <div class="diva">
                 <a href="#p1">點不到01</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="#p2">點不到02</a>
             </div>
-        <!-- </marquee> -->
+        </marquee>
     </nav>
     <div class="box1">
         <h3  id="p1">不給糖就搗蛋</h3>
