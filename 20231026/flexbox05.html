@@ -6,21 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        nav{
+        *{
+            color: aqua;
+        }
+        body{
+            background-image: url(./img/background.jpg);
+        }
+        nav {
             position: fixed;
             width: 100%;
             height: 10vh;
             background-color: blueviolet;
             opacity: 0.8;
+            text-align: center;
+            z-index: 100;
         }
-        a{
+
+        a {
+         
             font-size: 50px;
- background-color: brown;
- text-decoration: none;
- border-radius: 40px
+            background-color: brown;
+            text-decoration: none;
+            border-radius: 40px
         }
-        
-        .container,.box2{
+
+        .container,
+        .box2 {
             margin: auto;
             /* 宣告flexbox */
             display: flex;
@@ -34,74 +45,208 @@
             align-items: center;
             width: 100%;
             height: 70vh;
-            background-color: rgb(248, 59, 153);
+            /* background-color: rgb(248, 59, 153); */
             text-align: center;
         }
-        .box2{  
-            background-color: rgb(9, 129, 113);
-           text-align: center;
-           
+
+        .box2 {
+            /* background-color: rgb(9, 129, 113); */
+            text-align: center;
+
+
         }
-      
-        .item1{
+         .box3{
+            /* border: 1px solid black; */
+            /* background-color: rgb(75, 40, 202); */
+        }
+
+        .box1 {
+            padding-top: 60px;
+            /* border: 1px solid black; */
+            /* background-color: aqua; */
+        }
+        .box4{
+            margin-top: 30px;
+        }
+        marquee>img{
+            opacity: 0.5;
+            width: 220px;
+            height: 250px;
+        }
+
+        .item1 {
             width: 30%;
-            height: 60vh;
-            background-color: lightgreen; 
-            background-image: url(./img/halloween.jpg) ;
+            height: 55vh;
+            /* background-color: lightgreen; */
+            background-image: url(./img/halloween.jpg);
             background-size: cover;
             text-align: center;
+            border-radius: 50px;
+            /* border: 5px solid lightblue; */
+            box-shadow: 5px 10px 18px;
+            
         }
-        .item2{
+
+
+        .item2 {
             text-align: center;
             width: 22%;
-            height: 30vh;
-            background-color: lightgreen; 
-            background-image: url(./img/halloween.jpg) ;
-            background-size: cover        
+            height: 25vh;
+            /* background-color: lightgreen; */
+            background-image: url(./img/halloween.jpg);
+            background-size: cover;
+            border-radius: 50px;
+            border: 5px solid lightcoral;
+            box-shadow: 5px 10px 50px lightcoral;
+
         }
-    h1{
-        font-size: 40px;
-        text-align: center;
-    }
-  
 
-.item1:hover{
+        p {
+            text-align: center;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            padding-top: 500px;
+        }
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            padding-top: 210px;
+          
+        }
+
+        h3 {
+            font-size: 50px;
+            text-align: center;
+            /* background-color: lightsalmon; */
+            border-radius: 20px;
+        }
+
+
+        /* .item1:hover{
    background-image: url(./img/images.jpg);
    background-size: cover;
-}
-.item2:hover{
-   background-image: url(./img/images.jpg);
-   background-size: cover;
-}
+} */
+        .bgimg1:hover {
+            background-image: url(./img/01.jpg);
+            background-size: cover;
+       
+        }
 
-     
+        .bgimg2:hover {
+            background-image: url(./img/02.jpg);
+            background-size: cover;
+        
+        }
+
+        .bgimg3:hover {
+            background-image: url(./img/03.jpg);
+            background-size: cover;
+        }
+
+        .item2:hover {
+            background-image: url(./img/images.jpg);
+            background-size: cover;
+            
+        }
+
+        .bgimg4:hover {
+            background-image: url(./img/我.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        }
+
+        .bgimg9:hover {
+            background-image: url(./img/愛.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        }
+
+        .bgimg6:hover {
+            background-image: url(./img/大.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        }
+
+        .bgimg7:hover {
+            background-image: url(./img/奶.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        }
+
+        .bgimg11:hover {
+            background-image: url(./img/冰.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        }
     </style>
 </head>
+
 <body>
-  <nav>
-    <marquee behavior="Alternate" direction="" ScrollAmount="50"><div class="diva">
-        <a href="#p1">點不到01</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="#p2">點不到02</a></div>
-    </marquee>   
-</nav>
+    <nav>
+        <!-- <marquee behavior="Alternate" direction="" ScrollAmount="50"> -->
+            <div class="diva">
+                <a href="#p1">點不到01</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#p2">點不到02</a>
+            </div>
+        <!-- </marquee> -->
+    </nav>
+    <div class="box1">
+        <h3  id="p1">不給糖就搗蛋</h3>
+    </div>
     <div class="container">
-        <div class="item1"><h1 id="p1">不給糖就搗蛋</h1></div>
-        <div class="item1"><h1>不給糖就搗蛋</h1></div>
-        <div class="item1"><h1>不給糖就搗蛋</h1></div>
-       
+        <div class="item1 bgimg1">
+            <h1>不給糖就搗蛋</h1>
+        </div>
+        <div class="item1 bgimg2">
+            <h1>不給糖就搗蛋</h1>
+        </div>
+        <div class="item1 bgimg3">
+            <h1>不給糖就搗蛋</h1>
+        </div>
     </div>
-    <hr>
+    <div class="box4">
+        <marquee behavior="Alternate" direction="" ScrollAmount="15" >
+            <img src="./img/g1.jpg" alt="">
+            <img src="./img/g2.jpg" alt="">
+            <img src="./img/g3.jpg" alt="">
+            <img src="./img/g4.jpg" alt="">
+            <img src="./img/g5.gif" alt="">
+        </marquee>
+        <div class="box3">
+            <h3>猜字解謎</h3>
+        </div>
+        </div>
     <div class="box2">
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1>不給糖就搗蛋</h1></div>
-        <div class="item2"><h1 id="p2">不給糖就搗蛋</h1></div>
+        <div class="item2 bgimg4">
+            <h2>不給糖就搗蛋</h>
+        </div>
+        <div class="item2 bgimg5">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg6">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg7">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg8">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg9">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg10">
+            <h2>不給糖就搗蛋</h2>
+        </div>
+        <div class="item2 bgimg11">
+            <h2 id="p2">不給糖就搗蛋</h2>
+        </div>
     </div>
-    <hr>
 </body>
 
 </html>
