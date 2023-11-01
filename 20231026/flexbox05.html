@@ -68,14 +68,19 @@
         .box4{
             margin-top: 30px;
         }
+        
         marquee>img{
             filter: grayscale(100);
             /* opacity: 0.5; */
             width: 220px;
             height: 250px;
+           
         }
         img:hover{
+            border: 10px solid  lightcoral;
+            border-radius: 100px;
             filter: grayscale(0);
+            box-shadow: 5px 10px 18px;
         }
 
         .item1 {
@@ -162,30 +167,52 @@
             background-image: url(./img/我.jpg);
             opacity: 0.5;
             background-size: 90%;
+            border: 5px solid  aqua;
         }
-
+        /* .bgimg5:hover {
+            background-image: url(./img/.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+        } */
+        
+        .bgimg8:hover {
+            background-image: url(./img/很.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+            border: 5px solid  aqua;
+        }
         .bgimg9:hover {
             background-image: url(./img/愛.jpg);
             opacity: 0.5;
             background-size: 90%;
+            border: 5px solid  aqua;
+        }
+        .bgimg10:hover {
+            background-image: url(./img/老.jpg);
+            opacity: 0.5;
+            background-size: 90%;
+            border: 5px solid  aqua;
         }
 
         .bgimg6:hover {
             background-image: url(./img/大.jpg);
             opacity: 0.5;
             background-size: 90%;
+            border: 5px solid  aqua;
         }
 
         .bgimg7:hover {
-            background-image: url(./img/奶.jpg);
+            background-image: url(./img/師.jpg);
             opacity: 0.5;
             background-size: 90%;
+            border: 5px solid  aqua;
         }
 
         .bgimg11:hover {
-            background-image: url(./img/冰.jpg);
+            background-image: url(./img/奶.jpg);
             opacity: 0.5;
             background-size: 90%;
+            border: 5px solid  aqua;
         }
     </style>
 </head>
@@ -202,6 +229,7 @@
     <div class="box1">
         <h3  id="p1">不給糖就搗蛋</h3>
     </div>
+  
     <div class="container">
         <div class="item1 bgimg1">
             <h1>不給糖就搗蛋</h1>
@@ -221,9 +249,9 @@
             <img src="./img/g4.jpg" alt="">
             <img src="./img/g5.gif" alt="">
         </marquee>
+        </div>   
         <div class="box3">
-            <h3>猜字解謎</h3>
-        </div>
+            <h3>猜字解謎</h3>  
         </div>
     <div class="box2">
         <div class="item2 bgimg4">
@@ -251,6 +279,9 @@
             <h2 id="p2">不給糖就搗蛋</h2>
         </div>
     </div>
+    <marquee behavior="" direction="" ScrollAmount="100" >
+        <img  src="./img/spider.gif" alt="" width="300px" style="z-index: 200px;">
+    </marquee>
 </body>
 
 </html>
