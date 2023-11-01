@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+display: flex;
+width: 80%;
+height: 80vh;
+background-color: lightblue;
+margin: auto;
+/* 橫 */
+flex-direction: row;
+/* 換行 */
+flex-wrap: wrap;
+/* 保持相等距離均分 */
+justify-content: space-around;
+/* 垂直置中 */
+align-items: center;
+/* align-content: center; */
+
+
+        }
+        .item{
+width: 28%;
+height: 150px;
+background-color: rgb(133, 131, 131);
+        }
+        .item1{
+            align-self: flex-start;
+            background-color:lawngreen;
+        }
+.item6{
+    align-self: flex-end;
+    background-color: lightcoral;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+<div class="item item1">
+
+</div>
+<div class="item">
+
+</div>
+<div class="item">
+
+</div>
+<div class="item">
+
+</div>
+<div class="item">
+
+</div>
+<div class="item item6">
+
+</div>
+    </div>
+</body>
+</html>

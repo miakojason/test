@@ -8,12 +8,20 @@
     <style>
         .box1 {
             width: 100%;
-
+background-color: lightblue;
         }
 
         .marquee:hover {
             direction: left;
         }
+       .top{
+        width: 100%;
+        position: fixed;
+            right: 100px;
+            bottom: 100px;
+            z-index: 100;
+        }
+        
     </style>
 </head>
 
@@ -54,6 +62,14 @@
         <marquee behavior="" direction="down" width="40" height="200" ScrollAmount="10">雨<br><br><br><br><br><br><br>雨<br><br><br><br><br><br><br>雨</marquee>
         <marquee behavior="" direction="down" width="40" height="200" ScrollAmount="16">雨<br><br><br><br><br><br><br>雨<br><br><br><br><br><br><br>雨</marquee>
     </div>
+    <hr>
+    <div class="box1" >
+        <marquee behavior="" direction="left" ScrollAmount="35">
+            <img src="../img/兩斤.jpg" alt=""></marquee>
+
+<h1 class="top"><marquee behavior="" direction="left" ScrollAmount="30"><img id="spi" src="./spider.gif" alt="" ></marquee>
+</h1>
+</div>
 </body>
 
 </html>
