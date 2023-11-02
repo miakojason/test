@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.header{
+width: 1024px;
+height: 65px;
+/* background-color: lightblue; */
+margin: auto;
+border: 1px solid black;
+border-bottom: 0;
+}
+.container{
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+    /* background-color: lightcoral; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.aside{
+    /* -號要有空格不然會錯誤 */
+    /* calc(768px - 65px - 20px); */
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    /* background-color: blueviolet; */
+    border: 1px solid black;
+    border-right: 0;
+}
+.aside-header{
+    width: 215px;
+    height: calc(768px - 65px - 20px - 25px);
+    /* background-color: aqua; */
+}
+.aside-footer{
+    width: 215px;
+    height: 25px;
+    /* background-color: brown; */
+    border: 1px solid black;
+    border-left: 0;
+}
+.main{
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+    /* background-color: lightseagreen; */
+    border: 1px solid black;
+}
+.main-header{
+    width: calc(1024px - 215px);
+    height: 29px;
+    border: 1px solid black;
+    border-top: 0;
+    border-left: 0;
+    /* background-color: blanchedalmond; */
+}
+.main-footer{
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px - 29px);
+    /* background-color: lightgreen; */
+}
+.footer{
+    width: 1024px;
+    height: 20px;
+    /* background-color: lightslategrey; */
+    margin: auto;
+    border: 1px solid black;
+    border-top: 0;
+}
