@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+header {
+    border: 1px solid black;
+    width: 1024px;
+    height: 65px;
+    margin: auto;
+    /* background-color: antiquewhite; */
+}
+
+header>img {
+    width: 100%;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    border: 1px solid black;
+    border-top: 0px;
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+}
+
+aside {
+    /* display: flex;
+    flex-direction: column; */
+    /* border: 1px solid black; */
+    width: 215px;
+    height: calc(768px - 65px -20px);
+    /* background-color: aqua; */
+}
+
+.aside-header {
+    /* border: 1px solid black; */
+    width: 215px;
+    height: calc(768px - 65px - 20px - 25px);
+    /* background-color: blueviolet; */ 
+     font-family: "標楷體";
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.aside-header>div>a{
+    text-decoration: none;
+}
+.a-first{
+    text-decoration: underline;
+}
+/* 社團介紹 */
+.aside-title {
+  font-size: 24px;
+  border-bottom: 2px solid black;
+  color: #FF00FF;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    /* background-color: aqua; */
+}
+
+
+
+.flex-box1>div>a{
+    text-decoration: none;
+}
+.a-first{
+    text-decoration: underline;
+}
+/* 社團背景圖 */
+.aside-header>.box{
+    width: 200px;
+    height: 35px;
+    background-image: url(../imgs/menu1.png);
+    text-align: center;
+    margin-bottom: 5px;
+    padding-top: 5px;
+   
+}
+
+.aside-header>.box:hover{
+    background-image: url(../imgs/menu2.png);
+}
+
+.aside-footer {
+    font-family: "標楷體";
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid black;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    width: 215px;
+    height: 25px;
+    /* background-color: rgb(18, 18, 19); */
+}
+
+main {
+    /* display: flex;
+    flex-direction: column; */
+    border: 1px solid black;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+    /* background-color: blue; */
+}
+
+.main-header {
+    font-family: "標楷體";
+    font-size: 24px;
+    color: #0000FF;
+    border: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: calc(1024px - 215px);
+    height: 29px;
+    /* background-color: aqua; */
+
+}
+
+.main-footer {
+    width: 809px;
+    height: 654px;
+    /* background-color: yellow; */
+}
+iframe{
+    width: 99%;
+    height: 100%;
+    /* width: 99%;
+   height: 99%; */
+}
+footer {
+    font-family: "標楷體";
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    margin: auto;
+    border: 1px solid black;
+    border-top: 0px;
+    width: 1024px;
+    height: 20px;
+    /* background-color: burlywood; */
+}

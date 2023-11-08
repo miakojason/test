@@ -48,6 +48,7 @@
     text-underline-offset: 5px; */
     color: #FF00FF;
     margin-bottom: 15px;
+    /* background-color: #0000FF; */
     border-bottom: 2px solid black;
 }
 .aside-header>.box{
@@ -118,7 +119,6 @@ footer{
     /* background-color: lightslategray; */
     margin: auto;
     border: 1px solid black;
-    border-top: 0;
     font-size: 16px;
     color: #000000;
     font-family: "標楷體";

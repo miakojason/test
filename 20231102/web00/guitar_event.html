@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
+            background-image: url('./images/0101.jpg');
             height: 2000px;
             font-family: "標楷體";
         }
-        
+        /* 包括近期活動以下 */
         .container-main {
-         background-image: url(./images/0101.jpg);
+      
             color: red;
             text-align: center;
         }
@@ -23,61 +24,67 @@
             color: #FF0000;
             font-family: '標楷體';
         }
+        
+        /* 吉他社近期活動公告 */
         .my-title {
             font-family: '標楷體';
             text-align: center;
             font-size: 18px;
             color: #FF0000;
         }
-        nav,.container-date {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        
-    
-    
-        #date1 {
-            color: #0000FF;
-        }
-
-        #date2 {
-            color: #FF0000;
-        }
-
-        #date3 {
-            color: #00FF00;
-        }
-
-        #date4 {
-            color: #000000;
-        }
-       
-       
+        /* 回社團介紹首頁-吉他社社史-吉他社教學內容 */
+         /* 九月十六日-十月三十一日-十二月二十五日-元月一日 */
+        nav,
         .container-date {
             display: flex;
             justify-content: space-around;
             margin-top: 10px;
             margin-bottom: 10px;
         }
-     
+
+     nav>div>a{
+        text-decoration: none;
+        }
+        .container-main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
         .my-date {
             width: 70%;
         }
-
+        /* TOP */
         .my-p {
             width: 30%;
-            padding-top: 100px;
+            padding-top: 80px;
             /* text-align: center; */
         }
+        /* 近期活動 */
         #date-title {
             width: 100%;
             color: #800000;
            
         }
-
-
+    
+        /* 日期：九月十六日 */
+        #date1 {
+            color: #0000FF;
+        }
+        /* 日期：十月三十一日 */
+        #date2 {
+            color: #FF0000;
+        }
+        /* 日期：十二月二十五日 */
+        #date3 {
+            color: #00FF00;
+        }
+        /* 日期：元月一日 */
+        #date4 {
+            color: #000000;
+        }
 
     </style>
 </head>
@@ -91,16 +98,16 @@
 <div><a href="./guitar_learning.html">吉他社教學內容</a></div>
    </nav>
    <div class="container-date">
-<div><a href="#p2">九月十六日</a></div>
-<div><a href="#p3">十月三十一日</a></div>
-<div><a href="#p4">十二月二十五日</a></div>
-<div><a href="#p5">元月一日</a></div>
+<div><a href="#date1">九月十六日</a></div>
+<div><a href="#date2">十月三十一日</a></div>
+<div><a href="#date3">十二月二十五日</a></div>
+<div><a href="#date4">元月一日</a></div>
 </div>
 <div class="container-main">
       <!-- 100% -->
-<div id="my-title"> 近期活動</div> 
-</div>
-<div class="my-date1" id="date2">
+<div id="date-title"> 近期活動</div> 
+<!-- 70% -->
+<div class="my-date" id="date2">
 日期：九月十六日<br>
 活動主題：社員大會<br>
 地點：吉他社教室<br>
@@ -111,10 +118,12 @@
 3.社長致詞<br>
 4.社規介紹以及教學內容之簡介<br>
 </div>
+<!-- 30% -->
 <div class="my-p">
     <a href="#">TOP</a>
 </div>
-<div class="my-date2" id="date2">
+<!-- 70% -->
+<div class="my-date" id="date2">
     日期：十月三十一日<br>
             活動主題：校內吉他表演<br>
             地點：學校大禮堂<br>
@@ -123,12 +132,14 @@
             1.海浬來的沙<br>
             2.微風往事<br>
             3.七月涼山<br>
-            4.明天會更好(大合唱)br
+            4.明天會更好(大合唱)<br>
 </div>
+<!-- 30% -->
 <div class="my-p">
     <a href="#">TOP</a>
 </div>
-<div class="my-date3" id="date3">
+<!-- 70% -->
+<div class="my-date" id="date3">
     日期：十二月二十五日<br>
     活動主題：校內吉他比賽<br>
     地點：學校大禮堂<br>
@@ -138,10 +149,12 @@
     2.參賽內容可為民歌演唱以及任何純吉他演奏方式如：古典吉他、爵士吉他演奏<br>
     3.參賽者必須自備樂器<br>
 </div>
+<!-- 30% -->
 <div class="my-p">
     <a href="#">TOP</a>
 </div>
-<div class="my-date4" id="date4">
+<!-- 70% -->
+<div class="my-date" id="date4">
     日期：元月一日<br>
     活動主題：全國吉他(高中組)演奏比賽<br>
     地點：台北市社教館<br>
@@ -151,11 +164,10 @@
     2.除推舉參加外，其餘有興趣參賽的同學，請自行報名參加<br>
     3.參賽規則請參考比賽細則<br>
 </div>
+<!-- 30% -->
 <div class="my-p">
     <a href="#">TOP</a>
 </div>
 </div>
-
-
 </body>
 </html>
