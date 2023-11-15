@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*mobile*/
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: lightblue;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            /* height: 80vh; */
+            margin: auto;
+        }
+
+        .item {
+            border: 3px solid black;
+            width: 80%;
+            height: 300px;
+            background-color: lightslategray;
+            margin-bottom: 30px;
+        }
+
+        /* large css */
+        @media screen and (min-width: 576px) {
+
+            .container {
+                background-color: lightgreen;
+                width: 80%;
+                margin: auto;
+            }
+
+            .item {
+                width: 30%;
+                height: 300px;
+            }
+        }
+
+        /* large css */
+        @media screen and (min-width: 768px) {
+
+            .container {
+                background-color: lightpink;
+                width: 80%;
+                margin: auto;
+            }
+
+            .item {
+                width: 30%;
+                height: 300px;
+            }
+        }
+
+        /* computer css */
+        /* .container{
+            display: flex;
+            flex-wrap: wrap;
+        background-color: lightblue;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 80vh;
+        margin: auto;
+        }
+        .item{
+            width: 30%;
+            height: 300px;
+            background-color: lightslategray;
+        } */
+        /* ----------------------------------------- */
+        /* mobile css */
+
+        /* body {
+            background-color: pink;
+            color: black;
+        }
+
+        @media screen and (min-width: 576px) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+
+
+        /* On screens that are 992px wide or less, the background color is blue */
+        /* @media screen and (min-width: 768px) {
+            body {
+                background-color: blue;
+                color: white;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container" id="leftsidebar">
+        <div class="item" id="main"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+
+</html>
