@@ -1,0 +1,1 @@
+SELECT `dept`.`name`,count(*) as '人數' FROM `students`,`dept` WHERE `students`.`dept`= `dept`.`dept_id` group by `students`.`dept`;
