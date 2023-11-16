@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>會員註冊</title>
+    <style>
+        *{
+            font-family: "標楷體";
+            font-size: 20px;
+            font-weight: bold;
+        }
+        body{
+            background-image: url(https://picsum.photos/id/17/1920/1080);
+            background-size: cover;
+           
+        }
+       input:hover {
+    background-color: lightskyblue
+
+        }
+        .container{
+            margin-top: 150px;
+            background-color: lightgray;
+            opacity: 0.9;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- ---------------------------------nav---------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">註冊</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">products</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- -----------------------------main------------------------ -->
+    <div class="container border border-primary border-5  w-50  my-container ">
+        <div class="row">
+            <div class="col-12 text-center mt-3">
+                <h1>註銷海賊資格</h1>
+            </div>
+        </div>
+        <form action="./add_user.php" method="post" >
+            <div class="row mt-4 ">
+                <div class="col-6 mb-3 ">
+                    <label for="acc" class="form-label">帳號:</label>
+                    <input type="text" class="form-control" id="acc">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="pw" class="form-label">密碼:</label>
+                    <input type="password" class="form-control" id="pw">
+                </div>
+
+            </div>
+            <div class="row mb-3">
+                <div class="col-6 mb-3">
+                    <label for="name" class="form-label">姓名:</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="email" class="form-label">email:</label>
+                    <input type="text" name="email" id="email" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="address" class="form-label">居住地:</label>
+                    <input type="text" name="address" id="address" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="file" class="form-label"><i class="fa-solid fa-folder-open">檔案上傳:</i></label>
+                    <input type="file" name="file" id="file" class="form-control">
+                    
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <div class="col-3 offset-md-4">
+                    <button class="btn btn-primary" type="submit"><i class="fa-solid fa-check">提交</i></button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary" type="reset"><i class="fa-solid fa-xmark">重新</i></button>
+                </div>
+            </div>
+    </div>
+    </form>
+
+</body>
+
+</html>
