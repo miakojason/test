@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            background-image: url(https://picsum.photos/id/42/200/300);
+            background-size: cover;
+            
+        }
+        .pt-30 {
+            padding-top: 10vh;
+        }
+
+        .td-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 236px;
+        }
+
+        /* .td-box > p {
+            width: 100%;
+        } */
+
+        .td-box-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 236px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>Products</h2>
+        <p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:</p>
+        <div class="text-end">
+            <button type="button" class="btn btn-success btn-lg"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <div class="container">
+        <table class="table table-hover text-center ">
+            <thead class="table-primary">
+                    <tr class=" bg-info">
+                        <th width="5%">id</th>
+                        <th width="20%">img_url</th>
+                        <th width="30%">desc</th>
+                        <th width="5%">price</th>
+                        <th width="10%">unit</th>
+                        <th>oprate</th>
+                    </tr>
+                </div>
+            </thead>
+            <tbody>
+                <tr class="table-secondary opacity-75">
+                    <td>
+                        <div class="td-box">
+                            1
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/20/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary opacity-75 table-info">
+                    <td>
+                        <div class="td-box">
+                            2
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/2/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr><tr class="table-secondary opacity-75 table-danger">
+                    <td>
+                        <div class="td-box">
+                            3
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/1/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary opacity-75 table-success">
+                    <td>
+                        <div class="td-box">
+                           4
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/3/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary opacity-75 table-dark">
+                    <td>
+                        <div class="td-box">
+                            5
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/40/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary opacity-75 table-light">
+                    <td>
+                        <div class="td-box">
+                            7
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/60/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="table-secondary opacity-75 table-warning">
+                    <td>
+                        <div class="td-box">
+                            8
+                        </div>
+                    </td>
+                    <td>
+                        <img src="https://picsum.photos/id/50/310/250" class="rounded" alt="Cinque Terre" width="304"
+                            height="236">
+                    </td>
+                    <td class="text-start">
+                        <div class="td-box">
+                            <p class="w-100">
+                                imgUrl: p1.jpg
+                            </p>
+                            <p class="w-100">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae rerum amet sint sunt.
+                                Illo
+                                tenetur similique quis fugiat fugit vero.
+                            </p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            100
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box">
+                            元
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td-box-row">
+                            <button type="button" class="btn btn-warning btn-lg"><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="ms-3 btn btn-danger btn-lg"><i
+                                    class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+
+</html>
