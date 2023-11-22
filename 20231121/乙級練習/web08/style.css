@@ -43,6 +43,7 @@
     height: calc(768px - 65px - 20px - 25px);
     /* background-color: lightblue; */
  text-align: center;
+ margin-left: 5px;
 }
 .aside-title{
     color: #FF00FF;
