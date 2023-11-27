@@ -34,12 +34,16 @@
             height: 60vh;
 
         }
-
+        .dropdown-item:hover{
+            background-color: aqua;
+           
+        }
 
         .my-img {
             width: 100%;
             height: 80vh;
         }
+  
     </style>
 </head>
 
@@ -76,7 +80,7 @@
                 <form class="d-flex justify-content-center">
                     <span class="navbar-text">Hi你朝巴&nbsp;&nbsp;:))&nbsp;&nbsp;</span>
                     <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
-                    <button class="btn btn-primary" type="button">踢燈你</button>
+                    <button class="btn btn-outline-primary" type="button">踢燈你</button>
                 </form>
             </div>
         </div>
@@ -84,9 +88,9 @@
     <!-- ---------------------------- -->
     <div id="page1">
     </div>
-    <div class="container bg-dark mb-3 ">
+    <div class="container-fluid bg-dark mb-3 ">
         <div class="box">
-            <div class="container  ">
+            <div class="container">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -164,14 +168,14 @@
     <!-- --------------------------- -->
     <div id="page2">
     </div>
-    <div class="container bg-danger mb-3">
+    <div class="containerr-fluid bg-danger mb-3">
         <div class="row d-flex justify-content-around">
             <div class="col-3 card" style="width: 18rem;">
                 <img src="./imgs/heder01.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title ">山東．D．路飛</h5>
                     <p class="card-text">$:30.000.000<br>我要當海王~略~略~略~略~略</p>
-                    <a href="https://www.youtube.com/watch?v=qUq67DFr-Gs" class="btn btn-primary">鄉村海賊王1</a>
+                    <a href="https://www.youtube.com/watch?v=qUq67DFr-Gs" class="btn btn-outline-warning">鄉村海賊王1</a>
                 </div>
             </div>
             <div class="col-3 card" style="width: 18rem;">
@@ -179,7 +183,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title ">惡龍</h5>
                     <p class="card-text">$:20.000.000<br>綁架娜美醬</p>
-                    <a href="https://www.youtube.com/watch?v=qzUbCLCx6F4" class="btn btn-primary">鄉村海賊王2</a>
+                    <a href="https://www.youtube.com/watch?v=qzUbCLCx6F4" class="btn btn-outline-success">鄉村海賊王2</a>
                 </div>
             </div>
             <div class="col-3 card" style="width: 18rem;">
@@ -187,7 +191,7 @@
                 <div class="card-body text-center">
                     <h5 class="card-title ">西格</h5>
                     <p class="card-text">$:888<br>拿酒倒香客斯的頭</p>
-                    <a href="https://www.youtube.com/watch?v=XU1mL9Yb7CM" class="btn btn-primary">鄉村海賊王3</a>
+                    <a href="https://www.youtube.com/watch?v=XU1mL9Yb7CM" class="btn btn-outline-secondary">鄉村海賊王3</a>
                 </div>
             </div>
         </div>
@@ -195,14 +199,14 @@
     <!-- ------------------------------------------ -->
     <div id="page3">
     </div>
-    <div class="container bg-warning mb-3">
+    <div class="containerr-fluid bg-warning mb-3">
         <div class="box3">
             <div class="row ">
                 <p class=" d-inline-flex gap-1">
-                    <a class=" col-2 offset-3 btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1"
+                    <a class=" col-2 offset-3 btn btn-outline-primary" data-bs-toggle="collapse" href="#multiCollapseExample1"
                         role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first
                         element</a>
-                    <button class="col-2 offset-2 btn btn-primary" type="button" data-bs-toggle="collapse"
+                    <button class="col-2 offset-2 btn btn-outline-dark" type="button" data-bs-toggle="collapse"
                         data-bs-target="#multiCollapseExample2" aria-expanded="false"
                         aria-controls="multiCollapseExample2">Toggle second t</button>
                 </p>
@@ -231,11 +235,11 @@
     <!-- ------------------------------------------- -->
     <div id="page4">
     </div>
-    <div class="container bg-primary mb-3">
+    <div class="containerr-fluid bg-primary mb-3">
         <div class="box4">
             <div class="row">
                 <div class="col-4 btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+                    <button type="button" class="btn btn-outline-danger dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         非戰鬥人員+選擇海賊集數
                     </button>
@@ -274,7 +278,7 @@
                     </ul>
                 </div>
                 <div class="col-8 btn-group">
-                    <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                    <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         主戰力
                     </button>
@@ -288,43 +292,55 @@
                         <li><a class="dropdown-item" href="#">白吊打．佛朗基</a></li>
                     </ul>
                 </div>
-
-
-                <div class="container mt-3">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2>Toggleable Tabs</h2>
-                            <br>
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#menu3">海賊王</a>
-                                </li>
-                            </ul>
-                            <div id="menu3" class="container tab-pane active"><br>
-                                <h3>海賊王</h3>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/qUq67DFr-Gs?si=d2dOiV2l2S_yohUo" target="my-Iframe">鄉村海賊1</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/qzUbCLCx6F4?si=r41PmJw5y0Ym36rF" target="my-Iframe">鄉村海賊2</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/XU1mL9Yb7CM?si=2_F7wk5rw9gk5PNO" target="my-Iframe">鄉村海賊3</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/xxeT9f02fH4?si=kqh3AdRIxxMkTVQU" target="my-Iframe">鄉村海賊4</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/EEjnoQ2qJUQ?si=zQFu9Y_4TdHGTXWr" target="my-Iframe">鄉村海賊5</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/E9qFHa5F08M?si=KH4qCPVD2Upj3K1J" target="my-Iframe">鄉村海賊6</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/np-VcplD7z0?si=8ecZOsLM6d5qoAd6" target="my-Iframe">鄉村海賊7</a>
-                                <a class="dropdown-item" href="https://www.youtube.com/embed/JQGZ-ZfVcQ0?si=Uiu8yulimdt42QqC" target="my-Iframe">鄉村海賊8</a>
-                            </div>
-                            <div class="col-md-4 col-12">
-                                <iframe src="https://www.youtube.com/embed/qUq67DFr-Gs?si=IEf_gMbEzMsHqbXd" width="600"
-                                    height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade" name="my-Iframe"></iframe>
-                            </div>
-
-
-
-                        </div>
+                <div class="col-md-8 col-12">
+                    <br>
+                    <h2>選擇你要看的鄉村海賊</h2>
+                    <br>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#menu3">海賊王</a>
+                        </li>
+                    </ul>
+                    <div id="menu3" class="container tab-pane active text-center"><br>
+                        <h3>海賊王</h3>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/qUq67DFr-Gs?si=d2dOiV2l2S_yohUo"
+                            target="my-Iframe">鄉村海賊1</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/qzUbCLCx6F4?si=r41PmJw5y0Ym36rF"
+                            target="my-Iframe">鄉村海賊2</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/XU1mL9Yb7CM?si=2_F7wk5rw9gk5PNO"
+                            target="my-Iframe">鄉村海賊3</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/xxeT9f02fH4?si=kqh3AdRIxxMkTVQU"
+                            target="my-Iframe">鄉村海賊4</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/EEjnoQ2qJUQ?si=zQFu9Y_4TdHGTXWr"
+                            target="my-Iframe">鄉村海賊5</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/E9qFHa5F08M?si=KH4qCPVD2Upj3K1J"
+                            target="my-Iframe">鄉村海賊6</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/np-VcplD7z0?si=8ecZOsLM6d5qoAd6"
+                            target="my-Iframe">鄉村海賊7</a>
+                        <a class="dropdown-item" href="https://www.youtube.com/embed/JQGZ-ZfVcQ0?si=Uiu8yulimdt42QqC"
+                            target="my-Iframe">鄉村海賊8</a>
                     </div>
                 </div>
+                <div class="col-md-4 col-12 ">
+                    <br>
+                        <iframe src="https://www.youtube.com/embed/qUq67DFr-Gs?si=IEf_gMbEzMsHqbXd" width="600"
+                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" name="my-Iframe"></iframe>
+                </div>
+
+
+
+                </div>
             </div>
-            <!-- ------------------------------- -->
+        </div>
+    </div>
+
+
+
+
+    <!-- ------------------------------- -->
+
 </body>
 
 </html>
