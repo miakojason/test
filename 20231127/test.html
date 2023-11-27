@@ -34,16 +34,16 @@
             height: 60vh;
 
         }
-        .dropdown-item:hover{
+
+        .dropdown-item:hover {
             background-color: aqua;
-           
+
         }
 
         .my-img {
             width: 100%;
             height: 80vh;
         }
-  
     </style>
 </head>
 
@@ -203,8 +203,9 @@
         <div class="box3">
             <div class="row ">
                 <p class=" d-inline-flex gap-1">
-                    <a class=" col-2 offset-3 btn btn-outline-primary" data-bs-toggle="collapse" href="#multiCollapseExample1"
-                        role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first
+                    <a class=" col-2 offset-3 btn btn-outline-primary" data-bs-toggle="collapse"
+                        href="#multiCollapseExample1" role="button" aria-expanded="false"
+                        aria-controls="multiCollapseExample1">Toggle first
                         element</a>
                     <button class="col-2 offset-2 btn btn-outline-dark" type="button" data-bs-toggle="collapse"
                         data-bs-target="#multiCollapseExample2" aria-expanded="false"
@@ -244,9 +245,9 @@
                         非戰鬥人員+選擇海賊集數
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">羅賓</a></li>
-                        <li><a class="dropdown-item" href="#">娜美</a></li>
-                        <li><a class="dropdown-item" href="#">喬巴</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-1">羅賓</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-2">娜美</a></a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-3">喬巴</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -274,8 +275,76 @@
                         <li><a class="dropdown-item"
                                 href="https://www.youtube.com/embed/JQGZ-ZfVcQ0?si=Uiu8yulimdt42QqC"
                                 target="my-Iframe">鄉村海賊8</a></li>
-
                     </ul>
+                    <div class="modal" id="myModal-1">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">性感羅賓</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/羅賓.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-2">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">美麗娜美</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/娜美.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-3">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">可愛喬巴</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/喬巴.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-8 btn-group">
                     <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown"
@@ -283,14 +352,177 @@
                         主戰力
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">山東．D．魯夫</a></li>
-                        <li><a class="dropdown-item" href="#">日照．索龍</a></li>
-                        <li><a class="dropdown-item" href="#">七舞嗨．甚平</a></li>
-                        <li><a class="dropdown-item" href="#">白吊打．香吉士</a></li>
-                        <li><a class="dropdown-item" href="#">白吊打．騙人布</a></li>
-                        <li><a class="dropdown-item" href="#">白吊打．骷髏頭</a></li>
-                        <li><a class="dropdown-item" href="#">白吊打．佛朗基</a></li>
+                        <li><a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#myModal-4">山東．D．魯夫</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-5">白吊打．索龍</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-6">七舞嗨．甚平</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-7">白吊打．香吉士</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-8">白吊打．騙人布</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-9">白吊打．骷髏頭</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-10">白吊打．佛朗基</a></li>
                     </ul>
+                    <div class="modal" id="myModal-4">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">山東．D．魯夫</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/魯夫.png" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-5">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">白吊打．索龍</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/索龍.png" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-6">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">鯰魚</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/甚平.png" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-7">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">白吊打．香吉士</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/香吉士.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-8">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">白吊打．騙人布</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/騙人布.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-9">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">白吊打．骷髏頭</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/布魯克.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal-10">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">白吊打．佛朗基</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body text-center">
+                                    <img src="./imgs/佛朗基.jpg" alt="">
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="col-md-8 col-12">
                     <br>
@@ -324,17 +556,14 @@
                 </div>
                 <div class="col-md-4 col-12 ">
                     <br>
-                        <iframe src="https://www.youtube.com/embed/qUq67DFr-Gs?si=IEf_gMbEzMsHqbXd" width="600"
-                            height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade" name="my-Iframe"></iframe>
-                </div>
-
-
-
+                    <iframe src="https://www.youtube.com/embed/qUq67DFr-Gs?si=IEf_gMbEzMsHqbXd" width="600" height="450"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        name="my-Iframe"></iframe>
                 </div>
             </div>
         </div>
     </div>
+
 
 
 
