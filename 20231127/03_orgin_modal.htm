@@ -30,9 +30,16 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
       Open modal
     </button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal">
+        Open modal
+      </button>
   </div>
 
   <div class="modalBox" id="modalBox">
+
+  </div>
+
+  <div class="modalBox bg-danger" id="modalBoxRed">
 
   </div>
 
@@ -40,8 +47,12 @@
   <script>
     $(document).ready(function () {
       const modalBox = $('#modalBox');
-      $("button").click(function () {
+      const modalBoxRed = $('#modalBoxRed');
+      $(".btn-primary").click(function () {
         modalBox.toggle();
+      });
+      $(".btn-danger").click(function () {
+        modalBoxRed.toggle();
       });
     });
   </script>

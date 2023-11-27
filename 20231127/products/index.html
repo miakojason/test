@@ -45,6 +45,11 @@
             font-weight: bold;
             font-size: 20px;
         }
+        input:hover {
+    background-color: lightskyblue
+
+        }
+      
     </style>
 </head>
 
@@ -86,11 +91,13 @@
     <!-- --------------------nav-edn----------------------------------- -->
     <div class="container ">
         <div class="row">
-            <div class="col-11 text-center">
+            <div class="col-8 text-center">
                 <h2>我要當海王略~略~略~略~略</h2>
             </div>
-            
-            <div class="col-1 text-end">
+                <div class="col-4 text-end">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Open modal
+                  </button>
                 <a href="./create.html">
                     <button type="button" class="btn btn-success btn-lg"><i class="fa-solid fa-plus"></i></button>
                 </a>
@@ -401,6 +408,79 @@
         </tr>
     </tbody>
     </table>
+    <!-- -------------------The Modal ------------->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body這邊塞create表單內容 -->
+            <div class="modal-body">
+                <div class="container border border-primary border-5  w-50  my-container ">
+                    <div class="row">
+                        <div class="col-12 text-center mt-3">
+                            <h1>會員註冊</h1>
+                        </div>
+                    </div>
+                    <form action="./add_user.php" method="post" >
+                        <div class="row mt-4 ">
+                            <div class="col-6 mb-3 ">
+                                <label for="acc" class="form-label">帳號:</label>
+                                <input type="text" class="form-control" id="acc">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label for="pw" class="form-label">密碼:</label>
+                                <input type="password" class="form-control" id="pw">
+                            </div>
+            
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6 mb-3">
+                                <label for="name" class="form-label">姓名:</label>
+                                <input type="text" name="name" id="name" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="email" class="form-label">email:</label>
+                                <input type="text" name="email" id="email" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="address" class="form-label">居住地:</label>
+                                <input type="text" name="address" id="address" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <label for="file" class="form-label"><i class="fa-solid fa-folder-open">檔案上傳:</i></label>
+                                <input type="file" name="file" id="file" class="form-control">
+                                
+                            </div>
+                        </div>
+            
+            
+                        <div class="row mb-3">
+                            <div class="col-3 offset-md-4">
+                                <button class="btn btn-outline-primary" type="submit"><i class="fa-solid fa-check">提交</i></button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-outline-secondary" type="reset"><i class="fa-solid fa-xmark">重新</i></button>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+<!-- ----------------------- -->
     </div>
     </div>
 </body>
