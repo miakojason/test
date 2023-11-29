@@ -74,9 +74,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#page3">略略略</a>
                     </li>
-
+                    <li class="nav-item">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            乙級必勝
+                          </button>
                 </ul>
-
                 <form class="d-flex justify-content-center">
                     <span class="navbar-text">Hi你朝巴&nbsp;&nbsp;:))&nbsp;&nbsp;</span>
                     <!-- <input class="form-control me-2" type="text" placeholder="Search"> -->
@@ -85,7 +88,17 @@
             </div>
         </div>
     </nav>
-    <!-- ---------------------------- -->
+    <!-- ----------------button-start--offcanvas----------------------- -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">大家乙級加油~!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <img src="./imgs/cat.gif" alt="">
+        </div>
+    </div>
+     <!-- ----------------button-end--offcanvas------------------- -->
     <div id="page1">
     </div>
     <div class="container-fluid bg-dark mb-3 ">
@@ -352,13 +365,14 @@
                         主戰力
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#myModal-4">山東．D．魯夫</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-4">山東．D．魯夫</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-5">白吊打．索龍</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-6">七舞嗨．甚平</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-7">白吊打．香吉士</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-8">白吊打．騙人布</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-9">白吊打．骷髏頭</a></li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-10">白吊打．佛朗基</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal-10">白吊打．佛朗基</a>
+                        </li>
                     </ul>
                     <div class="modal" id="myModal-4">
                         <div class="modal-dialog modal-xl">
@@ -563,13 +577,7 @@
             </div>
         </div>
     </div>
-
-
-
-
-
     <!-- ------------------------------- -->
-
 </body>
 
 </html>
