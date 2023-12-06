@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="box bg-danger w-100 " id="myBox">
+                  
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" id="btnPrimary">Primary</button>
+                <button type="button" class="btn btn-success" id="btnSuccess">Success</button>
+                <button type="button" class="btn btn-danger" id="btnDanger">Danger</button>
+                <button type="button" class="btn btn-warning" id="btnWarning">Warning</button>
+            </div>
+        </div>
+    </div>
+
+<!-- body上面 -->
+<script>
+         // 綁定
+    let btnPrimary = document.getElementById('btnPrimary');
+    let btnSuccess = document.getElementById('btnSuccess');
+    let btnDanger = document.getElementById('btnDanger');
+    let btnWarning = document.getElementById('btnWarning');
+    let myBox =document.getElementById('myBox');
+    console.log(btnPrimary);
+      // 動作
+    btnPrimary.addEventListener('click',function(){
+        console.log('btnPrimary ok');
+        myBox.setAttribute('class','box bg-primary w-100')
+    });
+    btnSuccess.addEventListener('click',function(){
+        console.log('btnSuccess ok');
+        myBox.setAttribute('class','box bg-success w-100')
+    });
+    btnDanger.addEventListener('click',function(){
+        console.log('btnDanger ok');
+        myBox.setAttribute('class','box bg-danger w-100')
+    });
+    btnWarning.addEventListener('click',function(){
+        console.log('btnWarning ok');
+        myBox.setAttribute('class','box bg-warning w-100')
+    });
+</script>
+
+
+</body>
+</html>
