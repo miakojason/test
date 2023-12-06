@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My title</title>
+</head>
+<body>
+    <h1 id="myH1">A heading</h1>
+    <a href="#">Link Text</a>
+    <button type="button" id="myBtn">myBtn</button>
+
+    <script>
+        //1綁定
+        let myBtn = document.getElementById('myBtn');
+        let myH1 = document.getElementById('myH1');
+
+        // 2動作
+        myBtn.addEventListener('click',function(){
+            myH1.innerHTML = "Hello H1 55688";
+        });
+       
+        console.log(myBtn);
+        console.log(myH1);
+        console.log(console);
+
+    </script>
+</body>
+</html>
