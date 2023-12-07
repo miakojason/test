@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-3">
+    <h2>加總</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>word</th>
+          <th>button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <td id="word">beneath</td> -->
+          <td>
+            <input type="text" class="form-control" id="num1" placeholder="Enter Text" name="num1">
+          </td>
+          <td>
+              <input type="text" class="form-control" id="num2" placeholder="Enter Text" name="num2">
+            </td>
+        </tr>
+          <tr>
+              <td>
+                <button type="submit" name=""id="myBtn" >sum</button>
+              </td>
+          </tr>
+          <tr>
+            <td>
+                <span id="result">請輸入num1,num2</span>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script>
+    // 1.綁定
+    let num1 = document.getElementById('num1');
+    let num2 = document.getElementById('num2');
+    let myBtn = document.getElementById('myBtn');
+    let result = document.getElementById('result');
+// console.log('num1',num1)
+// console.log('num2',num2)
+    // console.log('word', word);
+    // console.log('myBtn', myBtn);
+
+    // let searchText = word.innerText;
+    // console.log('searchText', searchText);
+
+    // 2.動作
+    myBtn.addEventListener('click', function () {
+
+let num1Value = Number(num1.value);
+let num2Value = Number(num2.value);
+let sum = num1Value+num2Value;
+      console.log('sum', sum);
+    //   result.innerText=sum;
+    result.innerText= `${num1Value}+${num2Value} = ${sum}`;
+    });
+
+
+  </script>
+</body>
+
+</html>

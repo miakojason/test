@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-5 mb-3">
+    <h3>數字加總計算</h3>
+    <div class="row">
+      <div class="col">
+        <label for="num1">Num1</label>
+        <input type="text" class="form-control" name="" id="num1" value="">
+      </div>
+      <div class="col">
+        <label for="num2">Num2</label>
+        <input type="text" class="form-control" name="" id="num2" value="">
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="button" id="myBtn">Button</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <span id="result">請輸入 num1 num2</span>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // 1.綁定
+    let num1 = document.getElementById('num1');
+    let num2 = document.getElementById('num2');
+    let myBtn = document.getElementById('myBtn');
+    let result = document.getElementById('result');
+    console.log('num1', num1);
+    console.log('num2', num2);
+
+    // 2.動作
+    myBtn.addEventListener('click', function () {
+      let num1Value = Number(num1.value);
+      let num2Value = Number(num2.value);
+      let sum = num1Value + num2Value;
+      // console.log('sum', sum);
+      // result.innerText = sum;
+      result.innerText = `${num1Value} + ${num2Value} = ${sum}`;
+
+    });
+
+
+  </script>
+</body>
+
+</html>
