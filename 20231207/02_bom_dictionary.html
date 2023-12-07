@@ -14,19 +14,26 @@
 
 <body>
   <div class="container mt-3">
-    <h2>Striped Rows</h2>
-    <p>The .table-striped class adds zebra-stripes to a table:</p>
+    <h2>Search Word</h2>
+    <p>查詢單字 可以連接不同網站</p>
     <table class="table table-striped">
+      <thead>
         <tr>
           <th>word</th>
           <th>button</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
-          <td id="word">beneath</td>
+          <!-- <td id="word">beneath</td> -->
           <td>
-            <button type="button" id="myBtn">myBtn</button>
+            <input type="text" class="form-control" id="word" placeholder="Enter Text" name="word">
+          </td>
+          <td>
+            <button type="button" id="myBtn">search</button>
           </td>
         </tr>
+      </tbody>
     </table>
   </div>
 
@@ -36,18 +43,24 @@
     let word = document.getElementById('word');
     let myBtn = document.getElementById('myBtn');
 
-    console.log('word', word);
-    console.log('myBtn', myBtn);
+    // console.log('word', word);
+    // console.log('myBtn', myBtn);
 
-    let searchText = word.innerText;
-    console.log('searchText', searchText);
+    // let searchText = word.innerText;
+    // console.log('searchText', searchText);
 
     // 2.動作
     myBtn.addEventListener('click', function () {
+
+      let searchText = word.value;
+      console.log('searchText', searchText);
       // console.log('myBtn ok');
+      // php string .
+      // js string +
       window.open('https://www.merriam-webster.com/dictionary/' + searchText);
       window.open('https://dictionary.cambridge.org/dictionary/english-chinese-traditional/' + searchText);
       window.open('https://www.ldoceonline.com/dictionary/' + searchText);
+      window.open('https://www.google.com/search?q=' + searchText + '&sca_esv=588643820&tbm=isch&source=lnms&sa=X&ved=2ahUKEwiN5qXa2fyCAxXwqFYBHT3AAjwQ_AUoAnoECAIQBA&biw=1920&bih=919&dpr=1' + searchText);
 
     });
 
