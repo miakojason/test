@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="demo">
+    <h2>JavaScript Window</h2>
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="closeBtn">closeBtn</button>
+
+    <script>
+        // 1.綁定
+        let myBtn = document.getElementById('myBtn');
+        let closeBtn = document.getElementById('closeBtn');
+
+        let screenHeight = screen.height;
+        let screenWidth = screen.width;
+        console.log('screenWidth', screenWidth);
+        console.log('screenHeight', screenHeight);
+        // 2.動作
+        myBtn.addEventListener('click', function () {
+            // window.open("https://www.w3schools.com");
+
+            // window.location.assign("https://www.w3schools.com");
+            // window.location.href = "https://www.w3schools.com";
+
+            // replace 無法回到上一頁
+            // window常常可以省略
+            window.location.replace("https://www.w3schools.com");
+        });
+        closeBtn.addEventListener('click',function() {
+            window.close();
+        });
+        // document.getElementById("demo").innerHTML =
+        // "Browser inner window width: " + window.innerWidth + "px<br>" +
+        // "Browser inner window height: " + window.innerHeight + "px";
+    </script>
+
+</body>
+
+</html>
