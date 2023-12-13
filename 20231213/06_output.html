@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="myDiv">
+          Lorem ipsum dolor sit amet.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let myDiv = document.getElementById('myDiv');
+    // console.log('myDiv', myDiv);
+
+    // 1. innerHTML vs innerText
+    // myDiv.innerHTML = "<i>55568</i>";
+    myDiv.innerText = "<i>55568</i>";
+
+    // 2.少用 後面元件會被影響
+    document.write('Hello write');
+
+    // 3.alert
+    // alert('Alert Hello');
+
+    // 4.最常用
+    console.log();
+
+  </script>
+</body>
+
+</html>
