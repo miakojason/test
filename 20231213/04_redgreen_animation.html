@@ -19,7 +19,6 @@
       align-items: center;
       border: 1px solid black;
     }
-    
 
     .item {
       width: 150px;
@@ -27,128 +26,72 @@
     }
 
     .my-container {
-      /* background-color: lightpink; */
+      background-color: lightpink;
       position: relative;
       height: 90vh;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
 
     #myImg {
       position: absolute;
-    left:-600px;
+      right: -600px;
       /* right: 1400px; */
       bottom: 0px;
+      
     }
-    #myImg2{
-      position: absolute;
-    left:-600px;
-      /* right: 1400px; */
-      bottom: 0px;
-    }
-    #long2{
 
-  left: 100px;
-  bottom:325px;
-position: absolute;
-    width: 100px;
-    height: 30px;
-    background-color: bisque;
-    /* right: 1400px; */
-   
-}
 
 
     .myImgAnimation {
       position: absolute;
-      left:-600px;
-       /* right: 1400px; */
+      right: -600px;
+      right: 1400px;
       bottom: 0px;
       animation-name: example;
       animation-duration: 10s;
     }
-    .myImgAnimation2{
-      position: absolute;
-      left:-600px;
-       /* right: 1400px; */
-       bottom: 0px;
-      animation-name: example2;
-      animation-duration: 3s;
-    }
+
     .myImgAnimationInit {
       position: absolute;
-    }
-    .myImgAnimationInit2{
-      position: absolute;
-   
-    }
-    .longAnimation{
-      position: absolute;
-      /* background-color: aqua; */
-      animation-name: example3;
-      animation-duration: 5s;
-    }
-    .longAnimationInit {
-     
-      position: absolute;
-      /* background-color: blueviolet; */
-      
+      right: -600px;
+      /* right: 1400px; */
+      bottom: 0px;
     }
 
 
 
     @keyframes example {
       0% {
-          /* background-color: red; */
-        left: 0px;
+        /* background-color: red; */
+        right: -200px;
         bottom: 0px;
       }
 
       25% {
-         /* background-color: red; */
-        bottom: 400px;
-         /* transform: rotate(90deg); */
+        /* background-color: red; */
+        bottom: 200px;
+        /* transform: rotate(90deg); */
       }
 
       75% {
-          /* background-color: red; */
-          bottom: 0px;
+        /* background-color: red; */
+        bottom: 300px;
         /* transform: rotate(180deg); */
 
       }
 
       100% {
-          /* background-color: lightblue; */
-          left: 2000px;
-        bottom: 0px;
-        /* transform: rotate(0deg); */
-      } 
-    }
-    @keyframes example2 {
-      0% {
-          /* background-color: red; */
-        left: 0px;
-        bottom: 0px;
+        /* background-color: lightblue; */
+        right: 1200px;
+        bottom: 100px;
+        /* transform: rotate(270deg); */
       }
-      100% {
-          /* background-color: lightblue; */
-          left: 2500px;
-        bottom: 0px;
-        /* transform: rotate(0deg); */
-      } 
-    }
-    @keyframes example3 {
-      0% {
-       width: 100px;
-      }
-      100% {
-          width: 2500px;
-      } 
     }
   </style>
 </head>
 
 <body>
-  <div class="container-fluid mt-5 my-container">
+  <div class="container mt-5 my-container">
     <div class="mb-5">
       <h1 class="text-center text-warning ">紅 綠 燈</h1>
     </div>
@@ -165,22 +108,16 @@ position: absolute;
       </div>
       <div class="col">
         <button type="button" id="myBtn" class="btn btn-primary btn-lg mt-5">行人過馬路按鈕</button>
-        <button type="button" id="myBtn2" class="btn btn-primary btn-lg mt-5">哥萌哥萌變長弄</button>
+
       </div>
     </div>
     <div class="row">
       <div class="col">
         <a
           href="https://tw.news.yahoo.com/%E5%B8%9D%E7%8E%8B%E6%A2%9D%E6%AC%BE-%E5%A5%AA%E7%BE%8E%E8%A1%93%E8%B3%BD%E7%89%B9%E5%84%AA-%E5%9C%8B%E4%B8%AD%E7%94%9F%E8%AB%B7%E8%A1%8C%E4%BA%BA%E5%A6%82%E7%9A%87%E5%B8%9D%E8%A2%AB%E7%BD%B5%E7%88%86-080337120.html">
-          <img src="./images/紅洛克人飛艇.gif" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
-          <img src="./images/洛克人跑.gif" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg2">
+          <img src="./images/baby.gif" alt="紅綠燈" title="全國學生美術比賽漫畫類特優" id="myImg">
         </a>
       </div>
-      <div class="d-flex">
-        <img src="./images/人.png" alt="">
-        <div class="long" id="long2"></div>
-      </div>
-      
     </div>
   </div>
 
@@ -191,9 +128,6 @@ position: absolute;
       // myImg.setAttribute('class', 'd-none');
       myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
       myImg.setAttribute('class', 'myImgAnimationInit');
-      myImg2.setAttribute('class', 'myImgAnimationInit2');
-      myBtn2.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-block');
-      long2.setAttribute('class', 'longAnimationInit');
     }
 
 
@@ -201,10 +135,7 @@ position: absolute;
     let light2 = document.getElementById('light2');
     let light3 = document.getElementById('light3');
     let myBtn = document.getElementById('myBtn');
-    let myBtn2 = document.getElementById('myBtn2');
     let myImg = document.getElementById('myImg');
-    let myImg2 = document.getElementById('myImg2');
-    let long2=document.getElementById('long2');
 
     // init action
     // myImg.setAttribute('class', 'd-none');
@@ -214,51 +145,46 @@ position: absolute;
     console.log('light2', light2);
     console.log('light3', light3);
     console.log('myBtn', myBtn);
-    console.log('myBtn2', myBtn2);
 
     myBtn.addEventListener('click', function () {
-        myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
-      // console.log('myBtn ok');
-      // light1.setAttribute('class',"item bg-danger rounded-circle");
-      // light2.setAttribute('class', "item bg-danger rounded-circle");
-      // light3.setAttribute('class', "item bg-danger rounded-circle");
+      myBtn.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
+      // console.log('myBtn', myBtn);
+      // light1.setAttribute('class','item bg-danger rounded-circle');
+      // light1.setAttribute('class', 'item bg-success rounded-circle');
+      // light2.setAttribute('class', 'item bg-success rounded-circle');
+      // light3.setAttribute('class', 'item bg-success rounded-circle');
+
+      // time start
       setTimeout(function () {
-        myImg2.setAttribute('class', 'd-block');
-        myImg2.setAttribute('class', 'myImgAnimation2');
-      }, 1000);
-      
-      setTimeout(function () {
-        light1.setAttribute('class', "item bg-success rounded-circle");
+        light1.setAttribute('class', 'item bg-success rounded-circle');
       }, 2500);
 
       setTimeout(function () {
-        light2.setAttribute('class', "item bg-success rounded-circle");
+        light2.setAttribute('class', 'item bg-success rounded-circle');
       }, 3000);
 
       setTimeout(function () {
-        light3.setAttribute('class', "item bg-success rounded-circle");
+        light3.setAttribute('class', 'item bg-success rounded-circle');
         myImg.setAttribute('class', 'd-block');
         myImg.setAttribute('class', 'myImgAnimation');
       }, 3500);
-     
       // time end
+
       // red
       setTimeout(function () {
         light1.setAttribute('class', 'item bg-danger rounded-circle');
         light2.setAttribute('class', 'item bg-danger rounded-circle');
         light3.setAttribute('class', 'item bg-danger rounded-circle');
 
+
         initFun();
 
       }, 13500);
+
     });
-    myBtn2.addEventListener('click',function(){
-      myBtn2.setAttribute('class', 'btn btn-primary btn-lg mt-5 d-none');
-      setTimeout(function(){
-        // myBtn2.setAttribute('class', 'd-block');
-        long2.setAttribute('class','longAnimation');
-      },1000);
-    });
+
+
+
   </script>
 </body>
 
