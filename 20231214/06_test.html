@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>key</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td id="keyID"></td>
+      <td id="valueID"></td>
+    </tr>
+  </table>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6 mt-3">
+        <input type="text" name="" id="name" class="form-control">
+      </div>
+      <div class="col-6 mt-3">
+        <input type="text" name="" id="mobile" class="form-control">
+      </div>
+      <div class="col-12 mt-3">
+        <input type="text" name="" id="address" class="form-control">
+      </div>
+      <div class="col-12 mt-3">
+        <select name="" id="loves" class="form-control">
+          <option value="value">name</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let obj = {
+      's1': 'amy',
+      's2': 'bob',
+      's3': 'cat',
+      'arr': ['a1', 'a2', 'a3']
+    };
+
+    let studentObj = {
+      'name': 'amy',
+      'mobile': '0911-111-111',
+      'address': 'aaaaaaaaa',
+      'love': ['html', 'css', 'js', 'php']
+    };
+
+    const keyID = document.getElementById('keyID');
+    const valueID = document.getElementById('valueID');
+
+    const name = document.getElementById('name');
+    const mobile = document.getElementById('mobile');
+    const address = document.getElementById('address');
+    const loves = document.getElementById('loves');
+
+
+    console.log('obj', obj);
+    console.log('obj["s1"]', obj['s1']);
+    console.log('obj.s1', obj.s1);
+    console.log('obj.arr', obj.arr);
+    // console.log('obj->s1', obj->s1);
+    console.log('obj typeof', typeof (obj));
+    keyID.innerHTML = 's1';
+    valueID.innerHTML = obj.s1;
+
+    console.log('name', name);
+    console.log('mobile', mobile);
+    console.log('address', address);
+    name.value = studentObj.name;
+    mobile.value = studentObj.mobile;
+    address.value = studentObj.address;
+    console.log(studentObj);
+
+    // 建立節點
+    let option = document.createElement("option");
+    // 節點 設定
+    option.text = studentObj.love[0];
+    option.value = studentObj.love[0];
+    // select append
+    loves.appendChild(option);
+
+    // 建立節點
+    let option1 = document.createElement("option");
+    // 節點 設定 attribute
+    option1.text = studentObj.love[1];
+    option1.value = studentObj.love[1];
+    // select append
+    loves.appendChild(option1);
+
+
+    // let option2 = document.createElement("option");
+    // option.text = "Text";
+    // option.value = "myvalue";
+    // loves.appendChild(option2);
+    // mobile
+    // address
+
+
+  </script>
+</body>
+
+</html>
