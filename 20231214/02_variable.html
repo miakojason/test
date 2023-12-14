@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <input type="text" name="" id="myInput" value="123">
+
+  <script>
+    // let 變數 宣告一次
+    // const 常數
+
+    let x = 10;
+    console.log('x', x);
+    x = 500;
+    console.log('x', x);
+
+    const yConst = 10;
+    // console.log('yConst', yConst);
+    // yConst = 500;
+    // console.log('yConst', yConst);
+
+    const myInput = document.getElementById('myInput');
+    console.log('myInput', myInput);
+    myInput.value = "55688";
+    console.log('myInput', myInput);
+
+    // 綁定用 const 避免 不小心改掉
+
+    // myInput = 123;
+    // console.log('myInput', myInput);
+
+    function aFun() {
+      let testStr = 'Hello aFun';
+      console.log('testStr', testStr);
+    }
+
+    function bFun() {
+      let testStr = 'Hello bFun';
+      console.log('testStr', testStr);
+    }
+
+
+    aFun();
+    bFun();
+
+  </script>
+</body>
+
+</html>

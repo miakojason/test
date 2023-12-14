@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <button type="button" id="myBtn" onclick="oneFun();">one</button>
+  <button type="button" id="clearBtn" onclick="clearFun();">clearBtn</button>
+
+  <script>
+    function oneFun() {
+      // 一次
+      setTimeout(function () {
+
+      });
+    }
+
+    // 重複無限
+    setInterval(function () {
+      console.log('Hello setInterval');
+    }, 1000)
+
+
+    // clearInterval關閉重複
+    // https://stackoverflow.com/questions/109086/stop-setinterval-call-in-javascript
+    function fname() {
+      console.log('hello fname');
+    }
+
+    function clearFun() {
+      clearInterval(refreshIntervalId);
+    }
+    let refreshIntervalId = setInterval(fname, 1000);
+    /* later */
+    // clearInterval(refreshIntervalId);
+
+
+  </script>
+</body>
+
+</html>

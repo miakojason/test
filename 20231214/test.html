@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "標楷體";
+            font-size: 18px;
+            font-weight: bold;
+            color: lightpink;
+        }
+
+        body {
+            background-image: url(./img/bgm.jpg);
+            background-size: cover;
+        }
+        input:hover {
+    background-color: lightskyblue
+
+        }
+        @media screen and (min-width: 576px) {
+
+            * {
+                color: lightgreen;
+
+            }
+        }
+
+        /* large css */
+        @media screen and (min-width: 768px) {
+
+            * {
+                color: black;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container border border-primary border-5 border rounded mt-5 ">
+
+        <div class="container  ">
+            <div class="row mt-4">
+                <div class="col-6 mb-3 ">
+                    <label for="acc" class="form-label">帳號:</label>
+                    <input type="text" class="form-control" id="acc">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="pw" class="form-label">密碼:</label>
+                    <input type="password" class="form-control" id="pw">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 mb-3">
+                    <label for="name" class="form-label">姓名:</label>
+                    <input type="text" id="name" class="form-control">
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="date" class="form-label">出生日期:</label>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="col-4 mb-3">
+                    <label for="useraddr" class="form-label">地址:</label>
+                    <input class="form-control" type="text" id="useraddr" size="40">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="mb-3">
+                    <label for="email" class="form-label">電子郵件:</label>
+                    <input type="text" class="form-control" id="email">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-5 mb-3">習慣:
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">抽菸</label>
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">喝酒</label>
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">運動</label>
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">唱歌</label>
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">看書</label>
+                    <input class="form-check-input" type="checkbox" name="bad" id="">
+                    <label class="form-check-label" for="flexCheckIndeterminate">學習英文</label>
+                </div>
+                <div class="col-3 mb-3">感情狀況:
+                    <input class="form-radio-input" type="radio" name="love1" value="">
+                    <label class="form-check-label" for="flexRadioDefault1">單身</label>
+                    <input class="form-radio-input" type="radio" name="love1" value="">
+                    <label class="form-check-label" for="flexRadioDefault1">現充</label>
+                </div>
+                <div class="col-4 mb-3">會開車嗎:
+                    <input class="form-radio-input" type="radio" name="yes-no">
+                    <label class="form-check-label" for="flexRadioDefault1">會</label>
+                    <input class="form-radio-input" type="radio" name="yes-no">
+                    <label class="form-check-label" for="flexRadioDefault1">不會</label>
+                    <input class="form-radio-input" type="radio" name="car">
+                    <label class="form-check-label" for="flexRadioDefault1">有駕照</label>
+                    <input class="form-radio-input" type="radio" name="car">
+                    <label class="form-check-label" for="flexRadioDefault1">無駕照</label>
+                    <input class="form-radio-input" type="radio" name="drink">
+                    <label class="form-check-label" for="flexRadioDefault1">酒駕</label>
+                    <input class="form-radio-input" type="radio" name="game">
+                    <label class="form-check-label" for="flexRadioDefault1">飆車</label>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-4 mb-3">學歷:
+                <select class="form-select" aria-label="Default select example" name="" id="">
+                    <option value="">God</option>
+                    <option value="">博士</option>
+                    <option value="">碩士</option>
+                    <option value="">大學</option>
+                </select>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"> 三千字自傳</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-3 offset-md-4">
+                    <button class="btn btn-primary" type="submit">提交</button>
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-secondary" type="reset">重製</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+
+</html>

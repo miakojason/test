@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <input type="text" id="num1">
+  <input type="text" id="num2">
+
+  <hr>
+  <button type="button" id="myBtn">myBtn</button>
+
+  <script>
+    const num1 = document.getElementById('num1');
+    const num2 = document.getElementById('num2');
+    const myBtn = document.getElementById('myBtn');
+
+    console.log('num1', num1);
+    console.log('num1 typeof', typeof (num1));
+    console.log('num2', num2);
+    console.log('num2 typeof', typeof (num2));
+
+    myBtn.addEventListener('click', function () {
+      console.log('myBtn ok');
+      let num1Value = Number(num1.value);
+      let num2Value = Number(num2.value);
+      console.log('num1Value', num1Value);
+      console.log('num1Value typeof', typeof (num1Value));
+      console.log('num2Value', num2Value);
+      console.log('num2Value typeof', typeof (num2Value));
+      let sum = num1Value + num2Value;
+      console.log('sum', sum);
+      console.log('sum typeof', typeof (sum));
+    })
+
+
+
+
+  </script>
+</body>
+
+</html>
