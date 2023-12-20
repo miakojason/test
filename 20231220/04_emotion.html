@@ -72,16 +72,16 @@
         let myOpt = document.getElementById('myOpt');
         let myBtn = document.getElementById('myBtn');
         let mySpan = document.getElementById('mySpan');
-        
+
         // 動作addEventListener .innerHTML
         myBtn.addEventListener('click', function () {
-            let text ="";
-            if(confirm('是否要計算?') == true){
-                text ="You pressed OK!";
-                console.log('text',text);
-            }else{
+            let text = "";
+            if (confirm('是否要計算?') == true) {
+                text = "You pressed OK!";
+                console.log('text', text);
+            } else {
                 text = "You canceled!";
-                console.log('text',text);
+                console.log('text', text);
                 return false;
             }
             let myOptValue = myOpt.value;
@@ -90,9 +90,9 @@
 
             obj.name = nameValue;
             if (myOptValue.length <= 0) {
-console.log('myOptValue.length', myOptValue.length);
-alert('請選擇 心情狀態');
-return false;
+                console.log('myOptValue.length', myOptValue.length);
+                alert('請選擇 心情狀態');
+                return false;
             }
             let getResult = "";
             switch (myOptValue) {
@@ -101,7 +101,7 @@ return false;
                     mySpan.setAttribute('class', 'text-success');
                     mySpan.innerText = getResult;
                     break;
-                case 'sad': 
+                case 'sad':
                     getResult = obj.sadFun();
                     mySpan.setAttribute('class', 'text-danger');
                     mySpan.innerText = getResult;
@@ -114,16 +114,16 @@ return false;
                     break;
             }
         });
-          // 練習 calObj 
-    // num1
-    // num2
-    // sumFun +
-    // subFun -
-    // multiFun *
-    // divFun /
+        // 練習 calObj 
+        // num1
+        // num2
+        // sumFun +
+        // subFun -
+        // multiFun *
+        // divFun /
 
-    // let num1 = 5000;
-    // let num2 = 100;
+        // let num1 = 5000;
+        // let num2 = 100;
 
 
     </script>
