@@ -46,6 +46,16 @@
 
 
     <script>
+        // init data
+        const obj = {
+            name:'name',
+            happyFun: function(){
+                let result = `Hi ${this.name}開心中`;
+                return result;
+                console.log('text',text);
+            },
+        }
+
         // 綁定
         let name = document.getElementById('name');
         // console.log('ok',name)
@@ -53,14 +63,15 @@
         let myBtn = document.getElementById('myBtn');
         let mySpan = document.getElementById('mySpan');
         // 動作addEventListener .innerHTML
-        let myOptValue = myOpt.value;
-        var nameValue = name.value;
-        console.log('nameValue', nameValue);
+       
+       
         myBtn.addEventListener('click', function () {
-
+            let myOptValue = myOpt.value;
+            let nameValue = name.value;
+            console.log('myOtptvalue',myOptValue);
             mySpan.innerHTML =
                 `
-            123${nameValue}
+            ${nameValue}
             `;
         });
 
