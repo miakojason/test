@@ -20,8 +20,8 @@
                 <input type="text" class="form-control" name="" id="name" placeholder="name?">
             </div>
             <div class="col-12 col-sm-6 mt-3">
-                <select class="form-select" name="" id="myOpt">
-                    <option value="">--選擇心情--</option>
+                <select name="" id="myOpt" class="form-control">
+                    <option value="">--請選擇心情--</option>
                     <option value="happy">開心</option>
                     <option value="sad">難過</option>
                     <option value="soso">普通</option>
@@ -37,7 +37,7 @@
         </div>
         <div class="row mt-3">
             <div class="col">
-                <span id="mySpan">result</span>
+                <span id="mySpan" class=""></span>
             </div>
         </div>
 
@@ -48,11 +48,21 @@
     <script>
         // init data
         const obj = {
-            name:'name',
-            happyFun: function(){
-                let result = `Hi ${this.name}開心中`;
+            name: 'name',
+            happyFun: function () {
+                let result = `Hi ${this.name} 開心中`;
                 return result;
-                console.log('text',text);
+                // console.log('text', text);
+            },
+            sadFun: function () {
+                let result = `Hi ${this.name} 有點難過`;
+                return result;
+                // console.log('text', text);
+            },
+            sosoFun: function () {
+                let result = `Hi ${this.name} 還可以`;
+                return result;
+                // console.log('text', text);
             },
         }
 
@@ -62,23 +72,46 @@
         let myOpt = document.getElementById('myOpt');
         let myBtn = document.getElementById('myBtn');
         let mySpan = document.getElementById('mySpan');
+        
         // 動作addEventListener .innerHTML
-       
-       
         myBtn.addEventListener('click', function () {
             let myOptValue = myOpt.value;
             let nameValue = name.value;
-            console.log('myOtptvalue',myOptValue);
-            mySpan.innerHTML =
-                `
-            ${nameValue}
-            `;
-        });
+            console.log('myOptValue', myOptValue);
 
-        // switch(){
-        //     case:
-        //     break;
-        // }
+            obj.name = nameValue;
+            let getResult = "";
+            switch (myOptValue) {
+                case 'happy':
+                    getResult = obj.happyFun();
+                    mySpan.setAttribute('class', 'text-success');
+                    mySpan.innerText = getResult;
+                    break;
+                case 'sad':
+                    getResult = obj.sadFun();
+                    mySpan.setAttribute('class', 'text-danger');
+                    mySpan.innerText = getResult;
+                    break;
+                case 'soso':
+                    getResult = obj.sosoFun();
+                    mySpan.setAttribute('class', 'text-primary');
+                    mySpan.innerText = getResult;
+                default:
+                    break;
+            }
+        });
+          // 練習 calObj 
+    // num1
+    // num2
+    // sumFun +
+    // subFun -
+    // multiFun *
+    // divFun /
+
+    // let num1 = 5000;
+    // let num2 = 100;
+
+
     </script>
 </body>
 

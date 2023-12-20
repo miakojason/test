@@ -54,17 +54,14 @@
       happyFun: function () {
         let result = `Hi ${this.name} 開心中`;
         return result;
-        console.log('text', text);
       },
       sadFun: function () {
         let result = `Hi ${this.name} 有點難過`;
         return result;
-        console.log('text', text);
       },
       sosoFun: function () {
         let result = `Hi ${this.name} 還可以`;
         return result;
-        console.log('text', text);
       },
     }
 
@@ -77,6 +74,16 @@
     // 2.動作
     myBtn.addEventListener('click', function () {
 
+      let text = "";
+      if (confirm('是否要計算?') == true) {
+        text = "You pressed OK!";
+        console.log('text',text);
+      } else {
+        text = "You canceled!";
+        console.log('text',text);
+        return false;
+      }
+
       let myOptValue = myOpt.value;
       let nameValue = name.value;
 
@@ -84,6 +91,13 @@
 
       obj.name = nameValue;
 
+      if (myOptValue.length <= 0) {
+        console.log('myOptValue.length', myOptValue.length);
+        alert('請選擇 心情狀態')
+        return false;
+      }
+
+      // console.log('123');
 
       let getResult = "";
       switch (myOptValue) {
@@ -100,7 +114,7 @@
           break;
         case 'soso':
           obj.sosoFun();
-          getResult = obj.happyFun();
+          getResult = obj.sosoFun();
           mySpan.setAttribute('class', 'text-primary');
           mySpan.innerText = getResult;
           break;
