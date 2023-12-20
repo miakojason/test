@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container text-center mt5">
+    <div class="row">
+      <div class="col-12 col-sm-6 mt-3">
+        <label for="num1">Num1</label>
+        <input type="text" class="form-control" name="" id="num1" value="">
+      </div>
+      <div class="col-12 col-sm-6 mt-3">
+        <label for="num2">Num2</label>
+        <input type="text" class="form-control" name="" id="num2" value="">
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <div class="d-grid gap-3">
+          <button class="btn btn-primary" type="button" id="myBtn">Button</button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <!-- <span id="result">請輸入 num1 num2</span> -->
+        <span id="mySpan">result ....</span>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <script>
+  
+    const calObj = {
+      num1: 20,//逗號
+      num2: 10,//逗號
+      sumFun: function () {
+        let result = this.num1 + this.num2;
+        return result;
+        // console.log(`num1 + num2 = ${result}`);
+      },//逗號
+      subFun: function () {
+        let result = this.num1 - this.num2;
+        return result;
+        console.log(`num1 - num2 = ${result}`);
+      },//逗號
+      multiFun: function () {
+        let result = this.num1 * this.num2;
+        return result;
+        console.log(`num1 * num2 = ${result}`);
+      },//逗號
+      divFun: function () {
+        let result = this.num1 / this.num2;
+        return result;
+        console.log(`num1 / num2 = ${result}`);
+      },//逗號
+    }
+    // 1.綁定
+    let num1 = document.getElementById('num1');
+    let num2 = document.getElementById('num2');
+    let myBtn = document.getElementById('myBtn');
+    let mySpan = document.getElementById('mySpan');
+    //  2.動作
+  
+    myBtn.addEventListener('click', function () {
+      // console.log('myBtn ok');
+      let num1Value = Number(num1.value);
+      let num2Value = Number(num2.value);
+      calObj.num1 =num1Value;
+      calObj.num2 =num2Value;
+      console.log('calObj', calObj)
+      // calObj.sumFun();
+      let getSum=calObj.sumFun();
+      let getSub=calObj.subFun();
+      let getMulti=calObj.multiFun();
+      let getDiv=calObj.divFun();
+
+      // mySpan.innerText = calObj.sumFun();
+      mySpan.innerHTML = 
+       `
+      ${num1Value}+${num2Value}=${getSum}<br>
+      ${num1Value}-${num2Value}=${getSub}<br>
+      ${num1Value}*${num2Value}=${getMulti}<br>
+      ${num1Value}/${num2Value}=${getDiv}<br>
+      `;
+      // console.log('num1Value', num1Value);
+      // console.log('num1Value typeof', typeof num1Value);
+      // let result = num1Value + num2Value;
+      // console.log('result', result);
+    
+    });
+
+
+  // 練習 calObj 
+    // num1
+    // num2
+    // sumFun +
+    // subFun -
+    // multiFun *
+    // divFun /
+
+    // let num1 = 5000;
+    // let num2 = 100;
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container text-center mt5">
+        <h3>Emotion</h3>
+        <div class="row">
+            <div class="col-12 col-sm-6 mt-3">
+                <input type="text" class="form-control" name="" id="name" placeholder="name?">
+            </div>
+            <div class="col-12 col-sm-6 mt-3">
+                <select class="form-select" name="" id="myOpt">
+                    <option value="">--選擇心情--</option>
+                    <option value="happy">開心</option>
+                    <option value="sad">難過</option>
+                    <option value="soso">普通</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" id="myBtn">submit</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <span id="mySpan">result</span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // 綁定
+        let name = document.getElementById('name');
+        // console.log('ok',name)
+        let myOpt = document.getElementById('myOpt');
+        let myBtn = document.getElementById('myBtn');
+        let mySpan = document.getElementById('mySpan');
+        // 動作addEventListener .innerHTML
+        let myOptValue = myOpt.value;
+        var nameValue = name.value;
+        console.log('nameValue', nameValue);
+        myBtn.addEventListener('click', function () {
+
+            mySpan.innerHTML =
+                `
+            123${nameValue}
+            `;
+        });
+
+        // switch(){
+        //     case:
+        //     break;
+        // }
+    </script>
+</body>
+
+</html>
