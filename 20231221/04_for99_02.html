@@ -13,20 +13,31 @@
 </head>
 
 <body>
+<div class="container">
+  <div class="row">
+    <div class="col">
+<div id="box">
 
+</div>
+    </div>
+  </div>
+</div>
 
 
   <script>
-
-
-for (let i=0=1;i<=9;i++){
- for(let j=1;j<=9;j++){
-result=j*i;
-console.log(`0${i}*0${j}=${result}`);
-
- }
-}
-
+let box =document.getElementById('box');
+let resultText="";
+    for (let i = 1; i <= 9; i++) {
+      let text="";
+      for (let j = 1; j <= 9; j++) {
+        result = j * i;
+        
+        text +=`0${i} * 0${j} = ${result} | `;
+        
+      } resultText+=`${text}<br>`;
+    }
+// console.log('resultText',resultText);
+box.innerHTML=resultText;
   </script>
 </body>
 

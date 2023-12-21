@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col mb-3">
+                <input type="text" class="form-control" name="num1" id="num1" placeholder="num1?">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="num2" id="num2" placeholder="num2?">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="button" id="myBtn">Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col text-center">
+                <div id="box">
+                    <!-- 1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br> 
+                1 * 1 = 1 1 * 2 = 2 1 * 3 = 3 1 * 4 = 4 1 * 5 = 5 1 * 6 = 6 1 * 7 = 7 1 * 8 = 8 1 * 9 = 9<br>  -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- js -->
+    <script>
+        function for99Fun() {
+            let resultText = "";
+            for (let i = 1; i <= num1; i++) {
+                // console.log('i', i);
+                let text = "";
+                for (let j = 1; j <= num2; j++) {
+                    // console.log('j', j);
+                    // console.log(`${i} * ${j} = ${i * j}`);
+                    let tmpI = i.toString().padStart(2, '0');
+                    let tmpJ = j.toString().padStart(2, '0');
+                    let tmpResult = (i * j).toString().padStart(2, '0');
+                    text += `${tmpI} * ${tmpJ} = ${tmpResult} | `;
+                    // text += `${i} * ${j} = ${i * j} `;
+                }
+                // 單行
+                resultText += `${text} <br>`;
+            }
+            console.log('resultText', resultText);
+
+            box.innerHTML = resultText;
+            // box.innerText = resultText;
+        }
+
+        let box = document.getElementById('box');
+        let num1Input = document.getElementById('num1');
+        let num2Input = document.getElementById('num2');
+        let myBtn = document.getElementById('myBtn');
+
+        let num1 = 9;
+        let num2 = 9;
+
+        myBtn.addEventListener('click', function () {
+            num1 = Number(num1Input.value);
+            num2 = Number(num2Input.value);
+            console.log('num1', num1);
+            console.log('num2', num2);
+            for99Fun();
+        })
+
+        // init 首次進入
+        for99Fun();
+
+    </script>
+</body>
+
+</html>
