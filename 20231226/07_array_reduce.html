@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<body>
+
+
+
+  <script>
+    // 薪水
+
+    let data = [3, 5, 5, 6, 3, 5, 10];
+    //  newData = [6,10,10 .....]
+    let newData=[];
+
+    //重複使用，使用indexOf()會回傳第一個元素位置的（index），
+    //如果之後有重複元素的位置與indexOf()回傳的位置不相等，
+    //就會被filter()過濾掉。而這時的過濾結果，只會先保留第一個找到的元素，
+    //第二個重複的元素就不會被放進回傳的陣列裡了。
+    newData = data.filter(function (value, index, array) {
+      return array.indexOf(value) ===index;
+    });
+    console.log('newData', newData);
+
+    //indexof
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let position = fruits.indexOf("Orange");
+    console.log('position', position,);
+
+    //find找第一個
+    let first = data.find(value => {
+      return value > 5;
+    });
+    console.log('first', first);
+
+    // reduce 多了total
+    let sum = 0;
+    // 1000 初始total
+    sum = data.reduce(function (total, value, index) {
+      console.log('total', total);
+      console.log('value', value);
+      return total + value;
+    }, 1000);// 1000 初始total
+    console.log('sum', sum);
+
+
+    // foreach sum
+    // let sum = 0;
+    // data.forEach(value => {
+    //   sum += value;
+    // });
+
+    // console.log('sum', sum);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

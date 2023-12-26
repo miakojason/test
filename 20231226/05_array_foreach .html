@@ -18,44 +18,29 @@
 
 
   <script>
-    // sum 1-10
-    // array
-    // 1. 1-10 加總
-    // 2. 基數 加總
-    // 3. 偶數 加總
-    let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // 薪水
 
-    // 3
-    let sum = 0;
-    data.forEach(value => {
-      // % 取餘數
-      if (value % 2 == 0) {
-        // console.log('value % 2', value % 2);
-        console.log('value', value);
-        sum += value;
-      }
+    let data = [3, 5, 5, 6, 3, 5, 10];
+    //  newData = [6,10,10 .....]
+    let newData = [];
+
+
+    // > 4
+    newData = data.filter((value, key) => {
+      return value > 4;
     });
-    console.log('sum', sum);
 
+    console.log('newData', newData);
 
-
-    // 2.
-    // let sum = 0;
+    // > 5
     // data.forEach(value => {
-    //   if (value % 2 == 1) {
-    //     // console.log('value % 2', value % 2);
+    //   if (value > 5) {
     //     console.log('value', value);
-    //     sum += value;
+    //     newData.push(value);
     //   }
     // });
-    // console.log('sum', sum);
 
-    // 1.
-    // let sum = 0;
-    // data.forEach(value => {
-    //   sum += value;
-    // });
-    // console.log('sum', sum);
+    // console.log('newData', newData);
 
 
 
