@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+
+  <script>
+    // array 使用isArray 判斷是否為純陣列
+    // 如果是 才可以使用array method
+    let strArr = ['amy', 'bob', 'cat'];
+    console.log('strArr', strArr);
+    console.log('strArr typeof', typeof (strArr));
+    let result = Array.isArray(strArr);
+    console.log('result', result);
+    strArr.forEach(function (value, index, array) {
+      console.log('index', index);
+      console.log('value', value);
+      console.log('array', array);
+    })
+    //  Object 
+    let myObj = {
+      's1': 'amy',
+      's2': 'bob',
+      's3': 'cat'
+    }
+    console.log('myObj', myObj);
+    console.log('myObj typeof', typeof (myObj));
+    let resultObj = Array.isArray(myObj);
+    console.log('resultObj ?', resultObj);
+     //  Object 無法使用array method
+    // myObj.forEach(function (value, index, array) {
+    //   console.log('index', index);
+    //   console.log('value', value);
+    //   console.log('array', array);
+    // })
+// 查看object
+// for in
+for (const key in myObj) {
+  console.log('key', key);
+      console.log('${myObj[key]}', `${myObj[key]}`);
+    }
+
+    // for of use array 很少用
+
+    // object
+    // object 轉成array
+    Object.keys(myObj).forEach(function (value, index, array) {
+      console.log('index', index);
+      console.log('value', value);
+      console.log('array', array);
+    })
+    let storeArr = [
+      {
+        'name': '台北店',
+        'tel': '0911-111-111',
+      },
+      {
+        'name': '台中店',
+        'tel': '0922-222-222',
+      },
+      {
+        'name': '高雄店',
+        'tel': '0933-333-333'
+      }
+    ];
+    console.log('storeArr', storeArr);
+    storeArr.forEach(function (value, key) {
+      console.log('key', key);
+      console.log('value', value);
+      console.log('value["name"]', value['name']);
+      console.log('value["tel"]', value['tel']);
+      if (value['name'] == '台北店') {
+        console.log('這是台北店');
+      }
+    });
+  </script>
+</body>
+
+</html>
