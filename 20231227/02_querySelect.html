@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary myBtn" type="button">Button1</button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-grid gap-2">
+          <button class="btn btn-danger myBtn" type="button">Button2</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const myBtn = document.querySelectorAll('.myBtn');
+    console.log('myBtn', myBtn);
+    console.log('myBtn typeof', typeof (myBtn));
+    console.log('myBtn isArray', Array.isArray(myBtn));
+    // querySelectorAll -> NodeList 雖然不是array 但可以使用forEach
+    myBtn.forEach(function (value, key) {
+      console.log('value', value);
+      console.log('key', key);
+      let getValue = value.innerText;//value的文字屬性內容Button1.2
+      console.log('getValue', getValue);
+//value的log是=<button class="btn btn-danger myBtn" type="button">Button2</button>
+      value.addEventListener('click',function(){
+        console.log(`${getValue} is clicked`);
+      })//getValue=Button1.2
+      // console.log('this', this);
+    });
+
+
+    // id
+    // html
+    // js 綁定
+    // js event
+
+    // class
+    // html .. html...
+    // js 綁定 class
+    // foreach -> event
+
+    
+
+
+  </script>
+</body>
+
+</html>

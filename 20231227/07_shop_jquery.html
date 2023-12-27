@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container mt-3">
+    <h2>Shopping Table</h2>
+    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+    <table class="table table-bordered align-middle text-center">
+      <thead>
+        <tr>
+          <th>產品</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/25/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item1Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item1Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item1Total" class="form-control" value="100" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/24/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item2Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item2Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item2Total" class="form-control" value="100" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/26/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item3Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item3Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item3Total" class="form-control" value="100" readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td colspan="2">
+            <span id="resultSpan"></span>
+          </td>
+          <td>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button" id="myBtn">總計(500以上八折)</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(function () {
+      function item1Fun() {
+        let getItem1Price = Number(item1Price.val());
+        let getItem1Num = Number(item1Num.val());
+        let resultItem1Total = getItem1Price * getItem1Num;
+        item1Total.val(resultItem1Total);
+      }
+      function item2Fun(){
+      let getItem2Price=Number(item2Price.val());
+      let getItem2Num=Number(item2Num.val());
+      let resultItem2Total = getItem2Price * getItem2Num;
+      item2Total.val(resultItem2Total);
+    }
+    function item3Fun(){
+      let getItem3Price=Number(item3Price.val());
+      let getItem3Num=Number(item3Num.val());
+      let resultItem3Total = getItem3Price * getItem3Num;
+      item3Total.val(resultItem3Total);
+    }
+      const item1Price = $('#item1Price');
+      const item1Num = $('#item1Num');
+      const item1Total = $('#item1Total');
+      const item2Price = $('#item2Price');
+      const item2Num = $('#item2Num');
+      const item2Total = $('#item2Total');
+      const item3Price = $('#item3Price');
+      const item3Num = $('#item3Num');
+      const item3Total = $('#item3Total');
+      const myBtn = $('#myBtn');
+      const resultSpan = $('#resultSpan');
+
+      // item1
+      item1Price.change(function (e) {
+        item1Fun();
+      });
+      item1Num.change(function (e) {
+        item1Fun();
+      });
+
+
+      // item2
+      item2Price.change(function (e) {
+        item2Fun();
+      });
+      item2Num.change(function (e) {
+        item2Fun();
+      });
+
+      // item3
+      item3Price.change(function (e) {
+        item3Fun();
+      });
+      item3Num.change(function (e) {
+        item3Fun();
+      });
+
+      // myBtn
+      myBtn.click(function (e) {
+        let getItem1Total = Number(item1Total.val());
+        let getItem2Total = Number(item2Total.val());
+        let getItem3Total = Number(item3Total.val());
+        let sum = getItem1Total + getItem2Total + getItem3Total;
+        if (sum > 500) {
+          sum = sum * 0.8;
+        }
+        console.log('sum', sum);
+        resultSpan.text(sum);
+
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

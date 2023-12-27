@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #box {
+      width: 300px;
+      height: 300px;
+    }
+
+    .bg-pink {
+      background-color: lightpink  !important;
+    }
+
+    .bg-blue {
+      background-color: lightblue  !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button type="button" id="myBtn">myBtn</button>
+  <!-- <button type="button" id="myBtn2" onclick="console.log('this',this);">myBtn2</button> -->
+  <button type="button" id="myBtn2" onclick="myBtn2Fun(this);">myBtn2</button>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <input type="text" name="" id="myInput" class="form-control">
+      </div>
+      <div class="col">
+        <input type="text" name="" id="myInput" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <div class="bg-blue" id="box">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <script>
+    function myBtn2Fun(data) {
+      console.log('myBtn2 ok 11');
+      console.log('myBtn2 ok 12');
+      console.log('data', data);
+    }
+    const myBtn = document.getElementById('myBtn');
+    const box = document.getElementById('box');
+    const myInput = document.getElementById('myInput');
+
+
+    //1.
+      // myBtn
+    myBtn.addEventListener('click', function () {
+      console.log('myBtn ok');
+    });
+    myBtn.addEventListener('mouseenter', function () {
+      console.log('myBtn mouseenter ok');
+    });
+    myBtn.addEventListener('mouseout', function () {
+      console.log('myBtn mouseout ok');
+    });
+
+  // box
+  box.addEventListener('mouseenter', function () {
+      console.log('box mouseenter ok');
+      this.setAttribute('class', 'bg-pink');
+      // alert('Hello Box');
+    });
+
+    box.addEventListener('mouseout', function () {
+      console.log('box mouseout ok');
+      this.setAttribute('class', 'bg-blue');
+    });
+     // form input 
+     myInput.addEventListener('focus', function () {
+      console.log('myInput focus');
+      this.setAttribute('class', 'form-control bg-pink');
+
+    });
+
+    myInput.addEventListener('blur', function () {
+      console.log('myInput blur');
+      this.setAttribute('class', 'form-control');
+    });
+
+
+  </script>
+</body>
+
+</html>

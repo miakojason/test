@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container mt-3">
+    <h2>Shopping Table</h2>
+    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+    <table class="table table-bordered align-middle text-center">
+      <thead>
+        <tr>
+          <th>產品</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>總價</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/25/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item1Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item1Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item1Total" class="form-control" value="100"readonly><!-- readonly靜止更改 -->
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/24/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item2Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item2Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item2Total" class="form-control" value="100"readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h3>
+              咖啡
+            </h3>
+            <p>
+              <img src="https://picsum.photos/id/26/180/160" alt="" srcset="">
+            </p>
+          </td>
+          <td>
+            <input type="number" name="" id="item3Price" class="form-control" value="100">
+          </td>
+          <td>
+            <input type="number" name="" id="item3Num" class="form-control" value="1">
+          </td>
+          <td>
+            <input type="number" name="" id="item3Total" class="form-control" value="100"readonly>
+          </td>
+        </tr>
+        <tr>
+          <td>Result</td>
+          <td colspan="2">
+            <span id="resultSpan"></span>
+          </td>
+          <td>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" type="button" id="myBtn">總計(500以上八折)</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <script>
+    function item1Fun(){
+      let getItem1Price=Number(item1Price.value);
+      let getItem1Num=Number(item1Num.value);
+      let resultItem1Total = getItem1Price * getItem1Num;
+      item1Total.value=resultItem1Total;
+    }
+    function item2Fun(){
+      let getItem2Price=Number(item2Price.value);
+      let getItem2Num=Number(item2Num.value);
+      let resultItem2Total = getItem2Price * getItem2Num;
+      item2Total.value=resultItem2Total;
+    }
+    function item3Fun(){
+      let getItem3Price=Number(item3Price.value);
+      let getItem3Num=Number(item3Num.value);
+      let resultItem3Total = getItem3Price * getItem3Num;
+      item3Total.value=resultItem3Total;
+    }
+
+    const item1Price = document.getElementById('item1Price');
+    const item1Num = document.getElementById('item1Num');
+    const item1Total = document.getElementById('item1Total');
+    const item2Price = document.getElementById('item2Price');
+    const item2Num = document.getElementById('item2Num');
+    const item2Total = document.getElementById('item2Total');
+    const item3Price = document.getElementById('item3Price');
+    const item3Num = document.getElementById('item3Num');
+    const item3Total = document.getElementById('item3Total');
+    const myBtn = document.getElementById('myBtn');
+    const resultSpan = document.getElementById('resultSpan');
+
+
+
+    item1Price.addEventListener('change', function () {
+      item1Fun();
+    });
+
+    item1Num.addEventListener('change', function () {
+      item1Fun();
+    });
+    item2Price.addEventListener('change', function () {
+      item2Fun();
+    });
+
+    item2Num.addEventListener('change', function () {
+      item2Fun();
+    });
+    item3Price.addEventListener('change', function () {
+      item3Fun();
+    });
+
+    item3Num.addEventListener('change', function () {
+      item3Fun();
+    });
+//myBtn
+    myBtn.addEventListener('click', function () {
+      let getItem1Total = Number(item1Total.value);
+      let getItem2Total = Number(item2Total.value);
+      let getItem3Total = Number(item3Total.value);
+    let sum=getItem1Total + getItem2Total + getItem3Total;
+      if( sum>=500){
+        sum=sum*0.8;
+      }
+      console.log('sum', sum);
+      resultSpan.innerText = sum;
+    });
+  </script>
+</body>
+
+</html>
