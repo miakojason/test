@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>廣告文案</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad1" data-ani="toggle" class="myBtn btn btn-primary" type="button">Button</button>
+        </div>
+        <div class="" id="ad1">
+          AD1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit accusamus incidunt at quidem nesciunt
+          quasi mollitia. Maiores cumque voluptatem aut, consectetur possimus eligendi! Nesciunt, iusto voluptate optio,
+          in cum aliquid nam mollitia incidunt excepturi voluptates dignissimos dolorem ad sunt! Blanditiis nam iure vel
+          sit non excepturi sint magni aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui
+          cupiditate quae minima est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat,
+          at magnam a totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distinctio rem odio eos
+          eaque qui quis, similique omnis.
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad2" data-ani="slideToggle" class="myBtn btn btn-primary" type="button">Button</button>
+        </div>
+        <div class="" id="ad2">
+          AD2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit accusamus incidunt at quidem nesciunt
+          quasi mollitia. Maiores cumque voluptatem aut, consectetur possimus eligendi! Nesciunt, iusto voluptate optio,
+          in cum aliquid nam mollitia incidunt excepturi voluptates dignissimos dolorem ad sunt! Blanditiis nam iure vel
+          sit non excepturi sint magni aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui
+          cupiditate quae minima est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat,
+          at magnam a totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distinctio rem odio eos
+          eaque qui quis, similique omnis.
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="d-grid gap-2">
+          <button data-ad="#ad3" data-ani="fadeToggle" class="myBtn btn btn-primary" type="button">Button</button>
+        </div>
+        <div class="" id="ad3">
+          AD3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum fugit accusamus incidunt at quidem nesciunt
+          quasi mollitia. Maiores cumque voluptatem aut, consectetur possimus eligendi! Nesciunt, iusto voluptate optio,
+          in cum aliquid nam mollitia incidunt excepturi voluptates dignissimos dolorem ad sunt! Blanditiis nam iure vel
+          sit non excepturi sint magni aperiam modi natus dolor fugit tempore soluta vero dolorum quasi saepe, qui
+          cupiditate quae minima est nobis dignissimos laboriosam! Ad officiis cumque quae incidunt sit maxime placeat,
+          at magnam a totam labore tempora qui vero. Ipsam ipsum vel unde minima ducimus laborum distinctio rem odio eos
+          eaque qui quis, similique omnis.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const myBtn = $('.myBtn');
+      myBtn.click(function () {
+        console.log('this', this);
+        let getDataAd = $(this).attr('data-ad');
+        let getDataAni = $(this).attr('data-ani');
+        console.log('getDataAd', getDataAd);
+        console.log('getDataAni', getDataAni);
+        switch (getDataAni) {
+          case 'toggle':
+            $(getDataAd).toggle(3000);
+            break;
+          case 'fadeToggle':
+            $(getDataAd).fadeToggle(3000);
+            break;
+          case 'slideToggle':
+            $(getDataAd).slideToggle(3000);
+            break;
+          default:
+            break;
+        }
+      });
+
+
+
+
+
+
+    });
+
+  </script>
+</body>
+
+</html>

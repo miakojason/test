@@ -10,17 +10,49 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: lightblue;
+    }
+  </style>
 </head>
 
 <body>
-
-
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="box" id="myBox">
+        </div>
+      </div>
+      <div class="col">
+        <div class="d-grid gap-2 mt-5">
+          <button id="showBtn" type="button" class="btn btn-primary" id="showBtn">showBtn</button>
+          <button id="hideBtn" type="button" class="btn btn-danger mt-5" id="hideBtn">hideBtn</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
+      const myBox = $('#myBox');
+      const showBtn = $('#showBtn');
+      const hideBtn = $('#hideBtn');
+      console.log('myBox', myBox);
+      console.log('showBtn', showBtn);
+      console.log('hideBtn', hideBtn);
+
+      hideBtn.click(function () {
+        myBox.hide();
+      });
+      showBtn.click(function () {
+        myBox.show();
+      });
 
     });
 
