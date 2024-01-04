@@ -180,7 +180,7 @@
       myBtn.click(function () {
         console.log('this', this);
         console.log('$(this)', $(this));
-        let getDataPage = $(this).attr('data-page');
+        let getDataPage = $(this).attr('data-page');//找到attribute=data-page的值，給他(#date1,2,3,4)
         console.log('getDataPage', getDataPage);
         pageContainer.hide();//  把之前的蓋掉，在叫新的葉面出來，這行沒有就會新增其他頁在下面，如果在下面就會把上叫出來，馬上又關閉。
         $(getDataPage).show();

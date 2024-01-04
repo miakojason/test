@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <table class="table table-bordered">
+    <tr>
+      <th>num1</th>
+      <th>num2</th>
+      <th>option</th>
+      <th>button</th>
+      <th>result</th>
+    </tr>
+    <tr>
+      <td><input type="number" name="" id="myNum1" class="form-control"></td>
+      <td><input type="number" name="" id="myNum2" class="form-control"></td>
+      <td>
+        <select class="form-select" name="" id="cal">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+      </td>
+      <td><button class="btn btn-primary" type="button" class="form-control" id="myBtn">計算</button></td>
+      <td><input type="text" class="form-control" id="myResult"></td>
+    </tr>
+  </table>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const myNum1 = $('#myNum1');
+      const myNum2 = $('#myNum2');
+      const myResult = $('#myResult');
+      const myBtn = $('#myBtn');
+      const cal = $('#cal');
+      console.log('myNum1', myNum1);
+      console.log('myNum2', myNum2);
+      console.log('myResult', myResult);
+      console.log('cal', cal);
+      myBtn.click(function () {
+        console.log('myBtn ok');
+        let getmyNum1 = Number(myNum1.val());
+        let getmyNum2 = Number(myNum2.val());
+        let getopt = cal.val();
+        console.log('getopt', getopt);
+        console.log(' myResult', myResult);
+        let result = 0;
+        switch (getopt) {
+          case '+':
+            result = getmyNum1 + getmyNum2;
+            break;
+          case '-':
+            result = getmyNum1 - getmyNum2;
+            break;
+          case '*':
+            result = getmyNum1 * getmyNum2;
+            break;
+          case '/':
+            result = getmyNum1 / getmyNum2;
+            break;
+        }
+        if (result >= 500) {
+          myResult.val(result * 0.8);
+        } else {
+          myResult.val(result);
+        }
+      });
+
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>
