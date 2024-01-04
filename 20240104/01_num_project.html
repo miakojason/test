@@ -59,6 +59,12 @@
         let getopt = cal.val();
         console.log('getopt', getopt);
         console.log(' myResult', myResult);
+        // string method length 
+        if (myNum1 .val().length <= 0 || myNum2.val().length <= 0) {
+          alert('empty?');
+          return false;
+        };
+
         let result = 0;
         switch (getopt) {
           case '+':

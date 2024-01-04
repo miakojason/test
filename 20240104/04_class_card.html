@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box {
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container mt-3">
+    <h1 class="text-center m5-3">旅遊網</h1>
+    <div class="row">
+      <div class="col">
+        <h2>深度旅遊-日本</h2>
+        <p>Image at the top (card-img-top):</p>
+        <div class="card" style="width:400px">
+          <img class="card-img-top" src="https://picsum.photos/id/26/400/300" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">東京</h4>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos, ut necessitatibus
+              dicta debitis beatae expedita rem neque natus, velit, error excepturi sint commodi! Ratione saepe facere
+              excepturi vero similique.</p>
+            <button id="" data-price="1000" data-level="C" type="button" class="myBtn btn btn-primary">取得優惠價</button>
+            <div id="" class="myBox box text-danger mt-2">
+              <span id="" class="mySpan">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="col">
+        <h2>深度旅遊-法國</h2>
+        <p>Image at the top (card-img-top):</p>
+        <div class="card" style="width:400px">
+          <img class="card-img-top" src="https://picsum.photos/id/24/400/300" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">巴黎</h4>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos, ut necessitatibus
+              dicta debitis beatae expedita rem neque natus, velit, error excepturi sint commodi! Ratione saepe facere
+              excepturi vero similique.</p>
+            <button id="" data-price="5000" data-level="B" type="button" class="myBtn btn btn-primary">取得優惠價</button>
+            <div id="" class="myBox box text-danger mt-2">
+              <span id="" class="mySpan">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+      <div class="col">
+        <h2>深度旅遊-美國</h2>
+        <p>Image at the top (card-img-top):</p>
+        <div class="card" style="width:400px">
+          <img class="card-img-top" src="https://picsum.photos/id/25/400/300" alt="Card image" style="width:100%">
+          <div class="card-body">
+            <h4 class="card-title">紐約</h4>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quos, ut necessitatibus
+              dicta debitis beatae expedita rem neque natus, velit, error excepturi sint commodi! Ratione saepe facere
+              excepturi vero similique.</p>
+            <button id="" data-price="10000" data-level="A" type="button" class="myBtn btn btn-primary">取得優惠價</button>
+            <div id="" class="myBox box text-danger mt-2">
+              <span id="" class="mySpan">Lorem ipsum dolor sit amet.</span>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      // 綁定
+      const myBtn = $('.myBtn');
+      const myBox = $('.myBox');
+      const mySpan = $('.mySpan');
+
+      const levelObj = {
+        'A': 0.7,
+        'B': 0.8,
+        'C': 0.9,
+      };
+      console.log('levelObj', levelObj);
+
+      // init
+      myBox.hide();
+
+      myBtn.click(function () {
+        console.log('myBtn ok');
+        console.log('this', this);
+        let getDataPrice = Number($(this).attr('data-price'));
+        let getDataLevel = $(this).attr('data-level');
+        // let getDataLevel = $(this).data('level');
+        console.log('getDataPrice', getDataPrice);
+        console.log('getDataLevel', getDataLevel);
+        let result = getDataPrice * levelObj[getDataLevel];
+        console.log('result', result);
+
+        const nowCardBody = $(this).parent();
+        const nowMyBox = nowCardBody.find('.myBox');
+        const nowMySpan = nowCardBody.find('.mySpan');
+
+        $(this).remove();
+        // console.log('nowCardBody', nowCardBody);
+        nowMyBox.show();
+        nowMySpan.text(`原價:${getDataPrice} , 優惠價 ${result}`)
+
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
