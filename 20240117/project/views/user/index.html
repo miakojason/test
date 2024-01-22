@@ -1,0 +1,86 @@
+<!-- index -->
+<!-- del button -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 28px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-end {
+            text-align: right;
+            margin-right: 150px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><span>User</span> List</h3>
+        <div class="text-end">
+            <a href="../../api/login/logout.php">
+                <button type="button">Logout</button>
+            </a>
+        </div>
+        <div class="text-end">
+            <a href="../../views/user/create.html">
+                <button type="button">Add</button>
+            </a>
+        </div>
+        <table>
+            <tr>
+                <th width="15%">id</th>
+                <th width="15%">name</th>
+                <th>oprate</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>
+                    <a href="../user/edit.html?id=1">
+                        amy
+                    </a>
+
+                </td>
+                <td>
+                    <a href="../../views/user/edit.html">
+                        <button type="button">Edit</button>
+                    </a>
+                    <a href="../../api/user/del.php">
+                        <button type="button">Del</button>
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+
+</html>

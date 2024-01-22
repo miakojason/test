@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 300px;
+            background-color: lightblue;
+            margin: 0 auto;
+            margin-top: 30vh;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        input {
+            font-size: 24px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            width: 100px;
+        }
+
+        button {
+            width: 100px;
+            font-size: 24px;
+        }
+    </style>
+
+</head>
+<div class="container">
+    <div class="box">
+        <form action="../../api/login/login.php" method="post" id="myForm">
+            <p>
+                <input type="text" name="acc" id="">
+            </p>
+            <p>
+                <input type="text" name="pw" id="">
+            </p>
+            <p>
+                <a href="../../views/login/register.html"><button type="button">註冊</button></a>
+                <input type="submit" value="登入">
+            </p>
+
+        </form>
+    </div>
+</div>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            let myForm = $('#myForm');
+            let url = myForm.attr('action');
+            // let url = "../../api/login/login.php"
+            let data = myForm.serialize();
+            // let data = myForm.serializeArray();
+            // let data = {
+            //     's1' : 'amy',
+            //     's2' : 'bob',
+            //     's3' : 'cat',
+            // }
+            $.ajax({
+                type: "get/post",
+                url: url,
+                data: data,
+                dataType: "json",
+                success: function (res) {
+                    console.log('res', res);
+                    let result = res.message;
+                    switch (result) {
+                        case 'ok':
+                        // .....
+                        case 'error':
+                            // ....
+                            // alert('12321321')
+                            location.href('/views/login.php')
+
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

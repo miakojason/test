@@ -1,0 +1,88 @@
+<!-- index -->
+<!-- del button -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 0 auto;
+            font-size: 28px;
+        }
+
+        table,
+        tr,
+        td,
+        th {
+            text-align: center;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-end {
+            text-align: right;
+            margin-right: 150px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        input {
+            width: 90%;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center"><span>Post</span> Create</h3>
+        <form action="../../api/post/store.php">
+            <table>
+                <tr>
+                    <th width="50%">欄位名稱</th>
+                    <th width="">欄位資料</th>
+                </tr>
+
+                <tr>
+                    <td>
+                        name
+                    </td>
+                    <td>
+                        <input type="text" name="acc" id="">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        password
+                    </td>
+                    <td>
+                        <input type="password" name="pwd" id="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Post Create">
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+
+    </div>
+</body>
+
+</html>
