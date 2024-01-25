@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-9 offset-1">
+        <input id="mySearch" type="search" name="" id="" class="form-control">
+      </div>
+      <div class="col-1">
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" type="button">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col text-center">
+        <button type="button" class="myBtn btn btn-danger me-3" data-location="台北市">台北市</button>
+        <button type="button" class="myBtn btn btn-danger me-3" data-location="新北市">新北市</button>
+        <button type="button" class="myBtn btn btn-danger me-3" data-location="台中市">台中市</button>
+        <button type="button" class="myBtn btn btn-danger me-3" data-location="高雄市">高雄市</button>
+        <button type="button" class="myBtn btn btn-danger me-3" data-location="宜蘭市">宜蘭市</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const myBtn = $('.myBtn');
+      const mySearch = $('#mySearch');
+      myBtn.click(function (e) {
+        console.log('myBtn ok');
+        console.log('this', this);
+        // let getDataLocation = myBtn.data('location');
+        let getDataLocation = $(this).attr('data-location');
+        mySearch.val(getDataLocation);
+
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
