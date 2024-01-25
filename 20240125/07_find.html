@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .box {
+      width: 100%;
+      height: 70vh;
+    }
+
+    .container * {
+      color: #ccc;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="box border border-primary p-3">
+          div
+          <ul class="border border-success p-3">
+            ul
+            <li class="border border-warning p-3" data-name="li1">
+              li
+              <span id="" class="mySpan border border-danger p-3">
+                hello span1 class
+              </span>
+            </li>
+            <li class="border border-warning p-3" data-name="li1">
+              li
+              <span id="" class="mySpan border border-danger p-3">
+                hello span2 class
+              </span>
+            </li>
+            <li class="border border-warning p-3" data-name="li1">
+              li
+              <span id="" class="mySpan border border-danger p-3">
+                hello span2 class
+              </span>
+            </li>
+            <li class="border border-warning p-3 mt-3" data-name="li2">
+              li
+              <b id="myB" class="border border-danger p-3">
+                hello b
+              </b>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const box = $('.box');
+      box.click(function (e) {
+        console.log('this', this);
+        let thisFind = $(this).find('.mySpan');
+        console.log('thisFind', thisFind);
+        thisFind.attr('class', 'mySpan border border-danger p-3 text-danger')
+      });
+
+
+    });
+
+  </script>
+</body>
+
+</html>
