@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' />
+  <style>
+    body {
+      padding-bottom: 500px;
+    }
+
+    h3,
+    h4 {
+      margin: 20px 0;
+    }
+
+    .wrap {
+      width: 600px;
+      height: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7 {
+      width: 50px;
+      height: 50px;
+      background: black;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Stagger 交錯效果</h3>
+    <div class="wrap">
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+      <div class="box1"></div>
+    </div>
+    <h3>from 與 fromTo</h3>
+    <h4>from</h4>
+    <div class="box2"></div>
+    <h4>fromTo</h4>
+    <div class="box3"></div>
+  </div>
+
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <script>
+    gsap.to('.box1', {
+      y: 100,
+      duration: 1,
+      // stagger: 0.1,
+      stagger: {
+        each: 0.1,
+        // from: 'start', // 數值是從第幾個 index 開始，關鍵字 'start'、'end'、'center'、'random
+        repeat: -1, // 重複次數，-1 無限循環'
+        yoyo: true,
+      },
+      // repeat: -1,
+      // yoyo: true,
+      // ease: 'bounce',
+      rotation: 360,
+      backgroundColor: 'random([red, green, blue, yellow, pink, purple, orange, black, white])'
+    })
+
+    // from 指定元素補間動畫從設定狀態到目前狀態
+    gsap.from('.box2', {
+      x: -500,
+      duration: 3
+    })
+
+    // fromTo 指定元素補間動畫從 from 設定狀態1 到 to 設定狀態2
+    gsap.fromTo('.box3', {
+      x: 1000,
+    }, {
+      x: -50,
+      duration: 3,
+      delay: 1 // 動畫屬性要在 to 這裡設定，例如 delay、duration...
+    })
+  </script>
+</body>
+
+</html>

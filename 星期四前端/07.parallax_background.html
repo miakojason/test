@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- bootstrap -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' />
+  <style>
+    section {
+      height: 50vh;
+      font-size: 3rem;
+      color: white;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="section01">SECTION01</section>
+  <section id="section02">SECTION02</section>
+  <section id="section03">SECTION03</section>
+  <section id="section04">SECTION04</section>
+  <section id="section05">SECTION05</section>
+  <section id="section06">SECTION06</section>
+
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <!-- 引入 scrollTrigger plugin -->
+  <script src="./gsap/ScrollTrigger.js"></script>
+
+  <script>
+    // 註冊套件
+    gsap.registerPlugin(ScrollTrigger);
+    $('section').each(function (index, section) {
+      $(section).css({
+        backgroundImage: `url(https://picsum.photos/1920/1080/?random=${index})`,
+      })
+
+      gsap.to(section, {
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 50%',
+          end: 'bottom 0%',
+          scrub: true,
+          markers: true
+        },
+        backgroundPosition: '50% -50%',
+        ease: 'none'
+      })
+    })
+
+
+  </script>
+</body>
+
+</html>
