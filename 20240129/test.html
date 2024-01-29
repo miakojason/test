@@ -20,6 +20,7 @@
         width: 160px;
         height: 120px;
     }
+
     .span {
         margin: auto;
         display: flex;
@@ -126,10 +127,12 @@
                     nowTr.remove();
                 }
             }
+            const cloneBtn = $('.cloneBtn');
             function cloneFun(nowThis) {
                 console.log('clone ok');
                 let nowTr = $(nowThis).parent().parent();
                 nowTr.clone(true).insertAfter(nowTr);
+                updateTotal();
             }
             const myBtn = $('.myBtn');
             let delBtn = $('.delBtn');
@@ -176,6 +179,11 @@
                     itemFun(newItemPrice, newItemNum, newItemTotal);
                     updateTotal();
                 });
+                const cloneBtn = $('.cloneBtn');
+                cloneBtn.off('click'); // 解除之前的綁定
+                cloneBtn.click(function (e) {
+                    cloneFun(this);
+                });
                 updateTotal();
             });
             const tbody = $('tbody');
@@ -207,7 +215,9 @@
 
                 $('#resultSpan').text('總價: ' + total);
             }
-
+            cloneBtn.click(function (e) {
+                cloneFun(this);
+            });
 
 
         });
