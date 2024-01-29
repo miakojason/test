@@ -13,7 +13,7 @@
 </head>
 <style>
     img {
-        width: 160;
+        width: 160px;
         height: 120px;
     }
 </style>
@@ -89,7 +89,8 @@
                 const dataimg = $(this).attr('data-img');
                 const dataname = $(this).attr('data-name');
                 const dataprice = $(this).attr('data-price');
-                $("tbody").append(` <tr>
+                $("tbody").append(` 
+                <tr>
                     <td>a01</td>
                     <td>
                         <img src='${dataimg}'>
@@ -100,7 +101,8 @@
                     <td>1</td>
                     <td>${dataprice}</td>
                     <td><button  type="button" class="delbtn btn btn-danger">del</button></td>
-                </tr>`);
+                </tr>
+                `);
             });
         });
 
