@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="myBtn btn btn-primary" data-name="咖啡" data-price="100" data-img="24">
+          咖啡
+        </button>
+        <button type="button" class="myBtn btn btn-primary" data-name="花茶" data-price="200" data-img="25">
+          花茶
+        </button>
+        <button type="button" class="myBtn btn btn-primary" data-name="礦泉水" data-price="50" data-img="26">
+          礦泉水
+        </button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="myBtn btn btn-success" data-name="手工餅乾" data-price="120" data-img="35" data-id="1">
+          手工餅乾
+        </button>
+        <button type="button" class="myBtn btn btn-success" data-name="吐司" data-price="65" data-img="36">
+          吐司
+        </button>
+        <button type="button" class="myBtn btn btn-success" data-name="馬卡龍" data-price="50" data-img="37">
+          馬卡龍
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="container-fluid">
+    <table class="table table-hover align-middle text-center">
+      <thead>
+        <tr>
+          <!-- <th width="7%">編號</th> -->
+          <th width="12%">品名</th>
+          <th width="7%">數量</th>
+          <th width="12%">小計</th>
+          <th>備註</th>
+          <th width="15%">OPERATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <td>a01</td>
+          <td>
+            <img class="rounded-circle" src="https://picsum.photos/id/26/160/120" alt="">
+            <br>
+            咖啡
+          </td>
+          <td>100</td>
+          <td>
+            <input type="number" class="form-control" name="" id="" value="1" max="10" min="1">
+          </td>
+          <td>100</td>
+          <td>
+            <input type="text" class="form-control" name="" id="" max="10" min="1">
+          </td>
+          <td>
+            <button type="button" class="cloneBtn btn btn-warning">Clone</button>
+            <button type="button" class="delBtn btn btn-danger">Del</button>
+          </td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      function delFun(nowThis) {
+        console.log('del ok');
+        let nowTr = $(nowThis).parent().parent();
+        nowTr.remove();
+
+        // 抓tr數量
+        // 如果tr <=2 不能刪除
+
+        // 抓tr數量
+        // let getTrCount = $('tr').length;
+        // console.log('getTrCount', getTrCount);
+        // 如果tr <= 2 不能刪除
+        // if (getTrCount > 2) {
+        //   let nowTr = $(nowThis).parent().parent();
+        //   nowTr.remove();
+        // }
+
+
+      }
+
+      function cloneFun(nowThis) {
+        console.log('clone ok');
+        let nowTr = $(nowThis).parent().parent();
+        // nowTr.clone(true).appendTo("tbody");
+        nowTr.clone(true).insertAfter(nowTr);
+      }
+
+      const myBtn = $('.myBtn');
+      let delBtn = $('.delBtn');
+      let cloneBtn = $('.cloneBtn');
+
+
+      // init cloneBtn
+      cloneBtn.click(function (e) {
+        cloneFun(this);
+      });
+
+      // init delBtn
+      delBtn.click(function (e) {
+        delFun(this);
+      });
+
+      myBtn.click(function (e) {
+        let name = $(this).attr('data-name');
+        let price = $(this).attr('data-price');
+        let imgUrl = $(this).attr('data-img');
+
+
+
+        let content = `
+        <tr>
+          <td>
+            <img class="rounded-circle" src="https://picsum.photos/id/${imgUrl}/80/80" alt="">
+            <br>
+            ${name}
+            <br>
+            <span class="text-danger">${price} 元</span>
+          </td>
+          <td>
+            <input type="number" class="form-control" name="" id="" value="1" max="10" min="1">
+          </td>
+          <td>${price}</td>
+          <td>
+            <input type="text" class="form-control" name="" id="" max="10" min="1">
+          </td>
+          <td>
+            <button type="button" class="cloneBtn btn btn-warning"><i class="fa-regular fa-copy"></i></button>
+            <button type="button" class="delBtn btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        `;
+
+        $('tbody').append(content);
+
+        addDelBtn = $('.delBtn').last();
+        addCloneBtn = $('.cloneBtn').last();
+
+        // addDelBtn
+        addDelBtn.click(function (e) {
+          delFun(this);
+        });
+
+        // addCloneBtn
+        addCloneBtn.click(function (e) {
+          cloneFun(this);
+        });
+
+      });
+    });
+
+  </script>
+</body>
+
+</html>
