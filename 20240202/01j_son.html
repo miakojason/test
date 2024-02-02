@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <button type="button" class="testBtn btn btn-primary">testBtn</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      const testBtn = $('.testBtn');
+      console.log('testBtn', testBtn);
+      testBtn.each(function (index, element) {
+        // element == this
+        console.log('index', index);
+        console.log('element', element);
+        console.log('this', this);
+        $(this).click(function (e) {
+          e.preventDefault();
+
+        });
+
+      });
+      testBtn.click(function (e) {
+        e.preventDefault();
+        console.log('this', this);
+
+      });
+
+      const obj = {
+        's1': 'amy',
+        's2': 'bob',
+        's3': 'cat',
+      }
+      console.log('obj', obj);
+
+      const storeArr = [
+        {
+          'name': '台北店',
+          'mobile': '0911-111-111',
+          'chinese': '您好 YA',
+          'english': 'HELLO YA',
+        },
+        {
+          'name': '台中店',
+          'mobile': '0922-222-222'
+        },
+        {
+          'name': '高雄店',
+          'mobile': '0933-333-333'
+        }
+      ];
+
+      console.log('storeArr', storeArr);
+
+
+      storeArr.forEach(element => {
+        console.log('element', element);
+      });
+
+      // 練習
+      // 通訊行
+      // iphone10 10000 台北
+      // iphone11 20000 台北 台中
+      // iphone12 30000 高雄
+      // iphone13 40000 台北 台中 高雄
+
+      const mobileArr = [
+        {
+          'id': 1,
+          'name': 'iphone10',
+          'price': 10000,
+          'location': ['台北']
+        },
+        {
+          'id': 2,
+          'name': 'iphone11',
+          'price': 20000,
+          'location': ['台北', '台中']
+        },
+        {
+          'id': 3,
+          'name': 'iphone12',
+          'price': 30000,
+          'location': ['高雄']
+        },
+        {
+          'id': 4,
+          'name': 'iphone13',
+          'price': 40000,
+          'location': ['台北', '台中', '高雄']
+        },
+      ];
+      console.log('mobileArr', mobileArr);
+
+    });
+
+
+
+  </script>
+</body>
+
+</html>
