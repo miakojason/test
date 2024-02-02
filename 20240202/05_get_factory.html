@@ -44,7 +44,8 @@
     </div> -->
   </div>
 
-  <!-- <form action="./s20240202_03_ajaxData_php.php"></form> -->
+
+  <!-- <form action="./data/factory.json"></form> -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -54,61 +55,26 @@
     $(document).ready(function () {
       const myContainer = $('#myContainer')
 
-      let url = '';
+      let url = './factory.json';
 
       // 04 ajax get php 03
       $.ajax({
         type: "get",
-        url: "./03_ajaxData_php.php",
-        // data: "data",
+        url: url,
+        data: "data",
         dataType: "json",
         success: function (res) {
           console.log('res', res);
-          let content= `
-            <div class="row">
-              <div class="col-2">
-                1
-              </div>
-              <div class="col-2">
-                amy
-              </div>
-              <div class="col-2">
-                10000
-              </div>
-              <div class="col-6">
-                台北 台中 高雄 123
-              </div>
-            </div>
-          `;
-res.forEach(value=>{
-console.log("res value",value);
-console.log("value.id",value.id);
-console.log("value.name",value.name);
-console.log("value.price",value.price);
-console.log("value.location",value.location);
-let locationString = value.location.toString();
-let content= `
-            <div class="row">
-              <div class="col-2">
-                ${value.id}
-              </div>
-              <div class="col-2">
-                ${value.name}
-              </div>
-              <div class="col-2">
-               ${value.price}
-              </div>
-              <div class="col-6">
-                ${locationString}
-              </div>
-            </div>
-          `;
-          myContainer.append(content);
-});
+          console.log('res[12]', res[12]);
+          console.log('res[12].id', res[12].id);
+          console.log('res[12].name', res[12].name);
+          console.log('res[12].location', res[12].location);
+          console.log('res[12].web', res[12].web);
         }
       });
+
     });
-  
+
 
 
   </script>
