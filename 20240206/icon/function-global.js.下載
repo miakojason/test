@@ -1,0 +1,1285 @@
+//檢查電腦版/手機版的瀏覽模式	
+if(isMobile_()){
+	var vt = getCookie_('V8_view_type');
+	if(vt == 'desktop'){
+		$('meta[name="viewport"]').attr('content', 'width=1200');
+	}
+}
+
+$(function() {
+	$('body').on('touchstart', '[data-hover]', function(e) {
+		$(e.target).addClass('touching')
+	});
+	$('body').on('touchend', '[data-hover]', function(e) {
+		$(e.target).removeClass('touching')
+	});
+});
+
+// ----------- aria-label tooltip
+// for accessibility. RJ. Bocheng.
+$(document).on('mouseover', '[aria-label]', function(e){
+
+	var x = 10, y = 20;
+	var tooltip = $(this).attr('aria-label');
+	var tooltipInfo;
+	//var tooltipInfo = '<div id="tooltip">' + tooltip + '</div>';
+	if($('#tooltip').length==0){
+		//$("body").append(tooltipInfo);
+		tooltipInfo = document.createElement('div');
+		tooltipInfo.id = 'tooltip';
+		document.body.appendChild(tooltipInfo);
+		$('#tooltip').text(tooltip);
+	}else{
+		//$('#tooltip').html(tooltip);
+		$('#tooltip').text(tooltip);
+	}
+	$('#tooltip').css({"top": (e.pageY + y) + "px",
+		"left": (e.pageX - x) + "px"
+	}).show('fast');
+
+}).on('mouseout', '[aria-label]',function(e){
+	$('#tooltip').remove();
+
+}).on('mousemove', '[aria-label]', function(e){
+	var x = 10, y = 20;
+	var info = $(this).attr('aria-label');
+	
+	$('#tooltip').text(info).css({'top': (e.pageY + y) + 'px',
+		'left': (e.pageX - x) + 'px'
+	});
+
+}).on('focus', '[aria-label]',function(){
+
+        var $me = $(this);
+        var tooltip = $me.attr('aria-label');
+        var myX = $me.offset().left;
+        var myY = ($me.offset().top + parseInt($me.css('height')));
+        var tooltipInfo;
+		//var tooltipInfo = '<div id="tooltip">' + tooltip + '</div>';
+        if($('#tooltip').length==0){
+            //$('body').append(tooltipInfo);
+			tooltipInfo = document.createElement('div');
+			tooltipInfo.id = 'tooltip';
+			document.body.appendChild(tooltipInfo);
+			$('#tooltip').text(tooltip);
+        }else{
+            //$('#tooltip').html(tooltip);
+			$('#tooltip').text(tooltip);
+        }
+
+        $('#tooltip').css({'top': myY + 'px',
+                'left': myX + 'px'
+        }).show('fast');
+
+}).on('blur', '[aria-label]', function(){
+        $('#tooltip').remove();
+});
+
+// 若為手機, 移除顯示 aria-label的 handler, 避免iPhone觸控不便
+$(document).on('touchstart', function(){
+	
+	$(document).off('mouseover', '[aria-label]')
+	.off('mouseout', '[aria-label]')
+	.off('mousemove', '[aria-label]')
+	.off('focus', '[aria-label]')
+	.off('blur', '[aria-label]')
+	.off('touchstart'); //移除handler之後, 因為只需執行一次, 故可以移除這個handler
+
+});
+
+//$(function() {
+//	$("#warning_wrap_m").click(function() {
+//		$(".warning_information").toggleClass("is_open");
+//	});
+//		$("#warning_wrap").click(function() {
+//		$(".warning_information").toggleClass("is_open");
+//	});
+//	
+//	document.addEventListener('keydown', function(e) {
+//		if (e.keyCode === 9) {
+//			$('body').addClass('show-focus-outlines');
+//		}
+//	});
+//	document.addEventListener('click', function(e) {
+//		$('body').removeClass('show-focus-outlines');
+//	});
+//});
+$(function() {
+	$('.link a[href*="#"]:not([href="#"])').click(function() {
+		if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+				$('html, body').animate({
+					scrollTop: target.offset().top
+				}, 1000);
+				return false;
+			}
+		}
+	});
+});
+// -----------漢堡動效
+var forEach = function(t, o, r) {
+	if ("[object Object]" === Object.prototype.toString.call(t)){
+		for (var c in t) Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t);
+	} else {
+		for (var e = 0, l = t.length; l > e; e++) o.call(r, t[e], e, t);
+	}
+};
+var hamburgers = document.querySelectorAll(".hamburger");
+if (hamburgers.length > 0) {
+	forEach(hamburgers, function(hamburger) {
+		hamburger.addEventListener("click", function() {
+			this.classList.toggle("is-active");
+		}, false);
+	});
+}
+// end-----------漢堡動效
+var loadingText={'C':'載入中...','E':'Loading...'};
+$(document).ready(function() {
+
+	if( typeof(VER) == "undefined" ){
+		//不要寫成: var VER ='C' 
+		//因為 javascript會自己把宣告的變數拉到最上面, 這時候他們的值都是undefined.
+		//會排擠到先前定義的VER.
+		//詳細看: javascript hoisting 
+		//by Bocheng
+		VER = 'C';		
+	}
+
+	$.get("/V8/" + VER + "/ajax/_header.html?v=" + HEADER_VERSION, '', function(data) {
+		
+		$("#header").append(HtmlEscape(data));
+		console.log('Get VER="'+VER+'" Header?v=' + HEADER_VERSION + ' Success');	
+		initHeader();
+		ShowHeaderWarning(VER);
+
+	}).fail(function(){
+		console.log('Get VER="'+VER+'" Header Failed!');
+	});
+	
+	$.get("/V8/" + VER + "/ajax/_footer.html?v=" + FOOTER_VERSION, '', function(data) {
+		$("#footer-v3").append(HtmlEscape(data));
+		console.log('Get VER="'+VER+'" Footer?v=' + FOOTER_VERSION + ' Success');
+		initFooter();
+	}).fail(function(){
+		console.log('Get VER="'+VER+'" Footer Failed!');
+	});
+	
+});
+
+var gTimer = null;
+var warningTb = {'C':'警特報','E':'Warnings'};
+var warningClose = {'C':'關閉','E':'Close'};
+// Header 警特報 [RJ]
+function ShowHeaderWarning(VER) {
+	var FIFOWS_ALL = {'C':'總覽','E':'Overall'};
+	var hasWarning = false;
+	var myFIFOWS = '';
+	
+	$.each(WarnAll, function(i) {
+		var CheckEng = $.inArray( WarnAll[i], NoEng );
+		if( ( VER == 'E' )&&( CheckEng > -1 )||( WarnAll[i] == "FIFOWS" ) ){ return; }
+		
+		// 2021.01.20
+		var isFIFOWS = ( $.inArray( WarnAll[i], WarnFIFOWS ) > -1 ) ? true : false;
+		var myWarnName, myWarnLink, myWarnList;
+		switch(true){
+			case ( isFIFOWS === true ):
+				myWarnName = WarnContent[WarnAll[i]][VER].title;
+				myWarnLink = '<a role="button" title="'+myWarnName+'" target="_self" href="'+WarnFIFOWS_Link[WarnAll[i]][VER]+'" data-gtmtitle="'+myWarnName+'">';
+				break;
+			case ( WarnAll[i] == "TY_WARN" ):
+				myWarnName = WarnContent[WarnAll[i]][VER].title;
+				myWarnLink = '<a role="button" title="'+myWarnName+'" target="_self" '+WarnAllLink[WarnAll[i]][VER]+' data-gtmtitle="'+myWarnName+'">';
+				break;
+			default:
+				myWarnName = WarnAllName[WarnAll[i]][VER];
+				myWarnLink = '<a role="button" title="'+myWarnName+'" target="_self" '+WarnAllLink[WarnAll[i]][VER]+' data-gtmtitle="'+myWarnName+'">';
+				break;
+		}
+		myWarnList = '<li class="warn-bg-gray">'+myWarnLink+'<i class="icon-warn" aria-hidden="true"></i>'+myWarnName+'</a></li>';
+		
+		/* 2021.01.20
+		var myWarnName = WarnAllName[WarnAll[i]][VER];
+		if( WarnAll[i] == "TY_WARN" ){
+			myWarnName = WarnContent[WarnAll[i]][VER].title;
+		}
+		if( ( WarnAll[i] == "FIFOWS" )&&( WarnFIFOWS.length > 0 ) ){
+			myFIFOWS += '<li><i class="icon-warn" aria-hidden="true"></i>'+myWarnName+'<ul>';
+			myFIFOWS += '<li><a target="_self" href="/V8/'+VER+'/P/Warning/FIFOWS.html" title="'+FIFOWS_ALL[VER]+'"><i class="icon-cwb-warn" aria-hidden="true"></i>'+FIFOWS_ALL[VER]+'</a></li>';
+			$.each(WarnFIFOWS, function(i) {
+				var myFIFOWS_Link = WarnFIFOWS_Link[WarnFIFOWS[i]][VER];
+				var myFIFOWS_Name = WarnContent[WarnFIFOWS[i]][VER].title;
+				var myFIFOWS_Icon = '<i class="icon-warn_'+WarnIcon[WarnFIFOWS[i]]+'" aria-hidden="true"></i>';
+				var myFIFOWS_List = '<li><a target="_self" href="'+myFIFOWS_Link+'" title="'+myFIFOWS_Name+'">'+myFIFOWS_Icon+myFIFOWS_Name+'</a></li>';
+				myFIFOWS += myFIFOWS_List;
+			});
+			myFIFOWS += '</ul></li>';
+		}else{
+			var myWarnLink = '<a role="button" title="'+myWarnName+'" target="_self" '+WarnAllLink[WarnAll[i]][VER]+'>';
+			var myWarnList = '<li class="warn-bg-gray">'+myWarnLink+'<i class="icon-warn" aria-hidden="true"></i>'+myWarnName+'</a></li>';
+		}
+		*/
+		$('#warning_wrap_m > .warning_information > .warnlist').append(myWarnList);
+		$('#warning_wrap > .warning_information > .warnlist').append(myWarnList);
+		hasWarning = true;
+	});
+	$('#warning_wrap_m > .warning_information > .warnlist').append(myFIFOWS);
+	$('#warning_wrap > .warning_information > .warnlist').append(myFIFOWS);
+
+	//以下似乎不需要.	
+	/*
+	if(hasWarning){
+		if( $('#warning_wrap_m').hasClass('invisible') ){
+			$('#warning_wrap_m').removeClass('invisible');
+		}
+		if( $('#warning_wrap').hasClass('invisible') ){
+			$('#warning_wrap').removeClass('invisible');
+		}
+	}else{
+	
+		if( ! $('#warning_wrap_m').hasClass('invisible') ){
+			$('#warning_wrap_m').addClass('invisible');
+		}
+		if( ! $('#warning_wrap').hasClass('invisible') ){
+			$('#warning_wrap').addClass('invisible');
+		}
+	
+	}*/
+
+	//Bocheng
+	/*
+	var warningTime = getCookie('V8_Warning_Time');
+	//代表有新的警特報, 要展開
+	if(warningTime != Rt){
+		setCookie('V8_Warning_Time', Rt);
+		$(".warning_information").addClass("is_open_list");
+		$(".warning_information > h3").html(warningTb[VER] + '<i class="new" lang="en">NEW</i><a href="javascript:void(0)" role="button" aria-label="'+warningClose[VER]+'" style="display:inline;"><i class="fa fa-close"></i></a>');
+		gTimer = setTimeout(function(){
+			$(".warning_information").removeClass("is_open_list");
+			$(".warning_information > h3").html(warningTb[VER]);
+			gTimer = null;
+		}, 5000);
+	}
+	*/
+    //手機版時的警特報button的顯示
+
+    var warnLen = $('.warning_information .warnlist > li ').length;
+    if (warnLen == 0) {
+      $('.warn-row').css('display', 'none')
+    } else {
+      $('.warning-btn-outer span').text(warnLen);
+    }
+
+    if(parseInt($(window).width()) < 991){
+      if(parseInt( $('.warning_wrap .warning_information ol').height()) >= 10){
+        $('.warning-btn-outer').show()
+      }else{
+        $('.warning-btn-outer').hide()
+      }
+    }
+}
+
+// 分享按鈕
+// Bocheng: 似乎無作用. 因為根本沒有此 dom. (已放在 initHeader 檢查, 也是找不到).
+$(".share-btn").hover(function() {
+	$(".fab").removeClass("no");
+	$('.share-btn.active').not(this).removeClass('active');
+	$(this).toggleClass("active");
+});
+
+// 分享按鈕結束
+// 漁業氣象
+$("#01 a").hover(function() {
+	$("#01").toggleClass("fore");
+});
+$("#02 a").hover(function() {
+	$("#02").toggleClass("fore");
+});
+$("#03 a").hover(function() {
+	$("#03").toggleClass("fore");
+});
+$("#04 a").hover(function() {
+	$("#04").toggleClass("fore");
+});
+$("#05 a").hover(function() {
+	$("#05").toggleClass("fore");
+});
+//end 漁業氣象
+
+/*/ 表格連結
+$(document).ready(function($) {
+	$(".href-tr tbody tr").click(function() {
+		window.location = $(this).data("href");
+	});
+});
+//end 表格連結*/
+
+// 討論話題開合
+$(function() {
+	$(".open-file li").slice(0, 8).show();
+	$("#loadMore").on('click', function(e) {
+		e.preventDefault();
+		$("li:hidden").slice(0, 8).slideDown();
+		if ($("li:hidden").length == 0) {
+			$("#load").fadeOut('slow');
+		}
+		$('html,body').animate({
+			scrollTop: $(this).offset().top
+		}, 500);
+	});
+});
+//end 討論話題開合
+
+// 衛星雲圖 switch
+document.addEventListener('touchmove', function(e) {}, false);
+
+var _switch = document.getElementById("switch-1"),
+switchDataSaver = false,
+switchHit = false,
+hasTouch = false;
+
+function toggleHit() {
+	if (!switchHit) {
+		switchHit = true;
+		_switch.classList.add("hit");
+	}
+	
+	//[RJ] 節省流量切換 JS
+	if (!switchDataSaver) {
+		switchDataSaver = true;
+		_switch.classList.add("saveData");
+	}else{
+		switchDataSaver = false;
+		_switch.classList.remove("saveData");
+	}
+}
+
+function setTouch() {
+	if (!hasTouch) {
+		hasTouch = true;
+		_switch.classList.add("touch");
+	}//else{
+		//hasTouch = false;
+		//_switch.classList.remove("touch");
+	//}
+}
+
+if(_switch){
+	_switch.onclick = toggleHit;
+	_switch.ontouchstart = function(e) {
+		setTouch();
+		e.preventDefault();
+		e.target.click();
+	}	
+}
+//end 衛星雲圖 switch
+
+$(".pull-right,.pull-left").parent().addClass("clearconten");
+
+function GetTimeNumber_g(nInt) {
+	
+	nStr = ( nInt < 10 ) ? "0"+nInt.toString() : nInt.toString();
+	
+	return nStr;
+}
+
+//Bocheng START
+function loadGcsePopularWords(){
+	var srcTb={'C':'/Data/js/popularQuery.json', 'E':'/Data/js/popularQuery_E.json'};
+	var hotWords={'C':'熱門','E':'Popular query'};
+	var adSearch = {'C':{'url':'https://www.google.com/advanced_search?hl=zh-Hant&as_sitesearch=www.cwa.gov.tw','name':'進階搜尋'},
+		'E':{'url':'https://www.google.com/advanced_search?hl=en&as_sitesearch=www.cwa.gov.tw','name':'Advanced search'}};
+	$('#popular-queries').html('<span style="color:white;">'+loadingText[VER]+'</span>');
+
+	var baseTabIndex = parseInt($('#search-button').attr('tabindex')) + 1;
+	
+	var DT = new Date();
+	var DT_Y = DT.getFullYear().toString();
+	var DT_M = GetTimeNumber_g( DT.getMonth()+1 );
+	var DT_D = GetTimeNumber_g( DT.getDate() );
+	var DataTime = DT_Y + DT_M + DT_D;
+	
+	$.getJSON(srcTb[VER] + '?v=' + DataTime).done(function(data){
+		var qData=data['popularQueries'];
+		
+		var q,url;
+		var str='';
+		var searchStr = '<a tabindex="'+baseTabIndex+'" target="_blank" rel="noopener noreferrer" style="color:white; margin-right:1em;" title="' + adSearch[VER]['name'] + '" href="' + adSearch[VER]['url'] + '">' + adSearch[VER]['name'] + '</a>'+'<span style="margin-right:1em;color:white;">|</span>';
+                //顯示前5筆, 避免塞進過多的關鍵字, 破版
+                var max=5;
+		
+		max=(qData.length > max) ? max : qData.length;
+                for(var i=0; i<max; i++){
+			baseTabIndex++;
+                        q=HtmlEscape(qData[i]['query']);
+                        url=HtmlEscape(qData[i]['href']);
+                        str +='<a tabindex="'+baseTabIndex+'" href="' + url + '"' + ' title="'+q+'" target="_blank" rel="noopener noreferrer">'+q+'</a>';
+			if(i != max-1){
+				str += '<span>、</span>';
+			}
+                }
+        
+                $('#popular-queries').html('<span>'+ searchStr + hotWords[VER] + '：</span> ' + str);
+		$('#search_close').attr('tabindex', baseTabIndex+1);
+
+	}).fail(function(xhr, status, error){
+		console.log(error);
+	});
+}
+//Bocheng END
+
+function initHeader(){
+  var gMenuListIndex; //紀錄上方選單的 index, 若index與先前不同, 就將選單展開.
+  var gTabNext = true; // 若 false, 代表往上 tab ( shift + tab), 若 true, 代表為往下 tab.
+  var forEach = function (t, o, r) {
+    if ("[object Object]" === Object.prototype.toString.call(t))
+      for (var c in t) Object.prototype.hasOwnProperty.call(t, c) && o.call(r, t[c], c, t);
+    else
+      for (var e = 0, l = t.length; l > e; e++) o.call(r, t[e], e, t)
+  };
+
+  var hamburgers = document.querySelectorAll(".hamburger");
+  if (hamburgers.length > 0) {
+    forEach(hamburgers, function (hamburger) {
+      hamburger.addEventListener("click", function () {
+        this.classList.toggle("is-active");
+      }, false);
+    });
+  }
+  function _unit_select(query, val){
+        if(val === undefined){
+                val = !$(query).prop('checked');
+                $(query).prop('checked', val);
+        }else{
+                $(query).prop('checked', val);
+        }
+        return val;
+  }
+  function showMenu($me){
+        if($(window).width() > 992){
+                var thisIndex = $me.index();
+                if(gMenuListIndex != thisIndex){
+                        $me.find('.dropdown-menu').css({'display':'block'});
+                        $('#menu-list-li > li.dropdown').removeClass('open');
+                        if(gMenuListIndex != null){
+                                $('#menu-list-li > li.dropdown:eq(' + gMenuListIndex + ') > .dropdown-menu').css({'display':'none'});
+                        }
+                        gMenuListIndex = thisIndex;
+                        $('#menu-list-li > li:eq(' + thisIndex + ') > a').click();
+                }
+        }
+  }
+
+  $(function () {
+
+    //手機版警特報右邊的button.
+    $('#warn-btn-mb').on('click', function () {
+      event.stopPropagation();
+      $('.warning_wrap .warning_information ol').toggleClass('active');
+      if ($('.warning_wrap .warning_information ol').hasClass('active')) {
+	if(VER == 'C'){
+		$('#warn-btn-mb .warning-btn').text('收合');
+	}else{
+        	$('#warn-btn-mb .warning-btn i').removeClass('fa-ellipsis-h').addClass('fa-times');
+	}
+      } else {
+	if(VER == 'C'){
+		$('#warn-btn-mb .warning-btn').text('展開');
+	}else{
+        	$('#warn-btn-mb .warning-btn i').removeClass('fa-times').addClass('fa-ellipsis-h');
+	}
+      }
+    });
+
+    $("#warning_wrap_m").click(function () {
+      $(".warning_information").toggleClass("is_open_list");
+/*
+      if(gTimer != null){
+        clearTimeout(gTimer);
+        gTimer = null;
+        $(".warning_information").removeClass("is_open_list");
+        $(".warning_information > h3").html(warningTb[VER]);
+      }
+*/
+    });
+    //清除 gTimer 是避免使用者關閉警特報視窗, 後又打開, 突然被關閉視窗.
+    $("#warning_wrap").click(function () {
+      $(".warning_information").toggleClass("is_open_list");
+/*
+      if(gTimer != null){
+	clearTimeout(gTimer);
+	gTimer = null;
+	$(".warning_information").removeClass("is_open_list");
+	$(".warning_information > h3").html(warningTb[VER]);
+      }
+*/
+    });
+
+    $("#weather-func-change").click(function () {
+      $(".switch-wrap").addClass("is_open");
+    });
+    $(".switch-wrap .close").click(function () {
+      $(".switch-wrap").removeClass("is_open");
+    });
+    $(".search-box .close").click(function () {
+      $(".search-box").removeClass("is_open");
+    });	
+
+    $("#temp_select").click(function (ev) {
+        var val = _unit_select("#checkbox-1");
+        _unit_select("#checkbox-1_sm",val);
+    });
+    $("#temp_select_sm").click(function () {
+        var val = _unit_select("#checkbox-1_sm");
+        _unit_select("#checkbox-1", val);
+    });
+    $("#wind_select").click(function () {
+        var val = _unit_select("#checkbox-2");
+        _unit_select("#checkbox-2_sm", val);
+    });
+
+    $("#wind_select_sm").click(function () {
+        var val = _unit_select("#checkbox-2_sm");
+        _unit_select("#checkbox-2", val);
+    });
+   
+    $('#ShareBtn').click(function(){
+	var $mainShare = $(this).find('.main-share');
+
+	if($mainShare.css('display') == 'block'){
+		$mainShare.css('display', '');
+	}else{
+		$mainShare.css('display', 'block');
+	}
+    }).focusout(function(e){
+	var $target = $(e.relatedTarget);
+	if($target.parents('#ShareBtn').length==0){
+		$(this).find('.main-share').css('display', '');
+	}
+    });
+
+    //控制 tab 順序.
+    /*
+    $('#tab-point').focus(function(){
+	console.log(' i am tab');
+	gMenuListIndex = null;
+
+	if($('#warning_wrap .warning_information').hasClass('is_open_list')){
+		$('#warning_wrap').click();
+	}
+
+	$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+        $('#menu-list-li > li.dropdown').removeClass('open');
+
+	if($(".search-box").hasClass("is_open")){
+		$('#search').focus();
+
+	}else{
+		$('#center-content').focus();
+	}
+
+    });*/
+
+    $('#tab-point').focus(function(){
+
+	gMenuListIndex = null;
+	$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+	$('#menu-list-li > li.dropdown').removeClass('open');
+
+	if(gTabNext){
+
+		if($(".search-box").hasClass("is_open")){
+			$('#search').focus();
+		}else{
+			$('#center-content').focus();
+		}
+	}else{
+		if($('.warning_information .warnlist > li ').length > 0){
+			$('.warning_information .warnlist a:last').focus();
+		}else{
+			showMenu($('#menu-list-li > li.dropdown:last'));
+		}
+	}
+    });
+    // Bocheng: 以下都是有關控制 tab 方向的 code.	
+    // modified by Bocheng
+
+    $(document).on('focus', '#menu-list-li > li.dropdown', function () {
+	showMenu($(this));	
+    }).on('focusout', '#menu-list-li > li.dropdown > a', function () {
+	if(!gTabNext && ($(this).parent().index() == 1)){
+		gMenuListIndex = null;
+		$('#menu-list-li > li > .dropdown-menu').css({'display':'none'});
+		$('#web-search').focus();
+	}
+    });
+
+    $(document).on('focus', '#temp_select', function (e) {
+      if (!$(".switch-wrap").hasClass("is_open")) {
+	//這只有往前tab才會到. 不必考慮 shift+tab的情況.	
+	$('#web-search').focus();
+      }
+    });
+
+    // Bocheng: 這個是用於 shift + tab 的處理	
+    $(document).on('focus', '#weather_close', function (e) {
+      if (!$(".switch-wrap").hasClass("is_open")) {
+
+	//因為只有 shitf+tab才會到. 不必考慮 tab.
+	$('#weather-func-change').focus();
+      }
+    });
+
+    // Bocheng: 這個是用於 shift + tab 的處理	
+    $(document).on('focus', '#search_close', function (e) {
+      if (!$(".search-box").hasClass("is_open")) {
+
+        gMenuListIndex = null;
+	//因為往前 tab 不可能 tab到 search_close, 只有 shift+tab才會到. 故不必考慮 tab情況.
+
+	if($('#menu-list-li > li:eq(1)').hasClass("open") && $(window).width() > 992){
+		$('#menu-list-li > li:eq(1) > a').click();
+	}
+	$('#web-search').focus();
+      }else{
+	$('.search-box').removeClass('is_open');
+	$('#tooltip').hide();
+      }
+
+    }).on('focusout', '#search_close', function(e){
+	$('#center-content').focus();
+    });
+
+    $(document).on('focus', '#web-search', function (e) {
+      if($('#menu-list-li > li:eq(1)').hasClass("open") && $(window).width() > 992){
+	$('#menu-list-li > li:eq(1) > a').click();
+      }
+
+      if ($(".switch-wrap").hasClass("is_open")) {
+       $('#temp_select').focus();
+      }
+    });
+  });
+// [START] insert tabindex to menu-list-li
+	// tabindex 似乎仍沒什麼用, 還是需要透過 html 元素(如: tab-point)來控制tab順序
+	
+	var $menus = $('#menu-list-li > li.dropdown');
+	var ti = parseInt($('#web-search').attr('tabindex'));
+	for(var i=0, len=$menus.length; i<len; i++){
+		ti+=1;
+		$menus.eq(i).attr('tabindex',ti);
+	}
+
+	ti++;
+	$('.hamburger-box').attr('tabindex', ti);
+	ti++;
+	$('#warning_wrap').attr('tabindex', ti);
+
+	ti++;
+        $('#search').attr('tabindex', ti);
+        ti++;
+        $('#search-button').attr('tabindex', ti);
+
+// [END] insert tabindex to menu-list-list
+
+// menu slide start
+
+	var gMenuSlide = null;
+	var gMegaCityClicked = false;
+	var gHoverState = null ;
+	var waitMenuTime = 400;
+
+	//選單的顯示是由CSS(main.css)控制的: .header .navbar-nav>li.dropdown:hover>.dropdown-menu { display: block }
+	//不過  .header .navbar-nav>li.dropdown:hover>.dropdown-menu 本來就是 display:none, 只有滑鼠hover時才會變成 block,
+	//不知道為什麼這邊重新設定 display:none 就能不讓滑鼠hover變block.
+	if(window.matchMedia('(min-width: 992px)').matches){
+		$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+	}
+	
+	if(!('ontouchstart' in window)){
+
+		$('#menu-list-li > li').hover(function(){
+			//START for IE 的fix
+			var isWeather = false;
+			if($(this).index() == 2){
+				isWeather = true;
+			}
+			// END 
+			if(window.matchMedia('(min-width: 992px)').matches){
+				gHoverState = 'in';
+				if(!isWeather){
+					gMegaCityClicked = false;
+				}
+				gMenuSlide = setTimeout(function(){
+					showMenu($('#menu-list-li > li.dropdown:hover'));
+				
+				},waitMenuTime);
+			}else{
+				$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':''});
+			}
+
+		},function(){
+
+			if(window.matchMedia('(min-width: 992px)').matches){
+				gHoverState = 'out';
+				clearTimeout(gMenuSlide);
+				setTimeout(function(){
+					if(gHoverState == 'out' && !gMegaCityClicked){
+						$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+						gMenuListIndex = null;	
+					}		
+				},waitMenuTime);
+			}else{
+				$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':''});
+			}	
+		});
+	//這裡的code是給舊的 ipad 用的, 以確保能關閉選單.
+	}else{
+		$('#menu-list-li > li.dropdown > a').click(function(){
+        		if(window.matchMedia('(min-width: 992px)').matches){
+				if($('#menu-list-li > li.dropdown:hover > .dropdown-menu').css('display') == 'block'){
+					$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+				}else{
+					$('#menu-list-li > li.dropdown:hover > .dropdown-menu').css({'display':'block'});
+				}
+                	}else{
+				$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':''});
+			}
+        	});
+	}
+
+	$('#megacity').click(function(){
+		gMegaCityClicked = true;	
+	});
+        $('#megatown').click(function(){
+                gMegaCityClicked = true;
+        });
+
+// menu slide end
+
+  $(function () {
+    //Bocheng START
+    setFontSize();
+    //Get the temp, wind units saved in the client's cookie.
+    var unit=getTempUnit();
+    if(unit=='F'){
+	$('#temp_select').click();
+    }
+    var unit=getWindUnit();
+    if(unit=='MS'){
+	$('#wind_select').click();
+    }  
+	
+    //For Line, FB share url:
+    //Get own url:
+    var url=window.location.href;
+    var LINE_SHARE_URL = $('#ShareBtn > .main-share .share-line').find('a').prop('href') + '?url=';
+    var FB_SHARE_URL = $('#ShareBtn > .main-share .share-fb').find('a').prop('href') + '?u=';
+     
+    $('#ShareBtn > .main-share .share-line').find('a').prop('href', 'javascript:void(0)');
+    //line分享需用這種寫法才能在 Android 上 work. 
+    $('#ShareBtn > .main-share .share-line').click(function(){
+        window.open(LINE_SHARE_URL + url, '_blank');
+    });
+    $('#ShareBtn > .main-share .share-fb').find('a').prop('href', FB_SHARE_URL+url);
+
+    //Bocheng END
+
+    var switchAnimation = function () {
+
+      /* Save variable for later use ('out of event use') */
+      var originalPosition;
+      var dragStart = false;
+      var dragDirection;
+
+      function switchCheckbox(el, checked) {
+        if (el.prop("checked") !== checked) {
+          el.prop("checked", checked).trigger("change");
+        }
+      }
+
+      function handleTouchEvent(ev) {
+        ev.gesture.preventDefault();
+
+        /* Save Switch selector*/
+        var $el = $(ev.currentTarget);
+        var $checkbox = $el.find(".switch-ui-checkbox");
+        if ($checkbox.prop('disabled')) return;
+
+        var $round = $el.find(".switch-ui-switch");
+        var $inner = $el.find(".switch-ui-inner");
+
+        /* Create drag limit variable */
+        var borderWidth = parseInt($round.css('top'));
+        var roundMaxPosition = ($el.width() - $round.width() - borderWidth);
+        var roundMinPosition = borderWidth;
+        var innerOffset = -$el.width();
+
+
+        switch (ev.type) {
+
+          /* Remove css animation when dragged (cause weird behavior) */
+          case 'dragstart':
+            $el.removeClass("animate");
+            break;
+
+          /* Save switch position on touch (use to calcul drag position) */
+          case 'touch':
+            originalPosition = parseInt($round.css('left'), 10);
+            break;
+
+          /* Pretty obvious nope? */
+          case 'swipe':
+            switchCheckbox($checkbox, (ev.gesture.direction == "right") ? true : false);
+            break;
+
+
+          /* Tap event, also pretty obvious */
+          case 'tap':
+            switchCheckbox($checkbox, (($checkbox.prop("checked")) ? false : true));
+            break;
+
+
+          /* Drag event */
+          case 'dragright':
+          case 'dragleft':
+
+            /* Update drag information (used for release) */
+            dragStart = true;
+            dragDirection = ev.gesture.direction;
+
+            /* Calculate & apply left position for the switch  */
+            var position = Math.max(Math.min((originalPosition + ev.gesture.deltaX), roundMaxPosition), roundMinPosition);
+            $round.css('left', position);
+
+            /* Calculate & apply (negative) margin for the switch inner background (on/off)  */
+            position = position == borderWidth ? 0 : position;
+            var percent = position / roundMaxPosition * 100;
+            var innerMargin = (innerOffset - innerOffset / 100 * percent);
+            $inner.css("margin-left", innerMargin);
+            break;
+
+
+          /* Release event */
+          case 'release':
+
+            /* Reset css style */
+            $round.css("left", "");
+            $inner.css("margin-left", "");
+
+            /* Get movement distance & check if direction is correct/possible */
+            var distance = Math.max(Math.min((Math.abs(ev.gesture.deltaX)), roundMaxPosition), roundMinPosition);
+            var directionRight = ev.gesture.deltaX > 0 && dragDirection == "right" && !$checkbox.prop("checked");
+            var directionLeft = ev.gesture.deltaX < 0 && dragDirection == "left" && $checkbox.prop("checked");
+
+            /* If was dragged & distance is long enough & direciton are correct, switch that mofo! */
+            if (dragStart && (distance > roundMaxPosition / 2) && (directionLeft || directionRight)) {
+              switchCheckbox($checkbox, (($checkbox.prop("checked")) ? false : true));
+            }
+
+            /* Add back the animate class & reset dragStart variable */
+            $el.addClass("animate");
+            dragStart = false;
+            break;
+        }
+      }
+
+      //$('body').hammer().on("swipe release dragstart dragleft dragright tap touch", ".switch-ui", handleTouchEvent);
+
+    };
+
+    switchAnimation();
+
+  });
+
+// [RJ] 鄉鎮天氣選單建立
+	var MyTownOptionName = {'C':'選擇鄉鎮','E':'Choose a Township'};
+	var MyCountySelect = '#megatown > section:eq(0) > label > select';
+	var MyTownSelect = '#megatown > section:eq(1) > label > select';
+	var SelectedCID = $(MyCountySelect).val();
+	$(MyCountySelect).change(function(){
+
+		SelectedCID = $(this).val();
+		if(SelectedCID == 'overall'){
+			var enter = {'C':'請點選下方的確定按鈕', 'E':'Please click the submit button'};
+			$(MyTownSelect).html('<option value="" disabled="" selected="">' + enter[VER] + '</option>');
+
+		}else{
+			$(MyTownSelect).html('<option value="" disabled="" selected="">'+MyTownOptionName[VER]+'</option>');
+                        $.each(Info_Town[SelectedCID], function(i){
+                                var MyTID = Info_Town[SelectedCID][i].ID;
+                                var MyTown = Info_Town[SelectedCID][i].Name[VER];
+                                $(MyTownSelect).append('<option value="'+MyTID+'">'+MyTown+'</option>');
+                        });
+		}
+	});
+
+    $('#megacity').submit(function(){
+        var url = '';
+        var val = $(this).find('select').val();
+        if(val == 'overall' || val === null){
+                url = '/V8/' + VER + '/W/County/index.html';
+        }else{
+                url = '/V8/' + VER + '/W/County/County.html?CID=' + val;
+        }
+
+        window.location.href = url;
+        return false;
+    });
+
+    $('#megatown').submit(function(){
+       	var url = '';
+	var $select = $(this).find('select');
+	var cid = $select.eq(0).val();
+        if(cid == 'overall' || cid === null){
+                url = '/V8/' + VER + '/W/Town/index.html';
+        }else{	
+		var tid = $select.eq(1).val();
+		if(tid === null){
+			for(var i=0, len=Info_County.length; i<len; i++){
+				var o = Info_County[i];
+				if(o['ID'] == cid){
+					tid = o['TID'];
+					break;
+				}		
+			}
+		}
+		url = '/V8/' + VER + '/W/Town/Town.html?TID=' + tid;
+	}	
+        window.location.href = url;
+        return false;
+    });
+
+// 
+
+
+// [RJ] 警特報 Menu 開關
+/*
+	var WarnMenu = '#menu-list-li > li:eq(1) > ul.dropdown-menu > li > div > div > div > div:eq(1) > div > div > ul.list-unstyled';
+	$.each( $(WarnMenu+' > li:eq(0) > ul > li'), function(i,Menu){
+		var MyLink = $(Menu).children();
+		var MyWarnID = (MyLink.attr('href').split("/")[5]).split(".")[0];
+		//console.log('MyWarnID: '+MyWarnID);
+		if( $.inArray(MyWarnID, WarnAll) > -1 ){
+			MyLink.removeClass('disable');
+		}
+	});
+	$.each( $(WarnMenu+' > li:eq(1) > ul > li'), function(j,Menu){
+		if( j > 3 ) return;
+		var MyLink = $(Menu).children();
+		var MyWarnID = (MyLink.attr('href').split("/")[5]).split(".")[0];
+		//console.log('MyWarnID: '+MyWarnID);
+		if( $.inArray(MyWarnID, WarnAll) > -1 ){
+			MyLink.removeClass('disable');
+		}
+	});
+*/
+// [RJ]
+
+//////////////////////////////////////////////////////////////
+
+	var WindUnitOpen  = {"BF":".wind_1","MS":".wind_2"};
+	var WindUnitClose = {"BF":".wind_2","MS":".wind_1"};
+	//For PC
+	$('#checkbox-1').click(function(){
+		switchAndSaveTempUnit();
+
+		// 以下適用於有 .tem-C, .tem-F元素的網頁, 若有才進一步操作.
+		// 若網頁沒有該元素也不會怎麼樣.
+		
+		if($('.tem-C').length>0){
+			var unit=getTempUnit();
+			var newUnit=getAndSwitchTempUnit();
+			$('.tem-'+unit).removeClass('is-hidden').addClass('is-active');
+			$('.tem-'+newUnit).removeClass('is-active').addClass('is-hidden');
+		}
+	});
+
+	$('#checkbox-2').click(function(){
+		switchAndSaveWindUnit();
+
+		//風速以此類推	
+                if($('.wind_1').length>0){
+			
+                        var unit=getWindUnit();
+                        var newUnit=getAndSwitchWindUnit();
+
+			$(WindUnitOpen[unit]).removeClass('is-hidden').addClass('is-active');
+			$(WindUnitClose[unit]).removeClass('is-active').addClass('is-hidden');
+                }
+		
+	});
+
+	//For mobile
+	$('#checkbox-1_sm').click(function(){
+		switchAndSaveTempUnit();
+
+                if($('.tem-C').length>0){
+                        var unit=getTempUnit();
+                        var newUnit=getAndSwitchTempUnit();
+                        $('.tem-'+unit).removeClass('is-hidden').addClass('is-active');
+                        $('.tem-'+newUnit).removeClass('is-active').addClass('is-hidden');
+                }
+
+	});	
+	$('#checkbox-2_sm').click(function(){
+                switchAndSaveWindUnit();
+                if($('.wind_1').length>0){
+
+                        var unit=getWindUnit();
+                        var newUnit=getAndSwitchWindUnit();
+
+                        $(WindUnitOpen[unit]).removeClass('is-hidden').addClass('is-active');
+                        $(WindUnitClose[unit]).removeClass('is-active').addClass('is-hidden');
+                }
+
+        });
+		
+///////////////////////////////////////////
+
+	$('#footer-v3').append('<div id="gcse-put-div"></div>');
+
+	$('#form_search').submit(function(e){
+
+		e.preventDefault();
+		var val = $('#search').val();
+		if(typeof(google) != 'undefined'){
+			google.search.cse.element.getElement('cwb-results').execute(val);	
+		}
+	});
+
+	//這是因為 tooltip 會擋住搜尋框, 因為第一次 alt+S 展開會有動畫, 
+	//很難抓到正確的 Y 位置, 第二次之後才會正常, 要算出它的位置有困難,
+	//所以當使用者打字的時候就移除tooltip
+	$('#search').on('keydown', function(e){
+		$('#tooltip').remove();
+		if(e.which == 13){
+			$(this).click();	
+		}
+	}).on('focusout', function(){
+		if(!gTabNext){
+			if($('.warning_information .warnlist > li ').length > 0){
+                                $('.warning_information .warnlist a:last').focus();
+                        }
+		}
+	}).on('focus', function(){
+		if(!$('.search-box').hasClass('is_open')){
+
+			if($('.warning_information .warnlist > li ').length > 0){
+				$('.warning_information .warnlist a:first').focus();
+			}else{
+				$('#center-content').focus();
+			}
+		}
+	});
+
+	var isGcseCalled = false;
+	var gcseInstalled = false;
+	$('#web-search').click(function(){
+	
+		if(!isGcseCalled){
+			isGcseCalled = true;
+			$('#search').hide();
+			$('#search-button').hide();
+			$('#search-label').html('<span style="color:white;">' + loadingText[VER] + '</span>');
+
+			var _f = function(){
+				$('#search-button').show();
+				$('#search-label').html('');
+				$(".search-box").addClass("is_open");
+				$('#search').show().focus();
+				gcseInstalled = true;	
+			}
+			//See: Custom Search Element Control API (V2)
+			var myCallback=function(){
+				
+				if(document.readyState == 'complete'){
+					google.search.cse.element.render({
+						div:'gcse-put-div',
+						tag:'searchresults-only',
+						gname:'cwb-results'
+					});
+					_f();
+				}else{
+					google.setOnLoadCallback(function(){
+						google.search.cse.element.render({
+							div:'gcse-put-div',
+							tag:'searchresults-only',
+							gname:'cwb-results'
+						});
+						_f();
+					}, true);
+				}
+			};
+			
+			window.__gcse={
+				parsetags:'explicit',
+				callback:myCallback
+			};
+
+			//搜索代碼, 可於gcse console查
+			(function() {
+                		var cxTb={'C':'5273b5d458de448c0',
+                        	'E':'a63e1617f9f4a40c1'};
+                		var cx = cxTb[VER];
+                		var gcse = document.createElement('script');
+                		gcse.type = 'text/javascript';
+                		gcse.async = true;
+                		gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                		var s = document.getElementsByTagName('script')[0];
+                		s.parentNode.insertBefore(gcse, s);
+        		})();
+
+			loadGcsePopularWords();	
+	
+		}else if(isGcseCalled){
+			$(".search-box").addClass("is_open");
+			if(gcseInstalled){
+				$('#search').focus();
+			}
+		}
+	});
+///////////////////////////////////////////
+	// for 無障礙
+	
+        $(document).on('keydown', function(e){
+
+		if(e.shiftKey && e.which == 9){
+			gTabNext = false;
+		}else if(e.which == 9){
+			gTabNext = true;
+		}
+		//因為search-box是隱藏的, 所以需用js讓search-box顯示
+		//S=83
+		if(e.altKey && e.which == 83){
+			$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+			$('#menu-list-li > li.dropdown').removeClass('open');
+			$('#web-search').click();
+		}
+
+        }).on('click', function(){
+
+		if(window.matchMedia('(min-width: 992px)').matches){
+			$menu = $('#menu-list-li > li.dropdown:eq(' + gMenuListIndex + ') > .dropdown-menu');
+                        if($menu.css('display') == 'block'){
+                                $menu.css('display', 'none');
+                        }
+                }
+
+	}).on('focus', '#warning_wrap', function(){
+		
+		$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+		$('#menu-list-li > li.dropdown').removeClass('open');
+	
+	}).on('focusout', '#center-content', function(){
+                if(!gTabNext){
+			if(window.matchMedia('(min-width: 992px)').matches){
+			
+				if($('.search-box').hasClass('is_open')){
+					$('#popular-queries > a:last').focus();
+				}else{
+					if($('.warning_information .warnlist > li').length > 0){
+						$('.warning_information .warnlist a:last').focus();
+	                        	}else{
+						$('#menu-list-li > li.dropdown:last').focus();
+					}
+				}
+			}else{
+				if($('.search-box').hasClass('is_open')){
+                                        $('#popular-queries > a:last').focus();
+                                }else{
+					//注意這邊會跳不回警特報區塊. 因為不好改先暫時這樣.
+					$('.hamburger-box').focus();
+				}
+			}
+                }
+
+        }).on('focus', '#center-content', function(){
+                gMenuListIndex = null;
+                if($('#warning_wrap .warning_information').hasClass('is_open_list')){
+                        $('#warning_wrap').click();
+                }
+		$('#menu-list-li > li.dropdown > .dropdown-menu').css({'display':'none'});
+		$('#menu-list-li > li.dropdown').removeClass('open');
+
+        }).on('focus', '#warning_wrap .warning_information a:eq(0)', function(){
+                if(!$('#warning_wrap .warning_information').hasClass('is_open_list')){
+                	$('#warning_wrap').click();
+                }
+        });
+
+///////////////////
+
+	var favorite = getCookie('V8_FAVORITE');
+	var $megaTown = $('#megatown');
+	var $megaTown0 = $megaTown.find('section').eq(0);
+	if(favorite){
+
+		var mainCity = favorite.split('-')[0];
+		var megaCity = $('#megacity').find('section').eq(0);	
+		megaCity.find('option[value="' + mainCity +'"]').prop('selected', true);
+		$megaTown0.find('option[value="' + mainCity + '"]').prop('selected', true);
+		$megaTown0.find('select').change();
+	}
+
+/////////////////////	
+	for(var i=0, len=gFuncArr.length; i<len; i++){
+		gFuncArr[i]();
+	}
+}
+
+function initFooter(){
+	if(isMobile_()){
+		var wordTb={'desktop':{'C':'電腦版','E':'Desktop'}, 'mobile':{'C':'手機版','E':'Mobile'}};
+		var html = '<a style="font-size:1.1em;" id="desktop-button" href="javascript:void(0)" title="'+wordTb['desktop'][VER]+'">'+wordTb['desktop'][VER]+'</a> | <a style="font-size:1.1em;" id="mobile-button" href="javascript:void(0)" title="'+wordTb['mobile'][VER]+'">'+wordTb['mobile'][VER]+'</a>';
+		$('#footer-view-type').html(html).addClass("col-md-12 main-title-bar-v2 center");
+		$('#desktop-button').click(function(){
+			setCookie('V8_view_type', 'desktop');
+			//因為會reload, 網頁會重整, 理論上, 下面的code是不需要的, 但實際操作, 有下面的code, 瀏覽比例會正常一些. 但對於某些裝置的Safari似乎沒差.
+			$('meta[name="viewport"]').attr('content', 'width=1200');
+			location.reload(); 
+		});
+
+		$('#mobile-button').click(function(){
+			setCookie('V8_view_type', 'mobile');
+			$('meta[name="viewport"]').attr('content', 'width=device-width');
+			location.reload();
+		});
+	}
+}
+
+var gFuncArr=[];
+function addCallbackForHeader(f){
+	gFuncArr.push(f);
+}
+
+//怕與其他網頁函數,變數名字衝突, 故加上底線
+function isMobile_(){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+    || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0,4))) return true; else return false;}
+
+//暫時, 等到GenAll之後再改
+function getCookie_(cname){
+        var ca = document.cookie.split(';');
+        var key=null;
+        var value=null;
+        for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                c=c.split('=');
+                if(c.length==2){
+                        key=(c[0]).trim();
+                        value=(c[1]).trim();
+                }
+                if(key==cname){
+                        return value;
+                }
+
+        }
+        return null;
+}
+
+function HtmlEscape(input) {
+	return decodeURI(encodeURI(input));
+}
+

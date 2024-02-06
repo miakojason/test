@@ -1,0 +1,965 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wuqaaj');
+  src:  url('fonts/icomoon.eot?wuqaaj#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?wuqaaj') format('woff2'),
+    url('fonts/icomoon.ttf?wuqaaj') format('truetype'),
+    url('fonts/icomoon.woff?wuqaaj') format('woff'),
+    url('fonts/icomoon.svg?wuqaaj#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nearSea:before {
+  content: "\ea2e";
+}
+.icon-road:before {
+  content: "\ea2f";
+}
+.icon-beach:before {
+  content: "\ea19";
+}
+.icon-ships:before {
+  content: "\ea1a";
+}
+.icon-emptyCanlender:before {
+  content: "\ea1c";
+}
+.icon-7calendar:before {
+  content: "\ea2a";
+}
+.icon-24hr:before {
+  content: "\ea2b";
+}
+.icon-3hr:before {
+  content: "\ea1b";
+}
+.icon-lightning:before {
+  content: "\ea1d";
+}
+.icon-rainingCloud:before {
+  content: "\ea1e";
+}
+.icon-satellite-light:before {
+  content: "\ea1f";
+}
+.icon-tidal:before {
+  content: "\ea20";
+}
+.icon-weekTemperature:before {
+  content: "\ea21";
+}
+.icon-bodyTemperature:before {
+  content: "\ea28";
+}
+.icon-coastal-path:before {
+  content: "\ea10";
+}
+.icon-coastal-magnifier:before {
+  content: "\ea0f";
+}
+.icon-coastal-report:before {
+  content: "\ea0b";
+}
+.icon-coastal-tidal:before {
+  content: "\ea0c";
+}
+.icon-coastal-wave:before {
+  content: "\ea0d";
+}
+.icon-coastal-wind:before {
+  content: "\ea0e";
+}
+.icon-satelliteDish:before {
+  content: "\ea29";
+}
+.icon-boat:before {
+  content: "\e9de";
+}
+.icon-unstable:before {
+  content: "\e97f";
+}
+.icon-satellite-dish:before {
+  content: "\ea16";
+}
+.icon-line-chart:before {
+  content: "\ea17";
+}
+.icon-bachelor-cap:before {
+  content: "\ea18";
+}
+.icon-plan:before {
+  content: "\e9fc";
+}
+.icon-news-ste:before {
+  content: "\e9da";
+}
+.icon-people-cloudy:before {
+  content: "\e9db";
+}
+.icon-sun-calendar:before {
+  content: "\e9dc";
+}
+.icon-heart:before {
+  content: "\e9d8";
+}
+.icon-pauser:before {
+  content: "\e975";
+}
+.icon-chart:before {
+  content: "\e95a";
+}
+.icon-downapp:before {
+  content: "\e95b";
+}
+.icon-ears:before {
+  content: "\e95c";
+}
+.icon-ecard:before {
+  content: "\e95d";
+}
+.icon-like:before {
+  content: "\e95e";
+}
+.icon-man-talk:before {
+  content: "\e95f";
+}
+.icon-man:before {
+  content: "\e960";
+}
+.icon-masses:before {
+  content: "\e961";
+}
+.icon-player:before {
+  content: "\e962";
+}
+.icon-satellite:before {
+  content: "\e963";
+}
+.icon-study:before {
+  content: "\e964";
+}
+.icon-taiwaneq:before {
+  content: "\e965";
+}
+.icon-talk:before {
+  content: "\e966";
+}
+.icon-warn_mountain_rainstorm:before {
+  content: "\ea31";
+}
+.icon-warn_tem_hight02:before {
+  content: "\ea07";
+}
+.icon-warn_tem_hight03:before {
+  content: "\ea08";
+}
+.icon-warn_tem02:before {
+  content: "\ea09";
+}
+.icon-warn_tem03:before {
+  content: "\ea0a";
+}
+.icon-warn_rain01:before {
+  content: "\ea03";
+}
+.icon-warn_rain02:before {
+  content: "\ea04";
+}
+.icon-warn_rain03:before {
+  content: "\ea05";
+}
+.icon-warn_rain04:before {
+  content: "\ea06";
+}
+.icon-warn_b_fog:before {
+  content: "\e9fe";
+}
+.icon-warn_b_rain:before {
+  content: "\e9ff";
+}
+.icon-warn_b_temperature:before {
+  content: "\ea00";
+}
+.icon-warn_b_typhoon:before {
+  content: "\ea01";
+}
+.icon-warn_b_wind:before {
+  content: "\ea02";
+}
+.icon-warn_tem_hight:before {
+  content: "\e9f7";
+}
+.icon-warn_PM_low:before {
+  content: "\e9df";
+}
+.icon-warn_fog:before {
+  content: "\e928";
+}
+.icon-warn_gale:before {
+  content: "\e929";
+}
+.icon-warn_lightning:before {
+  content: "\e92a";
+}
+.icon-warn_PM:before {
+  content: "\e92b";
+}
+.icon-warn_tem:before {
+  content: "\e92c";
+}
+.icon-warn_thunder:before {
+  content: "\e92d";
+}
+.icon-warn_typhoon:before {
+  content: "\e92e";
+}
+.icon-moonlight:before {
+  content: "\e96e";
+}
+.icon-sunriseset:before {
+  content: "\e96f";
+}
+.icon-humidity:before {
+  content: "\e96c";
+}
+.icon-somatosensory:before {
+  content: "\e96d";
+}
+.icon-obs_detail_direction:before {
+  content: "\e92f";
+}
+.icon-obs_detail_HPa:before {
+  content: "\e930";
+}
+.icon-obs_detail_level:before {
+  content: "\e931";
+}
+.icon-obs_detail_puff:before {
+  content: "\e932";
+}
+.icon-obs_detail_rain:before {
+  content: "\e933";
+}
+.icon-obs_detail_RH:before {
+  content: "\e934";
+}
+.icon-obs_detail_spe:before {
+  content: "\e935";
+}
+.icon-obs_detail_visi:before {
+  content: "\e936";
+}
+.icon-cli_about_icon:before {
+  content: "\e9f0";
+}
+.icon-cli_the_address:before {
+  content: "\e9f1";
+}
+.icon-cli_the_captain:before {
+  content: "\e9f2";
+}
+.icon-cli_the_history:before {
+  content: "\e9f3";
+}
+.icon-cli_the_position:before {
+  content: "\e9f4";
+}
+.icon-cli_annual_report:before {
+  content: "\e9e6";
+}
+.icon-cli_bussiness:before {
+  content: "\e9e7";
+}
+.icon-cli_captain_word:before {
+  content: "\e9e8";
+}
+.icon-cli_medal:before {
+  content: "\e9e9";
+}
+.icon-cli_org_brief:before {
+  content: "\e9ea";
+}
+.icon-cli_performance:before {
+  content: "\e9eb";
+}
+.icon-cli_structure:before {
+  content: "\e9ec";
+}
+.icon-cli_target:before {
+  content: "\e9ed";
+}
+.icon-cli_the_gender:before {
+  content: "\e9ee";
+}
+.icon-cli_welfare:before {
+  content: "\e9ef";
+}
+.icon-cli_future:before {
+  content: "\e9d9";
+}
+.icon-cli_about_stars:before {
+  content: "\e97d";
+}
+.icon-cli_beaches:before {
+  content: "\e97e";
+}
+.icon-cli_biking:before {
+  content: "\e980";
+}
+.icon-cli_billboard:before {
+  content: "\e981";
+}
+.icon-cli_calendar:before {
+  content: "\e982";
+}
+.icon-cli_catalog:before {
+  content: "\e983";
+}
+.icon-cli_content2:before {
+  content: "\e984";
+}
+.icon-cli_database:before {
+  content: "\e985";
+}
+.icon-cli_day_content:before {
+  content: "\e986";
+}
+.icon-cli_farm:before {
+  content: "\e987";
+}
+.icon-cli_fishing:before {
+  content: "\e988";
+}
+.icon-cli_forest:before {
+  content: "\e989";
+}
+.icon-cli_hiking:before {
+  content: "\e98a";
+}
+.icon-cli_horoscope:before {
+  content: "\e98b";
+}
+.icon-cli_main_port:before {
+  content: "\e98c";
+}
+.icon-cli_moment:before {
+  content: "\e98d";
+}
+.icon-cli_month_content:before {
+  content: "\e98e";
+}
+.icon-cli_newest:before {
+  content: "\e98f";
+}
+.icon-cli_park:before {
+  content: "\e990";
+}
+.icon-cli_path:before {
+  content: "\e991";
+}
+.icon-cli_port:before {
+  content: "\e992";
+}
+.icon-cli_research:before {
+  content: "\e993";
+}
+.icon-cli_reservoirs:before {
+  content: "\e994";
+}
+.icon-cli_shooting_stars:before {
+  content: "\e995";
+}
+.icon-cli_sight:before {
+  content: "\e996";
+}
+.icon-cli_sky_stars:before {
+  content: "\e997";
+}
+.icon-cli_star:before {
+  content: "\e998";
+}
+.icon-cli_storms:before {
+  content: "\e999";
+}
+.icon-cli_sun:before {
+  content: "\e99a";
+}
+.icon-cli_taiwan_seasaon:before {
+  content: "\e99b";
+}
+.icon-cli_ten:before {
+  content: "\e99c";
+}
+.icon-cli_the_news:before {
+  content: "\e99d";
+}
+.icon-cli_timing:before {
+  content: "\e99e";
+}
+.icon-cli_tsunami:before {
+  content: "\e99f";
+}
+.icon-cli_typ_history:before {
+  content: "\e9a0";
+}
+.icon-cli_wavemeter:before {
+  content: "\e9a1";
+}
+.icon-cli_affect:before {
+  content: "\e9a2";
+}
+.icon-cli_agriculture:before {
+  content: "\e9a3";
+}
+.icon-cli_analyze:before {
+  content: "\e9a4";
+}
+.icon-cli_application:before {
+  content: "\e9a5";
+}
+.icon-cli_ask:before {
+  content: "\e9a6";
+}
+.icon-cli_astronomical:before {
+  content: "\e9a7";
+}
+.icon-cli_average:before {
+  content: "\e9a8";
+}
+.icon-cli_changing:before {
+  content: "\e9a9";
+}
+.icon-cli_content:before {
+  content: "\e9aa";
+}
+.icon-cli_daily:before {
+  content: "\e9ab";
+}
+.icon-cli_diffirent:before {
+  content: "\e9ac";
+}
+.icon-cli_east_summary:before {
+  content: "\e9ad";
+}
+.icon-cli_effection:before {
+  content: "\e9ae";
+}
+.icon-cli_ENSO:before {
+  content: "\e9af";
+}
+.icon-cli_event:before {
+  content: "\e9b0";
+}
+.icon-cli_evidence-1:before {
+  content: "\e9b1";
+}
+.icon-cli_evidence:before {
+  content: "\e9b2";
+}
+.icon-cli_farm_weather:before {
+  content: "\e9b3";
+}
+.icon-cli_feature:before {
+  content: "\e9b4";
+}
+.icon-cli_forecast_sys:before {
+  content: "\e9b5";
+}
+.icon-cli_greenhouse:before {
+  content: "\e9b6";
+}
+.icon-cli_history:before {
+  content: "\e9b7";
+}
+.icon-cli_lecture:before {
+  content: "\e9b8";
+}
+.icon-cli_monitor:before {
+  content: "\e9b9";
+}
+.icon-cli_monsoon:before {
+  content: "\e9ba";
+}
+.icon-cli_month_weather:before {
+  content: "\e9bb";
+}
+.icon-cli_month:before {
+  content: "\e9bc";
+}
+.icon-cli_ocean:before {
+  content: "\e9bd";
+}
+.icon-cli_order:before {
+  content: "\e9be";
+}
+.icon-cli_ozone:before {
+  content: "\e9bf";
+}
+.icon-cli_ph:before {
+  content: "\e9c0";
+}
+.icon-cli_phenomenon:before {
+  content: "\e9c1";
+}
+.icon-cli_pie_chart:before {
+  content: "\e9c2";
+}
+.icon-cli_reason:before {
+  content: "\e9c3";
+}
+.icon-cli_recommend:before {
+  content: "\e9c4";
+}
+.icon-cli_religion:before {
+  content: "\e9c5";
+}
+.icon-cli_report:before {
+  content: "\e9c6";
+}
+.icon-cli_searching:before {
+  content: "\e9c7";
+}
+.icon-cli_season_weather:before {
+  content: "\e9c8";
+}
+.icon-cli_season:before {
+  content: "\e9c9";
+}
+.icon-cli_service:before {
+  content: "\e9ca";
+}
+.icon-cli_statistics:before {
+  content: "\e9cb";
+}
+.icon-cli_summary:before {
+  content: "\e9cc";
+}
+.icon-cli_system:before {
+  content: "\e9cd";
+}
+.icon-cli_tai_monitor:before {
+  content: "\e9ce";
+}
+.icon-cli_taiwan:before {
+  content: "\e9cf";
+}
+.icon-cli_temp:before {
+  content: "\e9d0";
+}
+.icon-cli_temperture:before {
+  content: "\e9d1";
+}
+.icon-cli_tide:before {
+  content: "\e9d2";
+}
+.icon-cli_typhoon:before {
+  content: "\e9d3";
+}
+.icon-cli_variety:before {
+  content: "\e9d4";
+}
+.icon-cli_wave:before {
+  content: "\e9d5";
+}
+.icon-cli_what:before {
+  content: "\e9d6";
+}
+.icon-cli_wind:before {
+  content: "\e9d7";
+}
+.icon-cli-aud:before {
+  content: "\e977";
+}
+.icon-cli-effect:before {
+  content: "\e978";
+}
+.icon-cli-enso:before {
+  content: "\e979";
+}
+.icon-cli-question:before {
+  content: "\e97a";
+}
+.icon-cli-system:before {
+  content: "\e97b";
+}
+.icon-cwb-baseball:before {
+  content: "\e9f8";
+}
+.icon-cwb-crop:before {
+  content: "\e9f9";
+}
+.icon-cwb-farm:before {
+  content: "\e9fa";
+}
+.icon-cwb-fishing:before {
+  content: "\e9fb";
+}
+.icon-cwb-flower:before {
+  content: "\e937";
+}
+.icon-cwb-bicycle:before {
+  content: "\e938";
+}
+.icon-cwb-breeding:before {
+  content: "\e939";
+}
+.icon-cwb-ferry:before {
+  content: "\e93a";
+}
+.icon-cwb-ferry2:before {
+  content: "\e93b";
+}
+.icon-cwb-landscape:before {
+  content: "\e93c";
+}
+.icon-cwb-mountaineering:before {
+  content: "\e93d";
+}
+.icon-cwb-reservoirs:before {
+  content: "\e93e";
+}
+.icon-cwb-sea:before {
+  content: "\e93f";
+}
+.icon-cwb-star:before {
+  content: "\e940";
+}
+.icon-cwb-tree:before {
+  content: "\e941";
+}
+.icon-cwb-tree2:before {
+  content: "\e942";
+}
+.icon-cwb-warn:before {
+  content: "\e9fd";
+}
+.icon-taiwan-land:before {
+  content: "\e973";
+}
+.icon-cwb-clock:before {
+  content: "\e943";
+}
+.icon-cwb-cloud:before {
+  content: "\e944";
+}
+.icon-cwb-house:before {
+  content: "\e945";
+}
+.icon-cwb-ozone:before {
+  content: "\e946";
+}
+.icon-cwb-question:before {
+  content: "\e947";
+}
+.icon-cwb-raindrop:before {
+  content: "\e948";
+}
+.icon-cwb-receiver:before {
+  content: "\e949";
+}
+.icon-cwb-sailboat:before {
+  content: "\e94a";
+}
+.icon-cwb-temperature:before {
+  content: "\e94b";
+}
+.icon-menu-wave:before {
+  content: "\e94c";
+}
+.icon-calendar-page:before {
+  content: "\ea30";
+}
+.icon-chatQuest:before {
+  content: "\ea2c";
+}
+.icon-chatInfo:before {
+  content: "\ea2d";
+}
+.icon-cwb-home:before {
+  content: "\e956";
+}
+.icon-cwb-arrow-up:before {
+  content: "\e914";
+}
+.icon-t2-6:before {
+  content: "\ea12";
+}
+.icon-map:before {
+  content: "\e921";
+}
+.icon-t1-2:before {
+  content: "\ea23";
+}
+.icon-personal:before {
+  content: "\e953";
+}
+.icon-people:before {
+  content: "\e952";
+}
+.icon-t1-3:before {
+  content: "\ea24";
+}
+.icon-file-block:before {
+  content: "\e951";
+}
+.icon-t1-1:before {
+  content: "\ea22";
+}
+.icon-t1-4:before {
+  content: "\ea25";
+}
+.icon-t2-2:before {
+  content: "\ea11";
+}
+.icon-cwb-info:before {
+  content: "\e94d";
+}
+.icon-t1-5:before {
+  content: "\ea26";
+}
+.icon-t1-6:before {
+  content: "\ea27";
+}
+.icon-phone1:before {
+  content: "\ea13";
+}
+.icon-phone:before {
+  content: "\e924";
+}
+.icon-fontsizer:before {
+  content: "\ea15";
+}
+.icon-river:before {
+  content: "\e9f6";
+}
+.icon-unlink:before {
+  content: "\e9f5";
+}
+.icon-coldf:before {
+  content: "\e9e1";
+}
+.icon-direction:before {
+  content: "\e9e2";
+}
+.icon-highp:before {
+  content: "\e9e3";
+}
+.icon-lowp:before {
+  content: "\e9e4";
+}
+.icon-warmf:before {
+  content: "\e9e5";
+}
+.icon-line:before {
+  content: "\e9e0";
+}
+.icon-down:before {
+  content: "\e9dd";
+}
+.icon-card:before {
+  content: "\e97c";
+}
+.icon-global-temp:before {
+  content: "\e976";
+}
+.icon-imm-cloudy:before {
+  content: "\e974";
+}
+.icon-anchor:before {
+  content: "\e972";
+}
+.icon-pause:before {
+  content: "\e970";
+}
+.icon-play:before {
+  content: "\e971";
+}
+.icon-cwb-height:before {
+  content: "\e968";
+}
+.icon-cwb-low:before {
+  content: "\e969";
+}
+.icon-cwb-sunrise:before {
+  content: "\e96a";
+}
+.icon-cwb-sunset:before {
+  content: "\e96b";
+}
+.icon-warn:before {
+  content: "\e967";
+}
+.icon-cups:before {
+  content: "\e958";
+}
+.icon-uv:before {
+  content: "\e959";
+}
+.icon-plus:before {
+  content: "\e957";
+}
+.icon-cross:before {
+  content: "\e94e";
+}
+.icon-earth-search:before {
+  content: "\e94f";
+}
+.icon-employee:before {
+  content: "\e950";
+}
+.icon-qmark:before {
+  content: "\e954";
+}
+.icon-wrench:before {
+  content: "\e955";
+}
+.icon-arrow:before {
+  content: "\e900";
+}
+.icon-arrowcircle:before {
+  content: "\e901";
+}
+.icon-as_ban-cam .path1:before {
+  content: "\e902";
+  color: rgb(0, 0, 0);
+}
+.icon-as_ban-cam .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-as_ban-cam .path3:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(226, 87, 76);
+}
+.icon-as_ban-eye .path1:before {
+  content: "\e905";
+  color: rgb(226, 87, 76);
+}
+.icon-as_ban-eye .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-as_ban-eye .path3:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-as_ban-instrument .path1:before {
+  content: "\e908";
+  color: rgb(226, 87, 76);
+}
+.icon-as_ban-instrument .path2:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-as_ban:before {
+  content: "\e90a";
+}
+.icon-as_cam:before {
+  content: "\e90b";
+}
+.icon-as_eye:before {
+  content: "\e90c";
+}
+.icon-as_instrument:before {
+  content: "\e90d";
+}
+.icon-as_telescope:before {
+  content: "\e90e";
+}
+.icon-as_title-astrology:before {
+  content: "\e90f";
+}
+.icon-bus:before {
+  content: "\e910";
+}
+.icon-clock:before {
+  content: "\e911";
+}
+.icon-color-warn .path1:before {
+  content: "\e912";
+  color: rgb(60, 143, 209);
+}
+.icon-color-warn .path2:before {
+  content: "\e913";
+  margin-left: -1em;
+  color: rgb(255, 235, 59);
+}
+.icon-cwb-print:before {
+  content: "\e915";
+}
+.icon-cwb-question2:before {
+  content: "\e916";
+}
+.icon-cwb-share:before {
+  content: "\e917";
+}
+.icon-cwb-Ultraviolet-radiation2:before {
+  content: "\e918";
+}
+.icon-cwb-wave:before {
+  content: "\e919";
+}
+.icon-cwb-wind:before {
+  content: "\e91a";
+}
+.icon-down-file:before {
+  content: "\e91b";
+}
+.icon-earthquake-depth:before {
+  content: "\e91c";
+}
+.icon-earthquake-scale:before {
+  content: "\e91d";
+}
+.icon-horn:before {
+  content: "\e91e";
+}
+.icon-hr:before {
+  content: "\e91f";
+}
+.icon-mail:before {
+  content: "\e920";
+}
+.icon-MRT:before {
+  content: "\e922";
+}
+.icon-open:before {
+  content: "\e923";
+}
+.icon-plane:before {
+  content: "\e925";
+}
+.icon-umbrella:before {
+  content: "\e926";
+}
+.icon-wind-rose:before {
+  content: "\e927";
+}
+.icon-location:before {
+  content: "\ea14";
+}
+.icon-map1:before {
+  content: "\ea14";
+}

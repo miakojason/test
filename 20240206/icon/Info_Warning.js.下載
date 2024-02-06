@@ -1,0 +1,200 @@
+// [RJ] for Warning
+
+var WarnIcon = {
+	"W21":"typhoon",
+	"W25":"gale",
+	"W26":"rain01",
+	"W26-1":"rain01",
+	"W26-2":"rain02",
+	"W26-3":"rain03",
+	"W26-4":"rain04",
+	"W27":"fog",
+	"W28":"tem",
+	"W28-1":"tem",
+	"W28-2":"tem02",
+	"W28-3":"tem03",
+	"W29":"tem_hight",
+	"W29-1":"tem_hight",
+	"W29-2":"tem_hight02",
+	"W29-3":"tem_hight03"
+};
+
+// Cold Blues
+//	"W28-1":"temperature"
+//	"W28-2":"temperature-2"
+//	"W28-3":"temperature-2"
+//	"W28-4":"temperature-3"
+
+var WarningColor = {
+	"W21":"rain-2",
+	"W25":"wind",
+	"W26-1":"rain-4",
+	"W26-2":"rain-3",
+	"W26-3":"rain-2",
+	"W26-4":"rain-1",
+	"W27":"fog",
+	"W28":"rain-4",
+	"W28-1":"rain-4",
+	"W28-2":"rain-3",
+	"W28-3":"rain-2",
+	"W29":"rain-4",
+	"W29-1":"rain-4",
+	"W29-2":"rain-3",
+	"W29-3":"rain-2"
+};
+
+var WarnRegion = {
+	"G":{"C":"平地","E":"Flat Ground"},
+	"M":{"C":"山區","E":"Mountain Area"},
+	"K":{"C":"基隆北海岸","E":"Keelung North Coast"},
+	"H":{"C":"恆春半島","E":"Hengchun Peninsula"},
+	"L":{"C":"蘭嶼綠島","E":"Lanyu and Ludao"},
+	"C":{"C":"","E":""},
+	"T":{"C":"","E":""}
+};
+
+var WarnLevel = {
+	"W26":{
+		"1":{"C":"大雨","E":"Heavy Rain"},
+		"2":{"C":"豪雨","E":"Extremely Heavy Rain"},
+		"3":{"C":"大豪雨","E":"Torrential Rain"},
+		"4":{"C":"超大豪雨","E":"Extremely Torrential Rain"}
+	},
+	"W28":{
+		"1":{"C":"低溫黃色燈號","E":"Cold Surge Yellow Signal"},
+		"2":{"C":"低溫橙色燈號","E":"Cold Surge Orange Signal"},
+		"3":{"C":"低溫紅色燈號","E":"Cold Surge Red Signal"}
+	},
+	"W29":{
+		"1":{"C":"高溫黃色燈號","E":"Heat Information Yellow Signal"},
+		"2":{"C":"高溫橙色燈號","E":"Heat Information Orange Signal"},
+		"3":{"C":"高溫紅色燈號","E":"Heat Information Red Signal"}
+	}
+};
+
+var WarnFIFOWS_Link = {
+	"W21":{
+		"C":"/V8/C/P/Warning/W21.html",
+		"E":"/V8/E/P/Warning/W21.html",
+	},
+	"W25":{
+		"C":"/V8/C/P/Warning/W25.html",
+		"E":"/V8/E/P/Warning/W25.html",
+	},
+	"W26":{
+		"C":"/V8/C/P/Warning/W26.html",
+		"E":"/V8/E/P/Warning/W26.html",
+	},
+	"W27":{
+		"C":"/V8/C/P/Warning/W27.html",
+		"E":"/V8/E/P/Warning/W27.html",
+	},
+	"W28":{
+		"C":"/V8/C/P/Warning/W28.html",
+		"E":"/V8/E/P/Warning/W28.html",
+	}
+};
+
+var NoEng = ["TY_WIND","W23","W24","W33","W34"];
+
+var WarnAllLink = {
+	"PWS":{
+		"C":"href=\"/V8/C/P/PWS/PWS.html\"",
+		"E":"href=\"/V8/E/P/PWS/PWS.html\""
+	},
+	"EQ":{
+		"C":"href=\"/V8/C/E/index.html\"",
+		"E":"href=\"/V8/E/E/index.html\""
+	},
+	"TY_WIND":{
+		"C":"href=\"/V8/C/P/Typhoon/TY_WIND.html\"",
+		"E":"href=\"\""
+	},
+	"TY_WARN":{
+		"C":"href=\"/V8/C/P/Typhoon/TY_WARN.html\"",
+		"E":"href=\"/V8/E/P/Typhoon/TY_WARN.html\""
+	},
+	"TY_NEWS":{
+		"C":"href=\"/V8/C/P/Typhoon/TY_NEWS.html\"",
+		"E":"href=\"/V8/E/P/Typhoon/TY_NEWS.html\""
+	},
+	"FIFOWS":{
+		"C":"href=\"/V8/C/P/Warning/FIFOWS.html\"",
+		"E":"href=\"/V8/E/P/Warning/FIFOWS.html\""
+	},
+	"W23":{
+		"C":"href=\"/V8/C/P/Warning/W23.html\"",
+		"E":"href=\"\""
+	},
+	"W24":{
+		"C":"href=\"/V8/C/P/Warning/W24.html\"",
+		"E":"href=\"\""
+	},
+	"W29":{
+		"C":"href=\"/V8/C/P/Warning/W29.html\"",
+		"E":"href=\"/V8/E/P/Warning/W29.html\""
+	},
+	"W33":{
+		"C":"href=\"/V8/C/P/Warning/W33.html\"",
+		"E":"href=\"\""
+	},
+	"W34":{
+		"C":"href=\"/V8/C/P/Warning/W34.html\"",
+		"E":"href=\"\""
+	},
+	"W37":{
+		"C":"href=\"/V8/C/P/Warning/W37.html\"",
+		"E":"href=\"/V8/E/P/Warning/W37.html\""
+	}
+};
+
+var WarnAllName = {
+	"PWS":{
+		"C":"災防告警訊息",
+		"E":"PWS Messages"
+	},
+	"EQ":{
+		"C":"地震報告",
+		"E":"Earthquake Report"
+	},
+	"TY_WIND":{
+		"C":"颱風強風告警",
+		"E":""
+	},
+	"TY_WARN":{
+		"C":"颱風警報",
+		"E":"Typhoon Warning"
+	},
+	"TY_NEWS":{
+		"C":"颱風消息",
+		"E":"Typhoon News"
+	},
+	"FIFOWS":{
+		"C":"天氣警特報",
+		"E":"Weather Warning"
+	},
+	"W23":{
+		"C":"熱帶性低氣壓特報",
+		"E":""
+	},
+	"W24":{
+		"C":"大規模或劇烈豪雨",
+		"E":""
+	},
+	"W29":{
+		"C":"高溫資訊",
+		"E":"Heat Information"
+	},
+	"W33":{
+		"C":"大雷雨即時訊息",
+		"E":""
+	},
+	"W34":{
+		"C":"即時天氣訊息",
+		"E":""
+	},
+	"W37":{
+		"C":"長浪即時訊息",
+		"E":"Swell Information"
+	}
+};

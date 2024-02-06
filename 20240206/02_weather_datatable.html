@@ -19,10 +19,10 @@
   <table class="display" id="myTable">
     <thead>
       <tr>
-        <th width="30%" class="text-center">id</th>
-        <th class="text-start">name</th>
-        <th  class="text-start">desc</th>
-        <th></th>
+        <th width="5%" class="text-center">id</th>
+        <th width="10%" class="text-start">name</th>
+        <th width="10%" class="text-start">desc</th>
+        <th class="text-start">狀態</th>
       </tr>
     </thead>
     <tbody>
@@ -71,9 +71,10 @@
            let nowLocationMaxT=value.weatherElement[4]['time'][0]['parameter']['parameterName'];
            let nowLocationMinT=value.weatherElement[2]['time'][0]['parameter']['parameterName'];
            let nowiconName=value.weatherElement[0]['time'][0]['parameter']['parameterName'];
-
+           let nowiconValue=value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");
+        //轉換補0，也可以用中文名子去當黨名<td class="text-start">${nowiconName}<img src="./icon/${nowiconName}.svg" ></td>
            console.log('nowiconName',nowiconName);
-        
+           console.log('nowiconName',nowiconValue);
            console.log('nowLocationMaxT',nowLocationMaxT);
            console.log('nowLocationMinT',nowLocationMinT);
             // let content = `
@@ -84,7 +85,7 @@
             <td class="text-center">${stringID}</td>
             <td class="text-start">${nowLocationName}</td>
             <td>${nowLocationMinT}-${nowLocationMaxT}°C</td>
-            <td class="text-center">${nowiconName}<img src="./icon/${nowiconName}.svg" ></td>
+            <td class="text-start">${nowiconName}<img src="./icon/${nowiconValue}.svg" ></td>
         </tr>
           `;
 

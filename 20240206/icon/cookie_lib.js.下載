@@ -1,0 +1,178 @@
+//Author: Bocheng
+//Date: 2018/06/04
+//cookie formate:
+//document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+function getCookie(cname){
+	var ca = document.cookie.split(';');
+	var key=null;
+	var value=null;
+	for(var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		c=c.split('=');
+		if(c.length==2){
+			key=(c[0]).trim();
+			value=(c[1]).trim();
+		}
+		if(key==cname){
+			return value;
+		}
+
+	}
+	return null;
+}
+
+function deleteCookie(name){
+	document.cookie=name+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+}
+
+function setCookie(cname, cvalue, exdays){
+	var d = new Date();
+	if(exdays==undefined){
+		exdays=30; //若無給定日期, 預設30天.
+	}
+	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	var expires = "expires="+d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+// Tempertaure
+// C:度C
+// F:度F
+// 預設使用度C
+// 取得現在的cookie內的溫度單位
+function getTempUnit(){
+
+	var unit=getCookie('V8_Temp_Unit');
+	if(!unit){
+		unit='C';
+	}
+	return unit;
+}
+//轉換溫度單位再回傳
+function getAndSwitchTempUnit(){
+	
+	var unitTable={
+		'C':'F',
+		'F':'C'
+	};
+	var unit=getTempUnit();
+	var newUnit=unitTable[unit];
+	return newUnit;
+}
+//寫溫度單位到cookie
+function saveTempUnit(unit){
+
+	if(unit != 'C' && unit !='F'){
+		unit='C';
+	}
+	setCookie('V8_Temp_Unit', unit);	
+
+}
+//轉換溫度單位再寫入cookie
+function switchAndSaveTempUnit(){
+
+	var newUnit=getAndSwitchTempUnit();
+	saveTempUnit(newUnit);
+}
+
+//Wind
+//MS: 公尺每秒
+//BF: 蒲福風級
+//預設使用BF
+function getWindUnit(){
+
+	var unit=getCookie('V8_Wind_Unit');
+	if(!unit){
+		unit='BF';
+	}
+	return unit;
+}
+
+function getAndSwitchWindUnit(){
+
+	var unitTable={
+		'MS':'BF',
+		'BF':'MS'
+	};
+
+	var unit=getWindUnit();
+	var newUnit=unitTable[unit];
+	return newUnit;
+}
+
+function saveWindUnit(unit){
+
+	if(unit != 'MS' && unit !='BF'){
+		unit='BF';	
+	}
+	setCookie('V8_Wind_Unit', unit);
+}
+
+function switchAndSaveWindUnit(){
+
+	var newUnit=getAndSwitchWindUnit();
+	saveWindUnit(newUnit);
+}
+
+function setFontSize(){	
+	if(VER == 'E'){
+		return;
+	}
+      document.querySelector('#showFontSizerId').addEventListener('click', function (e) {
+        e.preventDefault();
+	if(e.target.id == ""){
+		return;
+	}
+	var fs = getCookie('FontSize');
+	if(!fs){
+		setCookie('FontSize', e.target.id);
+	}else if (fs != e.target.id){
+		setCookie('FontSize', e.target.id);
+	}
+        var html = document.getElementsByTagName('html')[0];
+        e.target.classList.add('is-active');
+        $(e.target).siblings().removeClass('is-active');
+        if (e.target.id === "fsSmall") {
+          html.style.fontSize = "90%";
+        } else if (e.target.id === "fsNormal") {
+          html.style.fontSize = "100%";
+        } else if (e.target.id === "fsBig") {
+          html.style.fontSize = "120%";
+        } else {
+          return;
+        }
+      })
+
+      // 手機版字體大小選單
+      document.querySelector('#showFontSizerId').addEventListener('click', function () {
+        if (window.matchMedia('(max-width: 1199px)').matches) {
+          $('.fontSizer').toggleClass('show');
+        } else {
+          return
+        }
+      })
+
+      // cookie 選擇頁面字體大小
+      var html = document.getElementsByTagName('html')[0];
+      if (document.cookie.match('fsSmall')) {
+        html.style.fontSize = "90%";
+        document.getElementById("fsSmall").classList.add("is-active");
+        document.getElementById("fsNormal").classList.remove("is-active");
+        document.getElementById("fsBig").classList.remove("is-active");
+      } else if (document.cookie.match('fsNormal')) {
+        html.style.fontSize = "100%";
+        document.getElementById("fsSmall").classList.remove("is-active");
+        document.getElementById("fsNormal").classList.add("is-active");
+        document.getElementById("fsBig").classList.remove("is-active");
+      } else if (document.cookie.match('fsBig')) {
+        html.style.fontSize = "120%";
+        document.getElementById("fsSmall").classList.remove("is-active");
+        document.getElementById("fsNormal").classList.remove("is-active");
+        document.getElementById("fsBig").classList.add("is-active");
+      } else {
+        html.style.fontSize = "100%";
+        document.getElementById("fsSmall").classList.remove("is-active");
+        document.getElementById("fsNormal").classList.add("is-active");
+        document.getElementById("fsBig").classList.remove("is-active");
+      }
+}

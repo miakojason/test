@@ -1,0 +1,28 @@
+var Rt = '11950414623';
+var WarnAll = ['W28','FIFOWS'];
+var WarnTab = [];
+var WarnHome = [];
+var WarnFIFOWS = ['W28'];
+var WarnContent = {
+	'W28':{
+		'C':{
+			'title':'低溫特報',
+			'issued':'2024/02/06 10:43',
+			'validto':'2024/02/07 19:00',
+			'content':'發布時間：02/06 10:43\n\n明(7)日大陸冷氣團或強烈大陸冷氣團逐漸南下，各地氣溫明顯偏低，有10度以下氣溫發生的機率。今(6日)下午至明(7日)金門局部地區有持續10度左右或以下氣溫(橙色燈號)發生的機率，請注意防範。\n\n加強保暖，使用瓦斯熱水器及電暖器具應注意室內通風及用電安全；預防低溫導致之呼吸道及心血管疾病、避免長時間逗留在寒冷環境，確保兒童之頭、頸、手和腳部溫暖，關懷老人、遊民及弱勢族群避寒措施；冬季為流感好發季節，請注意手部衛生與咳嗽禮節，落實生病在家休息；農作物及水產養殖業注意寒害。\n\n註1：連江縣由於地理及氣候因素，氣溫門檻值為其他地區值減4度。',
+			'content_web':'發布時間：02/06 10:43\n\n一、概述\n明(7)日大陸冷氣團或強烈大陸冷氣團逐漸南下，各地氣溫明顯偏低，有10度以下氣溫發生的機率。今(6日)下午至明(7日)金門局部地區有持續10度左右或以下氣溫(橙色燈號)發生的機率，請注意防範。\n\n二、低溫區域\n【橙色燈號(非常寒冷)】\n金門縣有持續10度左右或以下氣溫發生的機率，請注意防範。\n\n三、注意(警戒)事項\n加強保暖，使用瓦斯熱水器及電暖器具應注意室內通風及用電安全；預防低溫導致之呼吸道及心血管疾病、避免長時間逗留在寒冷環境，確保兒童之頭、頸、手和腳部溫暖，關懷老人、遊民及弱勢族群避寒措施；冬季為流感好發季節，請注意手部衛生與咳嗽禮節，落實生病在家休息；農作物及水產養殖業注意寒害。\n\n註1：連江縣由於地理及氣候因素，氣溫門檻值為其他地區值減4度。'
+		},
+		'E':{
+			'title':'Cold Surge Advisory',
+			'issued':'2024/02/06 10:43',
+			'validto':'2024/02/07 19:00',
+			'content':'Issued Time: 02/06 10:43\n\nOrange 10 cold surge advisory in effect from late this afternoon (02/06) through Wednesday night (02/07)',
+			'content_web':'Issued Time: 02/06 10:43\n\nOrange 10 cold surge advisory in effect from late this afternoon (02/06) through Wednesday night (02/07)\n\n------ Color-coded Cold Surge Advisory Areas ------\n\n[Orange (very cold)]\nKinmen County, Jinsha Township, Kinmen County, Jinhu Township, Kinmen County, Jinning Township, Kinmen County, Jincheng Township, Kinmen County, Lieyu Township, Kinmen County, Wuqiu Township with the chance of temperature remaining around 10°C\n\n[Reminders]\nRemember to:\n1. Take extra care to keep warm\n2. Pay attention to indoor ventilation and electricity safety when using gas water heater and electric heater\n3. Avoid prolonged stay in a cold environment, and watch out for respiratory and cardiovasculardiseases induced by low temperature\n4. Make sure children have protection to keep their head, neck, hands and feet warm, and care for theelderly, the homeless, and other people vulnerable to cold exposure\n5. Pay attention to hand hygiene and cough etiquette as winter is usually flu season, and stay homeand rest if you are ill\n6. Take precaution to prevent damage to crops and aquaculture\n\nNote 1: Considering its geographical and climate conditions, the criteria for Lienchiang County is 4 degrees lower than other areas.'
+		}
+	}
+};
+var WarnContent_W32 = [];
+var WarnContent_W33 = [];
+var WarnContent_TyWind = [];
+var HEADER_VERSION = '20240201';
+var FOOTER_VERSION = '20230627';

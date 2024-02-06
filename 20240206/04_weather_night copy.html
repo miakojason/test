@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
+    integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <table class="display" id="myTable">
+    <thead>
+      <tr>
+        <th width="7%" class="text-center">id</th>
+        <th width="15%" class="text-start">name</th>
+        <th class="text-start" id="title12">desc 12</th>
+        <th class="text-start" id="title24">desc 24</th>
+        <th class="text-start" id="title36">desc 36</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- pw url -->
+  <script src="../ignore/js/pw.js"></script>
+
+  <!-- datatable js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+    integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      let url = weatherUrl;
+      const myOl = $('#myOl');
+      const myTable = $('#myTable');
+      const title12 = $('#title12');
+      const title24 = $('#title24');
+      const title36 = $('#title36');
+
+
+      let nowTime = new Date();
+      console.log('nowTime', nowTime);
+
+
+      $.ajax({
+        type: "get",
+        url: url,
+        // data: "data",
+        // dataType: "dataType",
+        success: function (res) {
+          // . [] ->  property variable
+          // .xxx()  ['xxx']()  ->xxx() method function action
+          console.log('res', res);
+          let nowLocation = res.records.location;
+
+          // th title
+          let title12Text = res.records.location[1].weatherElement[2]['time'][0]['startTime'];
+          let title24Text = res.records.location[1].weatherElement[2]['time'][1]['startTime'];
+          let title36Text = res.records.location[1].weatherElement[2]['time'][2]['startTime'];
+          title12.text(title12Text);
+          title24.text(title24Text);
+          title36.text(title36Text);
+
+          let time12 = new Date(title12Text);
+          let time24 = new Date(title24Text);
+          let time36 = new Date(title36Text);
+          console.log('time12', time12);
+          console.log('time24', time24);
+          console.log('time36', time36);
+
+          tim12Hour = time12.getHours();
+          tim24Hour = time24.getHours();
+          tim36Hour = time36.getHours();
+          console.log('tim12Hour', tim12Hour);
+          console.log('tim24Hour', tim24Hour);
+          console.log('tim36Hour', tim36Hour);
+
+          // 0 night
+          // 6 day
+          // 12 day
+          // 18 night
+          let dayNight_12 = 'day';
+          let dayNight_24 = 'day';
+          let dayNight_36 = 'day';
+
+          switch (tim12Hour) {
+            case 12:
+            case 18:
+              dayNight_12 = 'night';
+              break;
+
+            default:
+              break;
+          }
+
+          switch (tim24Hour) {
+            case 12:
+            case 18:
+              dayNight_24 = 'night';
+              break;
+
+            default:
+              break;
+          }
+
+          switch (tim36Hour) {
+            case 12:
+            case 18:
+              dayNight_36 = 'night';
+              break;
+
+            default:
+              break;
+          }
+
+          $.each(nowLocation, function (key, value) {
+            let nowID = key + 1;
+            let stringID = nowID.toString().padStart(2, "0");
+            let nowLocationName = value.locationName;
+            console.log('value', value);
+
+            // 12
+            let nowLocationMaxT_12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+            let nowLocationMinT_12 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxName_12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxValue_12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString();
+            let imgUrl_12 = nowLocationWxValue_12 + '.svg';
+
+            // 24
+            let nowLocationMaxT_24 = value.weatherElement[4]['time'][1]['parameter']['parameterName'];
+            let nowLocationMinT_24 = value.weatherElement[2]['time'][1]['parameter']['parameterName'];
+            let nowLocationWxName_24 = value.weatherElement[0]['time'][1]['parameter']['parameterName'];
+            let nowLocationWxValue_24 = value.weatherElement[0]['time'][1]['parameter']['parameterValue'].toString();
+            let imgUrl_24 = nowLocationWxValue_24 + '.svg';
+
+            // 36
+            let nowLocationMaxT_36 = value.weatherElement[4]['time'][2]['parameter']['parameterName'];
+            let nowLocationMinT_36 = value.weatherElement[2]['time'][2]['parameter']['parameterName'];
+            let nowLocationWxName_36 = value.weatherElement[0]['time'][2]['parameter']['parameterName'];
+            let nowLocationWxValue_36 = value.weatherElement[0]['time'][2]['parameter']['parameterValue'].toString();
+            let imgUrl_36 = nowLocationWxValue_36 + '.svg';
+
+
+            // let content = `
+            //  <li>${nowLocationName}</li>
+            // `;
+            let content = `
+              <tr>
+                <td class="text-center">${stringID}</td>
+                <td class="text-start">${nowLocationName}</td>
+                <td class="text-start">${nowLocationMinT_12} - ${nowLocationMaxT_12} °C ${nowLocationWxName_12} <img src="./images/${dayNight_12}/${imgUrl_12}" alt=""></td>
+                <td class="text-start">${nowLocationMinT_24} - ${nowLocationMaxT_24} °C ${nowLocationWxName_24} <img src="./images/${dayNight_24}/${imgUrl_24}" alt=""></td>
+                <td class="text-start">${nowLocationMinT_36} - ${nowLocationMaxT_36} °C ${nowLocationWxName_36} <img src="./images/${dayNight_36}/${imgUrl_36}" alt=""></td>
+              </tr>
+            `;
+
+            // 1 新北市 12-18 °C
+
+            // console.log('nowLocationName', nowLocationName);
+            $('tbody').append(content);
+          });
+
+          // run datatable
+          myTable.DataTable();
+
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
