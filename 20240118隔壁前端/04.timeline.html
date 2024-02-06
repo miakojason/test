@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GSAP - timeline</title>
+  <!-- bootstrap -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css' />
+  <style>
+    body {
+      padding-bottom: 500px;
+    }
+
+    h3 {
+      margin: 20px 0;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10,
+    .box11,
+    .box12,
+    .box13,
+    .box14,
+    .box15,
+    .box16,
+    .box17,
+    .box18,
+    .box19,
+    .box20 {
+      width: 50px;
+      height: 50px;
+      background: black;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>tween 與 timeline 差異</h3>
+    <h4>使用 tween 製作佇列動畫</h4>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <h4>使用 timeline 製作佇列動畫</h4>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+
+    <hr>
+
+    <h3>defaults 設定</h3>
+    <p>補間動畫屬性值相同時，會有重複不必要的程式碼。</p>
+    <div class="box7"></div>
+    <div class="box8"></div>
+    <div class="box9"></div>
+    <p>使用 defaults，讓程式碼更加簡潔。</p>
+    <div class="box10"></div>
+    <div class="box11"></div>
+    <div class="box12"></div>
+
+    <hr>
+
+    <h3>timeline 的 vars 物件設定</h3>
+    <p>vars 除了可以設定 defaults，還可以一些與補間動畫相同的屬性</p>
+    <div class="box13"></div>
+    <div class="box14"></div>
+    <div class="box15"></div>
+    <div class="progress mb-3">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+  <!-- bootstrap -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+  <!-- 引入 gsap 主程式 -->
+  <script src="./gsap/gsap.js"></script>
+  <script>
+    // 使用 tween 製作佇列動畫
+    // 可以使用 delay 來完成佇列的排序動畫，但如果調動其中一個，其他的動畫也要跟著調整
+    gsap.to('.box1', { x: 500, duration: 1 })
+    gsap.to('.box2', { x: 500, duration: 1, delay: 2 })
+    gsap.to('.box3', { x: 500, duration: 1, delay: 3 })
+
+    // 使用 timeline 製作佇列動畫
+    // timeline 是一種用來組織動畫的方式，用來管理動畫排序的工具，是其中補間動畫的容器
+    const tl1 = gsap.timeline()
+    tl1
+      .to('.box4', { x: 500, duration: 1 })
+      .to('.box5', { x: 500, duration: 1 })
+      .to('.box6', { x: 500, duration: 1 })
+
+    const tl2 = gsap.timeline()
+    tl2
+      .to('.box7', { x: 150, duration: 1, ease: 'back' })
+      .to('.box8', { x: 250, duration: 1, ease: 'back' })
+      .to('.box9', { x: 350, duration: 1, ease: 'back' })
+
+    // 使用 defaults 讓程式碼更加簡潔 
+    const tl3 = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: 'back'
+      }
+    })
+
+    tl3
+      .to('.box10', { x: 150 })
+      .to('.box11', { x: 250 })
+      .to('.box12', { x: 350 })
+
+    // 使用 timeline 的 vars 物件設定
+    const tl4 = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: 'power1.back'
+      },
+      repeat: 1,
+      repeatDelay: 1, // 重複播放的延遲
+      // yoyo: true,
+      delay: 1, // 初始播放的延遲
+      repeatRefresh: true,
+      onStart(p1, p2) {
+        console.log(p1, p2)
+      },
+      onStartParams: ['時間軸動畫開始', 'KaiFu'],
+      onComplete: function (p1, p2) {
+        console.log(p1, p2)
+      },
+      onCompleteParams: ['時間軸動畫結束', 'KaiFu'],
+      onUpdate(p1, p2) {
+        // console.log(p1, p2, this.progress().toFixed(2))
+        $('.progress-bar').css({
+          width: this.totalProgress() * 100 + '%'
+        })
+      },
+      onUpdateParams: ['時間軸動畫更新', 'KaiFu'],
+    })
+    tl4
+      .to('.box13', { x: '+=100' })
+      .to('.box14', { x: '+=150' })
+      .to('.box15', { x: '+=200' })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'
+        integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A=='
+        crossorigin='anonymous' />
+</head>
+<style>
+    body {
+        padding-bottom: 500px;
+        ;
+    }
+
+    h3 {
+        margin: 20px;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10,
+    .box11 {
+        width: 50px;
+        height: 50px;
+        background: black;
+        margin: 5px;
+    }
+
+    .box2 {
+        background-color: red;
+    }
+
+    .box3 {
+        background-color: green;
+    }
+
+    .box4 {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Stagger交錯效果</h1>
+     <div class="row">
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+
+    <br><br><br><br><br><br> <hr>
+        <h3>from與fromTo</h3>
+        <h4>from</h4>
+        <div class="box2"></div>
+        <h4>fromTo</h4>
+        <div class="box3"></div>
+    </div>
+       
+
+
+
+
+
+
+
+
+
+
+
+        <!-- ------------------ -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'></script>
+        <script src="./gsap/gsap.js"></script>
+        <script>
+            // .1
+         
+             gsap.to(".box1", {
+                y: 100,
+                duration: 1,
+                stagger:{
+                    each:0.1,
+                    // from:"radom",
+                    from:"start",
+                    repeat:-1,
+                    yoyo:true,        
+                },
+                ease:"bounce",
+                rotation:360,
+                backgroundColor:"random([red,green,blue,yellow,pink,purple,orange,black,white])"
+            })
+            gsap.from(".box2", {
+                x: -500,
+                duration: 3,
+            })
+            gsap.fromTo(".box3", {
+                x: 1000,
+                duration: 3,
+            },{
+                x:-50,
+            })
+
+        </script>
+</body>
+
+</html>
