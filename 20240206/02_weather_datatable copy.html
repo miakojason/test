@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css"
+    integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <table class="display" id="myTable">
+    <thead>
+      <tr>
+        <th width="30%" class="text-center">id</th>
+        <th class="text-start">name</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- pw url -->
+  <script src="../ignore/js/pw.js"></script>
+
+  <!-- datatable js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+    integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $(document).ready(function () {
+      let url = weatherUrl;
+      const myOl = $('#myOl');
+      const myTable = $('#myTable');
+
+      $.ajax({
+        type: "get",
+        url: url,
+        // data: "data",
+        // dataType: "dataType",
+        success: function (res) {
+          // . [] ->  property variable
+          // .xxx()  ['xxx']()  ->xxx() method function action
+          // console.log('res', res);
+          // console.log('res.records', res.records);
+          // console.log('res["records"]', res['records']);
+          // console.log('res.records.datasetDescription', res.records.datasetDescription);
+          let nowLocation = res.records.location;
+          let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
+          console.log('nowLocationMaxT', nowLocationMaxT);
+          console.log('nowLocation', nowLocation);
+          $.each(nowLocation, function (key, value) {
+            // console.log('key', key);
+            // console.log('value', value);
+            // console.log('value.locationName', value.locationName);
+            let nowID = key + 1;
+            let stringID = nowID.toString().padStart(2, "0");
+            let nowLocationName = value.locationName;
+            // let content = `
+            //  <li>${nowLocationName}</li>
+            // `;
+            let content = `
+              <tr>
+                <td class="text-center">${stringID}</td>
+                <td class="text-start">${nowLocationName}</td>
+                <td class="text-start">${12} - ${18} °C</td>
+              </tr>
+            `;
+
+            // 1 新北市 12-18 °C
+
+            // console.log('nowLocationName', nowLocationName);
+            // $('tbody').append(content);
+          });
+
+          // run datatable
+          // myTable.DataTable();
+
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>

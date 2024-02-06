@@ -1,0 +1,1 @@
+let weatherUrl='https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-3C939697-DFB3-43A6-A022-C770F1CD9956'
