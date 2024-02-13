@@ -136,10 +136,10 @@
                         console.log('value', value);
 
                         // 12
-                        let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
-                        let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
-                        let nowiconName = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
-                        let nowiconValue = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");
+                        let nowLocationMaxT_12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+                        let nowLocationMinT_12 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+                        let nowiconName_12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+                        let nowiconValue_12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");
 
                         //  24
                         let nowLocationMaxT_24 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
@@ -151,14 +151,14 @@
                         let nowLocationMaxT_36 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
                         let nowLocationMinT_36 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
                         let nowiconName_36 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
-                        let nowiconValue_36 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");_36
+                        let nowiconValue_36 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");
                         let content = `
         <tr>
             <td class="text-center">${stringID}</td>
             <td class="text-start">${nowLocationName}</td>
-            <td class="text-start>${nowLocationMinT}-${nowLocationMaxT}°C${nowiconName}<img src="./icon/${dayNight_12}/${nowiconValue}.svg" ></td>
-            <td class="text-start>${nowLocationMinT_24}-${nowLocationMaxT_24}°C${nowiconName_24}<img src="./icon/${dayNight_12}/${nowiconValue_24}.svg" ></td>
-            <td class="text-start>${nowLocationMinT_36}-${nowLocationMaxT_36}°C${nowiconName_36}<img src="./icon/${dayNight_12}/${nowiconValue_36}.svg" ></td>
+            <td class="text-start">${nowLocationMinT_12}-${nowLocationMaxT_12}°C${nowiconName_12}<img src="./icon/${dayNight_12}/${nowiconValue_12}.svg" ></td>
+            <td class="text-start">${nowLocationMinT_24}-${nowLocationMaxT_24}°C${nowiconName_24}<img src="./icon/${dayNight_24}/${nowiconValue_24}.svg" ></td>
+            <td class="text-start">${nowLocationMinT_36}-${nowLocationMaxT_36}°C${nowiconName_36}<img src="./icon/${dayNight_36}/${nowiconValue_36}.svg" ></td>
         </tr>
           `;
 
