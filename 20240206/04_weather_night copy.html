@@ -16,6 +16,11 @@
 </head>
 
 <body>
+  <div class="container">
+    <button type="button" data-location="新北市">新北市</button>
+    <button type="button" data-location="台中市">台中市</button>
+    <button type="button" data-location="高雄市">高雄市</button>
+  </div>
   <table class="display" id="myTable">
     <thead>
       <tr>
@@ -129,10 +134,10 @@
           }
 
           $.each(nowLocation, function (key, value) {
+
             let nowID = key + 1;
             let stringID = nowID.toString().padStart(2, "0");
             let nowLocationName = value.locationName;
-            console.log('value', value);
 
             // 12
             let nowLocationMaxT_12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];

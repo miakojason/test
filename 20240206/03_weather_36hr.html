@@ -19,11 +19,11 @@
   <table class="display" id="myTable">
     <thead>
       <tr>
-        <th width="5%" class="text-center">id</th>
-        <th width="10%" class="text-start">name</th>
-        <th width="10%" class="text-start" id="title12">desc 12</th>
-        <th width="10%" class="text-start" id="title24">desc 24</th>
-        <th width="10%" class="text-start" id="title36">desc 36</th>
+        <th width="7%" class="text-center">id</th>
+        <th width="15%" class="text-start">name</th>
+        <th class="text-start" id="title12">desc 12</th>
+        <th class="text-start" id="title24">desc 24</th>
+        <th class="text-start" id="title36">desc 36</th>
       </tr>
     </thead>
     <tbody>
@@ -65,15 +65,18 @@
           // console.log('res["records"]', res['records']);
           // console.log('res.records.datasetDescription', res.records.datasetDescription);
           let nowLocation = res.records.location;
-           // let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
+          // let nowLocationMaxT = res.records.location[1].weatherElement[4]['time'][0]['parameter']['parameterName'];
           // let nowLocationMinT = res.records.location[1].weatherElement[2]['time'][0]['parameter']['parameterName'];
-          let title12Text=res.records.location[1].weatherElement[2]['time'][0]['startTime'];
-          let title24Text=res.records.location[1].weatherElement[2]['time'][1]['startTime'];
-          let title36Text=res.records.location[1].weatherElement[2]['time'][2]['startTime'];
+
+          let title12Text = res.records.location[1].weatherElement[2]['time'][0]['startTime'];
+          let title24Text = res.records.location[1].weatherElement[2]['time'][1]['startTime'];
+          let title36Text = res.records.location[1].weatherElement[2]['time'][2]['startTime'];
           title12.text(title12Text);
           title24.text(title24Text);
           title36.text(title36Text);
-          console.log('nowLocation', nowLocation);
+
+          // console.log('nowLocationMaxT', nowLocationMaxT);
+          // console.log('nowLocation', nowLocation);
           $.each(nowLocation, function (key, value) {
             // console.log('key', key);
             // console.log('value', value);
@@ -81,37 +84,52 @@
             let nowID = key + 1;
             let stringID = nowID.toString().padStart(2, "0");
             let nowLocationName = value.locationName;
-               console.log('value', value);
-               
-            // 12
-            let nowLocationMaxT = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
-            let nowLocationMinT = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
-            let nowiconName = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
-            let nowiconValue = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString().padStart(2, "0");
+            console.log('value', value);
 
-            console.log('nowiconName', nowiconName);
-            console.log('nowiconName', nowiconValue);
-            console.log('nowLocationMaxT', nowLocationMaxT);
-            console.log('nowLocationMinT', nowLocationMinT);
-            //  24
+            // 12
+            let nowLocationMaxT_12 = value.weatherElement[4]['time'][0]['parameter']['parameterName'];
+            let nowLocationMinT_12 = value.weatherElement[2]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxName_12 = value.weatherElement[0]['time'][0]['parameter']['parameterName'];
+            let nowLocationWxValue_12 = value.weatherElement[0]['time'][0]['parameter']['parameterValue'].toString();
+            let imgUrl_12 = nowLocationWxValue_12 + '.svg';
+
+            // 24
+            let nowLocationMaxT_24 = value.weatherElement[4]['time'][1]['parameter']['parameterName'];
+            let nowLocationMinT_24 = value.weatherElement[2]['time'][1]['parameter']['parameterName'];
+            let nowLocationWxName_24 = value.weatherElement[0]['time'][1]['parameter']['parameterName'];
+            let nowLocationWxValue_24 = value.weatherElement[0]['time'][1]['parameter']['parameterValue'].toString();
+            let imgUrl_24 = nowLocationWxValue_24 + '.svg';
 
             // 36
+            let nowLocationMaxT_36 = value.weatherElement[4]['time'][2]['parameter']['parameterName'];
+            let nowLocationMinT_36 = value.weatherElement[2]['time'][2]['parameter']['parameterName'];
+            let nowLocationWxName_36 = value.weatherElement[0]['time'][2]['parameter']['parameterName'];
+            let nowLocationWxValue_36 = value.weatherElement[0]['time'][2]['parameter']['parameterValue'].toString();
+            let imgUrl_36 = nowLocationWxValue_36 + '.svg';
+
+
+            // let content = `
+            //  <li>${nowLocationName}</li>
+            // `;
             let content = `
-        <tr>
-            <td class="text-center">${stringID}</td>
-            <td class="text-start">${nowLocationName}</td>
-            <td>${nowLocationMinT}-${nowLocationMaxT}°C${nowiconName}<img src="./icon/${nowiconValue}.svg" ></td>
-            <td>${nowLocationMinT}-${nowLocationMaxT}°C${nowiconName}<img src="./icon/${nowiconValue}.svg" ></td>
-            <td>${nowLocationMinT}-${nowLocationMaxT}°C${nowiconName}<img src="./icon/${nowiconValue}.svg" ></td>
-        </tr>
-          `;
+              <tr>
+                <td class="text-center">${stringID}</td>
+                <td class="text-start">${nowLocationName}</td>
+                <td class="text-start">${nowLocationMinT_12} - ${nowLocationMaxT_12} °C ${nowLocationWxName_12} <img src="./images/day/${imgUrl_12}" alt=""></td>
+                <td class="text-start">${nowLocationMinT_24} - ${nowLocationMaxT_24} °C ${nowLocationWxName_24} <img src="./images/day/${imgUrl_24}" alt=""></td>
+                <td class="text-start">${nowLocationMinT_36} - ${nowLocationMaxT_36} °C ${nowLocationWxName_36} <img src="./images/day/${imgUrl_36}" alt=""></td>
+              </tr>
+            `;
 
-            console.log('nowLocationName', nowLocationName);
+            // 1 新北市 12-18 °C
+
+            // console.log('nowLocationName', nowLocationName);
             $('tbody').append(content);
-
           });
+
           // run datatable
           myTable.DataTable();
+
         }
       });
     });
